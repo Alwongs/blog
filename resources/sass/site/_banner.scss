@@ -1,0 +1,96 @@
+.home-page-banner {
+    background-image: url('../../images/banners/main-banner-1.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: changeBanner 20s ease infinite;
+    &::after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
+        opacity: 0.3;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }  
+    h2 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50px;
+        letter-spacing: 30px;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 100px;
+    }      
+    &__contact-us {
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+        display: flex;
+        border: 1px solid white;
+        padding: 20px 40px;
+        color: white;
+        cursor: pointer;
+        z-index: 3;
+        transition: 0.5s;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.3);       
+        }
+    }
+    @media (max-width: $mobile-max) {  
+        height: fit-content;  
+        display: none;    
+    }  
+}
+@keyframes changeBanner {
+    0% {
+        background-image: url('../../images/banners/main-banner-1.jpg');   
+    }
+    50% {
+        background-image: url('../../images/banners/main-banner-2.jpg');
+    }
+    100% {
+        background-image: url('../../images/banners/main-banner-1.jpg');     
+    }
+}
+
+.page-banner {
+    background-image: url('../../images/banners/page-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    &::after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        background: linear-gradient(to bottom, rgb(51, 21, 21), transparent);
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+    h2 {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        top: 50px;
+        letter-spacing: 10px;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 80px;
+    }                
+    @media (max-width: $mobile-max) {  
+        height: fit-content;  
+        display: none;    
+    }  
+}

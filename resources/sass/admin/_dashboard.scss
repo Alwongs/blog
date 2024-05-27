@@ -1,0 +1,164 @@
+
+
+.dashboard-container {
+    background-color: rgb(117, 145, 129);
+    padding: 0 30px;
+    min-height: 100vh;
+}
+
+.dashboard {
+    background-color: #bbb2d8;
+    min-height: calc(100vh - 50px);
+}
+
+.reminder-section {
+    margin-bottom: 30px;
+}
+
+.dashboard-row {    
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 32px; 
+    @media (max-width: $desktop-max) {  
+        flex-wrap: wrap;   
+        justify-content: flex-end;  
+    }  
+    @media (max-width: $tablet-max) {  
+        flex-direction: column;
+    }     
+}
+.dashboard-item {
+    flex: 1 0 340px;
+    @media (max-width: $desktop-max) {  
+        flex: 0 0 48%;       
+    }  
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {  
+        flex: 1 1 auto;    
+    }  
+    @media (max-width: $mobile-max) {  
+        flex: 1 1 auto;            
+    }    
+}
+
+.dashboard-row-second {
+    display: flex;
+    justify-content: flex-end;
+}
+.dashboard-row-second .dashboard-item {
+    flex: 0 0 32%;  
+    @media (max-width: $desktop-max) {  
+        flex: 0 0 48%;      
+    }  
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {  
+        flex: 1 1 auto;    
+    }  
+    @media (max-width: $mobile-max) {  
+        flex: 1 1 auto;            
+    }     
+}
+
+.dashboard-card {
+    background-color: #f7e6b7;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    &__title {
+        &:first-letter {
+            text-transform: capitalize;
+        }
+        text-align: center;
+        padding: 10px 0;
+    }
+    &__content-list {
+        border-radius: 10px;
+        flex: 1 0 auto;
+    }
+    &__content-empty {
+        height: 44px;
+        line-height: 44px;
+        font-style: italic;
+        color: rgba($baseText, .3);
+        text-align: center;
+    }
+    &__item {
+        height: 44px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid rgba($baseText, 0.2);
+        &.bg-tomorrow{
+            background-color: $eventBgTomorrow;
+            color: lighten($red, 20);            
+        }
+        &.bg-today {
+            background-color: $eventBgToday;  
+            color: $red;          
+        }
+        &.bg-overdue {
+            background-color: $eventBgOverdue;            
+        }
+    }
+    @media (min-width: $desktop-min) and (max-width: $desktop-max) {
+                
+    }     
+    @media (min-width: $tablet-min) and (max-width: $tablet-max) {  
+        &.hide-dashboard-card {
+            display: none;
+        }
+    }      
+    @media (max-width: $mobile-max) {  
+        &.hide-dashboard-card {
+            display: none;
+        }
+    }     
+}
+
+.dashboard-card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    letter-spacing: 0.4px;
+    color: $baseText;
+    padding: 0 10px;  
+    &__index-block {
+        flex: 0 0 25px;
+        @media (max-width: $mobile-max) {  
+            display: none;               
+        }        
+    }
+    &__title {
+        color: inherit;
+        display: block;
+        flex: 1 0 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        width: 21ch;    
+        &:first-letter {
+            text-transform: capitalize;
+        }
+        @media (min-width: $desktop-min) and (max-width: $desktop-max) {    
+            max-width: 100%;                                      
+        }     
+        @media (min-width: $tablet-min) and (max-width: $tablet-max) {  
+            max-width: 100%; 
+        }         
+        @media (max-width: $mobile-max) {  
+            width: 17ch;             
+            max-width: 100%;             
+            flex: 1 0 185px;               
+        }         
+    }
+    &__btn-block {
+        display: flex;
+        @media (max-width: $mobile-max) {  
+            button:first-child {
+                display: none;
+            }              
+        }           
+    }
+    &:hover {
+        background: rgba(#ffebb3, 1);
+    }
+}
