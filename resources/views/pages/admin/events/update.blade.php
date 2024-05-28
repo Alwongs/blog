@@ -3,9 +3,9 @@
         <h1>@isset($event){{ __('Update') }}@else{{ __('New event') }}@endisset</h1>
     </header>
 
-    <main class="main ">
-        @include('includes.common.notification')
+    @include('includes.common.notification')
 
+    <main class="main ">
         @if(isset($event))
             <form class="form" action="{{ route('events.update', $event) }}" method="POST">
             @method('PUT')

@@ -1,5 +1,4 @@
 <x-site-layout>
-    
     <section class="page-banner">
         <h2 class="home-title">{{ __("blog.categories") }}</h2>
     </section>

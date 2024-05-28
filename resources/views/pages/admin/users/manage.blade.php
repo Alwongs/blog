@@ -5,12 +5,9 @@
             <h1>{{ __('Users') }}</h1>
         </header>
 
-        <main class="main">
+        @include('includes.common.notification')
 
-            <div class="notification-block">
-                <x-session-status :status="session('status')" :info="session('info')" />
-            </div>
-        
+        <main class="main">        
             <ul class="manage-list">
                 @foreach($users as $user)
                 <li class="manage-list__item"> 

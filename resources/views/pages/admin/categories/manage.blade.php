@@ -1,10 +1,7 @@
 <x-admin-layout>
-    <main class="main">
-        @include('includes.common.notification')
-        {{-- <div class="notification-block">
-            <x-session-status :status="session('status')" :info="session('info')" />
-        </div>     --}}
+    @include('includes.common.notification')
 
+    <main class="main">
         <div class="add-btn-group">
             <a class="add-btn btn-icon-add" title="add new post" href="{{ route('categories.create') }}"></a>
         </div> 

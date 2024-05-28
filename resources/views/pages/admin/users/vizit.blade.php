@@ -5,12 +5,9 @@
             <h1>{{ __('Vizit') }}</h1>
         </header>
 
-        <main class="main">
+        @include('includes.common.notification')
 
-            <div class="notification-block">
-                <x-session-status :status="session('status')" :info="session('info')" />
-            </div>   
-        
+        <main class="main">        
             <table class="simple-table">
                 <tr>
                     <td class="simple-table__key">ip_address:</td>

@@ -1,5 +1,4 @@
 <x-site-layout>
-
     <section class="page-banner">
         <h2>{{ $category->title }}</h2>
     </section>

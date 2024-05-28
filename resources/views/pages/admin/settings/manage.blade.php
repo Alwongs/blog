@@ -6,9 +6,9 @@
 @endphp
 
 <x-admin-layout>
+    @include('includes.common.notification')
+    
     <main class="main">
-        @include('includes.common.notification')
-
         <section class="section">
             <form class="form" action="{{ route('settings.update', 1) }}" method="POST">
                 @method('PUT')

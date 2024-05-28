@@ -5,11 +5,9 @@
             <h1>{{ __('Vizits') }}</h1>
         </header>
 
-        <main class="main">
+        @include('includes.common.notification')
 
-            <div class="notification-block">
-                <x-session-status :status="session('status')" :info="session('info')" />
-            </div>   
+        <main class="main">  
             @if(count($vizits) > 0)
             <div class="btn-block">
                 <a class="btn btn-red" title="clear table" href="{{ route('clear-vizits') }}?return_url=vizits">

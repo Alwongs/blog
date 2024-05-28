@@ -1,4 +1,7 @@
-
+.dashboard {
+    background-color: rgb(117, 145, 129);
+    min-height: calc(100vh - 50px);
+}
 
 .dashboard-container {
     background-color: rgb(117, 145, 129);
@@ -6,10 +9,7 @@
     min-height: 100vh;
 }
 
-.dashboard {
-    background-color: #bbb2d8;
-    min-height: calc(100vh - 50px);
-}
+
 
 .reminder-section {
     margin-bottom: 30px;

@@ -3,10 +3,9 @@
         <h1>@isset($category){{ __('blog.update') }}@else{{ __('blog.new_category') }}@endisset</h1>
     </header>
 
+    @include('includes.common.notification')
+
     <main class="main">
-
-        @include('includes.common.notification')
-
         @if(isset($category))
             <form class="form" action="{{ route('categories.update', $category) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')

@@ -3,9 +3,9 @@
         <h1>@isset($post){{ __('blog.update') }}@else{{ __('blog.new_post') }}@endisset</h1>
     </header>
 
-    <main class="main">
-        @include('includes.common.notification')
+    @include('includes.common.notification')
 
+    <main class="main">
         @if(isset($post))
             <form class="form" action="{{ route('posts.update', $post) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')

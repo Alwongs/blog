@@ -5,11 +5,9 @@
             <h1>{{ __('Messages') }}</h1>
         </header>
 
-        <main class="main">
+        @include('includes.common.notification')
 
-            <div class="notification-block">
-                <x-session-status :status="session('status')" :info="session('info')" />
-            </div>   
+        <main class="main">  
             @if(count($messages) > 0)
                 <a href="{{ route('clear-messages') }}" class="btn btn-red" title="clear table">
                     Clear table
