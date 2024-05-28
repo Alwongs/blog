@@ -31,7 +31,7 @@ Route::get('/post/{id}', [BlogController::class, 'showPost'])->name('post');
 
 Route::get('/contact-us', [MessageController::class, 'create'])->name('contact-us');
 Route::post('/store-message', [MessageController::class, 'store'])->name('store-message');
-Route::post('/report', [MessageController::class, 'report'])->name('report');
+Route::get('/report', [MessageController::class, 'report'])->name('report');
 
 
 Route::middleware('auth')->group(function () {

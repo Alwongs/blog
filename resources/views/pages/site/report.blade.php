@@ -3,10 +3,9 @@
         <h2 class="home-title">{{ __('message.contact_us') }}</h2>
     </section>
 
+    @include('includes.common.notification')
+
     <section class="main page-container">
-
-        @include('includes.common.notification')
-
         <h2 class="main__title">Thank you! Message has been sent</h2>
 
         <div class="btn-block">

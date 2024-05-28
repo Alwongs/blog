@@ -1,9 +1,9 @@
 <ul class="breadcrumbs">
 
-    <li class="breadcrumbs__item hide-in-mobile">You are here:</li> 
+    <li class="breadcrumbs__item hide-in-mobile">{{ __("common.you_are_here") }}:</li> 
 
     <li class="breadcrumbs__item">
-        <a href="{{ route('home') }}">Home</a>
+        <a href="{{ route('home') }}">{{ __("common.home") }}</a>
     </li>
 
     @foreach($breadcrumbs as $item)

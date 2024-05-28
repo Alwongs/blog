@@ -6,12 +6,12 @@
     </div>
 
     <div class="aside-navigation">
-        <h2 class="aside-navigation__title">Navigation</h2>
+        <h2 class="aside-navigation__title">{{ __("common.website") }}</h2>
         <nav class="aside-navigation__body nav-site">
-            <a href="{{ route('home') }}">Home</a>
-            <a href="{{ route('blog') }}">Gallery</a>
+            <a href="{{ route('home') }}">{{ __("common.home") }}</a>
+            <a href="{{ route('blog') }}">{{ __("common.gallery") }}</a>
             @auth
-                <a href="{{ route('dashboard') }}">Dashboard</a>
+                <a href="{{ route('dashboard') }}">{{ __("dashboard.dashboard") }}</a>
             @endauth
         </nav>
     </div>
