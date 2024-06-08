@@ -10,9 +10,9 @@
 
     <section class="section">
         <div class="container">
-            <div class="section__title">
-                <h2>{{ __("blog.recent_posts") }}<h2>
-            </div>
+            <x-section-title>
+                {{ __("blog.recent_posts") }}
+            </x-section-title>
 
             @include('blocks.recent_posts')
 
