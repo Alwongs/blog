@@ -118,7 +118,7 @@ class PostController extends Controller
     {
         if ($request->hasFile('image')) {
 
-            $category = Album::find($post->category_id);
+            $category = Category::find($post->category_id);
             $categoryDirName = TextHelper::transliterate($category->title);
 
             if($post->image) {

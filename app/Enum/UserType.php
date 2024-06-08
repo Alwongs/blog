@@ -7,7 +7,7 @@ namespace App\Enum;
  *
  * @package Tygh\Enum
  */
-class UserTypes
+class UserType
 {
     const ADMIN = 'A';
     const TEST = 'T';
