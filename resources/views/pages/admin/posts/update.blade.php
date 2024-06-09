@@ -40,7 +40,7 @@
             </div>
 
             <div class="form__input-block">
-                <input name="source_link" type="text" placeholder="{{ __("blog.source_link") }}" value="{{ isset($post) ? $post->source_link : '' }}" required />
+                <input name="source_link" type="text" placeholder="{{ __("blog.source_link") }}" value="{{ isset($post) ? $post->source_link : '' }}" />
             </div> 
 
             @isset($post)
