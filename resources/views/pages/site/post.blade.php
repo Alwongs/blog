@@ -27,10 +27,11 @@
                 <div class="text-container photo-detail__text">
                     {{ $post->description }}
                 </div>
-
-                <div class="text-container photo-detail__source-link">
-                    <a href="{{ $post->source_link }}" target="_blank" >{{ __("blog.source_link")}}</a>
-                </div>
+                @if (!empty($post->source_link))
+                    <div class="text-container photo-detail__source-link">
+                        <a href="{{ $post->source_link }}" target="_blank" >{{ __("blog.source_link")}}</a>
+                    </div>
+                @endif
             </div>
         </div>
     </section>
