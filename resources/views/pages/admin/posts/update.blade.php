@@ -39,6 +39,10 @@
                 <textarea name="description" placeholder="description">{{ isset($post) ? $post->description : '' }}</textarea>
             </div>
 
+            <div class="form__input-block">
+                <input name="source_link" type="text" placeholder="{{ __("blog.source_link") }}" value="{{ isset($post) ? $post->source_link : '' }}" required />
+            </div> 
+
             @isset($post)
             <div class="form__image-block">
                 @if($post->image)

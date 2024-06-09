@@ -139,6 +139,7 @@ class PostController extends Controller
         $post->category_id = $request->category_id;
         $post->title = $request->title;
         $post->description = $request->description;
+        $post->source_link = $request->source_link;
         $post->update();
 
         return redirect()->route('posts.edit', compact('post'))->with('info', 'Post has been updated!'); 

@@ -23,8 +23,13 @@
                         <div class="no-photo-image"></div>
                     @endif
                 </div>
+                
                 <div class="text-container photo-detail__text">
                     {{ $post->description }}
+                </div>
+
+                <div class="text-container photo-detail__source-link">
+                    <a href="{{ $post->source_link }}" target="_blank" >{{ __("blog.source_link")}}</a>
                 </div>
             </div>
         </div>

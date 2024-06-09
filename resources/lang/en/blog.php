@@ -13,5 +13,6 @@ return [
     'posts' => 'Posts',
     'new_post' => 'New post',
     'recent_posts' => 'Recent posts',
-    'no_posts_in_category' => 'There are no posts in this category'
+    'no_posts_in_category' => 'There are no posts in this category',
+    'source_link' => 'Source link'
 ];
