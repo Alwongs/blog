@@ -25,7 +25,7 @@
                 </div>
                 
                 <div class="text-container photo-detail__text">
-                    {{ $post->description }}
+                    {!! $post->description !!}
                 </div>
                 @if (!empty($post->source_link))
                     <div class="text-container photo-detail__source-link">

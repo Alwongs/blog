@@ -26,5 +26,12 @@
                 </main>
             </div>
         </div>
+
+        <script src="https://cdn.tiny.cloud/1/81udwibp5bnpl1hfw94bct46jrb2sxrc01vkn1abbktr17jn/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: '#mytextarea'
+            });
+        </script>
     </body>
 </html>

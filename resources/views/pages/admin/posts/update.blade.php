@@ -36,7 +36,7 @@
             </div>    
 
             <div class="form__textarea-block">
-                <textarea name="description" placeholder="description">{{ isset($post) ? $post->description : '' }}</textarea>
+                <textarea id="mytextarea" name="description" placeholder="description">{{ isset($post) ? $post->description : '' }}</textarea>
             </div>
 
             <div class="form__input-block">
