@@ -17,7 +17,7 @@
             <div class="blog-page-item__header">
                 <h3 class="blog-page-item__title">{{ $post->title }}</h3>
             </div>
-            <p class="blog-page-item__description">{{ $post->description }}</p>
+            <p class="blog-page-item__description">{!! $post->description !!}</p>
             <a class="blog-page-item__footer" href="{{ route('post', $post->id) }}">{{ __("common.read_more") }}</a>
         </div>
     </div>
