@@ -569,7 +569,6 @@ a {
   }
 }
 .photo-detail__text {
-  text-indent: 30px;
   margin-bottom: 30px;
 }
 
@@ -1362,4 +1361,20 @@ select {
     width: 100%;
     height: auto;
   }
+}
+
+.tinymce-content h4 {
+  margin-bottom: 10px;
+}
+.tinymce-content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.tinymce-content li:before {
+  content: "-";
+  position: relative;
+  left: -5px;
+}
+.tinymce-content p {
+  text-indent: 30px;
 }

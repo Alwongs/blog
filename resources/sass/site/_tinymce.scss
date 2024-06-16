@@ -1,0 +1,22 @@
+
+.tinymce-content {
+    // border: 2px solid green;
+
+    h4 {
+        margin-bottom: 10px;
+    }
+    ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+    li {
+        &:before {
+            content:  "-";
+            position: relative;
+            left:     -5px;
+        }
+    }
+    p {
+        text-indent: 30px;
+    }
+}

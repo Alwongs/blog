@@ -66,8 +66,6 @@
                 <p id="error" style="color: red;"></p>
             </div>  
 
-
-
             <div class="form__btn-block">
                 <button type="submit" class="btn btn-green">
                     @if(isset($post))
@@ -81,5 +79,19 @@
 
     </main>
 
+    @push('tinymce')
+        <script 
+            src="https://cdn.tiny.cloud/1/81udwibp5bnpl1hfw94bct46jrb2sxrc01vkn1abbktr17jn/tinymce/7/tinymce.min.js" 
+            referrerpolicy="origin"
+        ></script>
+        <script>
+            tinymce.init({
+                selector: '#mytextarea',
+                plugins: 'code table lists',
+                toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code '
+            });
+        </script>
+    @endpush
 </x-admin-layout>
+
 

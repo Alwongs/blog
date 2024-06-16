@@ -24,7 +24,7 @@
                     @endif
                 </div>
                 
-                <div class="text-container photo-detail__text">
+                <div class="text-container photo-detail__text tinymce-content">
                     {!! $post->description !!}
                 </div>
                 @if (!empty($post->source_link))
