@@ -12,7 +12,7 @@
         
             @if(count($posts) != 0)
 
-                <ul class="gallery-list-vertical">
+                <ul class="post-list">
                     @foreach ($posts as $post)
                         @include('cards.post')
                     @endforeach
