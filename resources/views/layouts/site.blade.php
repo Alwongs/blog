@@ -12,6 +12,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+
     </head>
     <body>
         @if( Session::get("settings.is_develop_mode.value" ) == 'Y')
@@ -27,5 +28,8 @@
 
             @include('includes.site.footer')
         </div>
+
+        <!-- Scripts -->
+        @stack('jquery')        
     </body>
 </html>

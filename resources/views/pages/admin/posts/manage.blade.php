@@ -18,7 +18,11 @@
                         @endif
                     </div>  
 
-                    <div class="manage-list__item-title">{{ $post->title }}</div> 
+                    <div class="manage-list__item-title">
+                        <a href="{{ route('posts.edit', $post->id) }}">
+                            {{ $post->title }}
+                        </a>
+                    </div> 
 
                     <div class="manage-list__item-date">{{ date("d.m.Y", strtotime($post->created_at)) }}</div>
 

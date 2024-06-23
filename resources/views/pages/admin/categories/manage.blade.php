@@ -18,7 +18,11 @@
                         @endif
                     </div>  
 
-                    <div class="manage-list__item-title">{{ $category->title }}</div> 
+                    <div class="manage-list__item-title">
+                        <a href="{{ route('categories.edit', $category->id) }}">
+                            {{ $category->category_name }}
+                        </a>
+                    </div> 
 
                     <div class="manage-list__item-date">{{ date("d.m.Y", strtotime($category->created_at)) }}</div>
 

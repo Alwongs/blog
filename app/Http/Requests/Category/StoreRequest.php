@@ -24,17 +24,17 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'       => ['required', 'unique:categories,title', 'string', 'max:255'],
-            'description' => ['nullable', 'string'],
-            'image'       => ['nullable', 'image:jpg,jpeg,png,webp', 'max:3000']
+            'category_name' => ['required', 'unique:categories,title', 'string', 'max:20'],
+            'category_id' => ['nullable'],
+            'position' => ['required', 'numeric']
         ];
     }
 
-    // public function messages()
-    // {
-    //     return [
-    //         'post.required' => 'Request validation: A title is required',
-    //         'image.image:jpg,jpeg,png,webp' => 'Request validation: An extension is not permited',
-    //     ];
-    // }    
+    public function messages()
+    {
+        return [
+            'category_name.required' => 'Request validation: A title is required',
+            'category_name.max:20' => 'Request validation: Too long title. Max - 20'
+        ];
+    }    
 }

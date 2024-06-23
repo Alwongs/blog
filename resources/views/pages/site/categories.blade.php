@@ -9,6 +9,7 @@
 
     <section class="section">
         <div class="page-container">
+
             @if(count($categories) != 0)
                 <ul class="gallery-list">
                     @foreach ($categories as $category)

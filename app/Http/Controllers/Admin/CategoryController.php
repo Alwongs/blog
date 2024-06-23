@@ -40,7 +40,8 @@ class CategoryController extends Controller
      */
     public function create(Request $request)
     {
-        return view('pages/admin/categories/update');
+        $p_categories = Category::all();
+        return view('pages/admin/categories/update', compact('p_categories'));
     }
 
     /**
@@ -54,13 +55,12 @@ class CategoryController extends Controller
         if ($request->validated()) {
 
             $category = $request->all();
+            $category['title'] = $request->category_name;
 
             if ($request->hasFile('image')) {
-                
                 $requestImage = $request->file('image');
                 $newImageName = TextHelper::buildAlbumImageName($category['title'], $requestImage->getClientOriginalExtension());
                 ImageCategoryHelper::storeImage($requestImage, $category['title'], $newImageName);  
-
                 $category['image'] = $newImageName;
             } else {
                 return redirect()->back()->with('status', 'Select image!'); 
@@ -91,7 +91,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('pages/admin/categories/update', compact('category')); 
+        $p_categories = Category::all();
+        return view('pages/admin/categories/update', compact('category', 'p_categories')); 
     }
 
     /**
@@ -104,23 +105,20 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         if ($request->hasFile('image')) {
-
             if($category->image) {
                 ImageCategoryHelper::removeImagesFromStorage('', $category->image);
             }
-
             $requestImage = $request->file('image');
             $newImageName = TextHelper::buildAlbumImageName($category->title, $requestImage->getClientOriginalExtension());
             ImageCategoryHelper::storeImage($requestImage, $category->title, $newImageName); // возможно не нужен album->title
-
             $category->image = $newImageName;
         }
-
         if (empty($category->image)) {
             return redirect()->back()->with('status', 'Select image!'); 
         }
 
-        $category->description = $request->description;
+        $category->category_name = $request->category_name;
+        $category->position = $request->position;
         $category->update();
 
         return redirect()->route('categories.edit', compact('category'))->with('info', 'Category has been updated!'); 

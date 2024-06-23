@@ -20,9 +20,9 @@
                         <option value="" >Select Album</option>
                         @foreach($categories as $category)
                             @if(isset($post) && $category->id == $post->category_id)
-                                <option value="{{ $category->id }}" selected>{{ $category->title }}</option>
+                                <option value="{{ $category->id }}" selected>{{ $category->category_name }}</option>
                             @else
-                                <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                             @endif
                         @endforeach
                     </select>
@@ -44,13 +44,13 @@
             </div> 
 
             @isset($post)
-            <div class="form__image-block">
-                @if($post->image)
-                    <img src="{{ Storage::url('posts/' . App\Helpers\TextHelper::transliterate($post->category->title) . '/previews/' . $post->image) ?: '' }}" alt="{{ $post->image }}" />
-                @else
-                    <div class="no-photo-image"></div>
-                @endif
-            </div>
+                <div class="form__image-block">
+                    @if($post->image)
+                        <img src="{{ Storage::url('posts/' . App\Helpers\TextHelper::transliterate($post->category->title) . '/previews/' . $post->image) ?: '' }}" alt="{{ $post->image }}" />
+                    @else
+                        <div class="no-photo-image"></div>
+                    @endif
+                </div>
             @endisset
 
             <!-- For file size validation make js check -->
@@ -59,9 +59,9 @@
                     id="input_file"
                     name="image"
                     type="file"
-                    @if(!isset($post)) 
+                    {{-- @if(!isset($post)) 
                         required
-                    @endif
+                    @endif --}}
                 />
                 <p id="error" style="color: red;"></p>
             </div>  

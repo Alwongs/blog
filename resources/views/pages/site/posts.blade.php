@@ -1,16 +1,15 @@
 <x-site-layout>
     <section class="page-banner">
-        <h2>{{ $category->title }}</h2>
+        <h2>{{ __("common.search") . ": " . $phrase }}</h2>
     </section>
 
     <section class="container">
-        @include('includes.site.breadcrumbs', ['category' => $category])
+        @include('includes.site.breadcrumbs')
     </section>
 
     <section class="section">
         <div class="page-container category-posts">
             <div class="category-tree-column">
-                {{-- @include('includes.site.category_tree', ['categories' => $categories]) --}}
                 @include('includes.site.category_list', ['categories' => $categories])
             </div>
         

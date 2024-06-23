@@ -16,22 +16,21 @@
 
             <div class="form__input-block">
                 <input 
-                    type="text"
-                    name="title"
-                    placeholder="title"
-                    value="{{ isset($category) ? $category->title : '' }}"
-                    @if(isset($category)) 
-                        class="input-disabled"
-                        disabled
-                    @else
-                        required
-                    @endif
+                    type="number"
+                    name="position"
+                    placeholder="position"
+                    value="{{ isset($category) ? $category->position : 0 }}"
                 />
-            </div>    
-
-            <div class="form__textarea-block">
-                <textarea name="description" placeholder="description">{{ isset($category) ? $category->description : '' }}</textarea>
             </div>
+
+            <div class="form__input-block">
+                <input 
+                    type="text"
+                    name="category_name"
+                    placeholder="category name"
+                    value="{{ isset($category) ? $category->category_name : '' }}"
+                />
+            </div>   
 
             @isset($category)
                 <div class="form__image-block">
@@ -44,27 +43,12 @@
             @endisset
 
             <div class="form__file-block">
-                <input 
-                    id="input_file" 
-                    name="image" 
-                    type="file"
-                    @if(!isset($category)) 
-                        required
-                    @endif
-                />
+                <input id="input_file" name="image" type="file" @if(!isset($category)) required @endif />
                 <p id="error" style="color: red;"></p>
             </div>  
 
-
-
             <div class="form__btn-block">
-                <button type="submit" class="btn btn-green submit">
-                    @if(isset($category))
-                        Update
-                    @else
-                        Save
-                    @endif
-                </button>
+                <button type="submit" class="btn btn-green submit"> @if(isset($category)) Update @else Save @endif </button>
             </div>
         </form>
 

@@ -61,18 +61,16 @@ class PostController extends Controller
         if ($request->validated()) {
 
             $post = $request->all();
-            $category = Category::find($post['category_id']);
 
             if ($request->hasFile('image')) {
+
+                $category = Category::find($post['category_id']);
 
                 $requestImage = $request->file('image');
                 $newImageName = ImagePostHelper::buildImageName($post['title'], $requestImage->getClientOriginalExtension());
                 ImagePostHelper::storeImage($requestImage, TextHelper::transliterate($category->title), $newImageName);                 
 
                 $post['image'] = $newImageName;
-
-            } else {
-                return redirect()->back()->with('status', 'Select image!'); 
             }
 
             Post::create($post);
@@ -132,9 +130,9 @@ class PostController extends Controller
             $post->image = $newImageName;
         }
 
-        if (empty($post->image)) {
-            return redirect()->back()->with('status', 'Select image!'); 
-        }
+        // if (empty($post->image)) {
+        //     return redirect()->back()->with('status', 'Select image!'); 
+        // }
 
         $post->category_id = $request->category_id;
         $post->title = $request->title;

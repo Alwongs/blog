@@ -8,6 +8,11 @@ class Breadcrumbs
     {
         switch ($page) {
 
+            case 'search':
+                return [
+                    ['route' => '', 'value' => 'search'],
+                ];
+
             case 'categories':
                 return [
                     ['route' => '', 'value' => 'categories'],
