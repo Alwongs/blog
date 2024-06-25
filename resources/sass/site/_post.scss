@@ -92,19 +92,14 @@
 
 .post-detail {
     display: flex;
+    gap: 30px;
     justify-content: space-between;
     &__title {
         text-align: center;
         margin-bottom: 20px;
     }
     &__body {
-        // display: flex;
-        // justify-content: space-between;
-        // gap: 30px;          
-        // @media (max-width: $mobile-max) {  
-        //     // display: block;
-        //       flex-direction: column;      
-        // }  
+
     }
 
     &__image {
@@ -130,8 +125,7 @@
     }
 
     &__text {
-
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
 }
 
@@ -173,10 +167,14 @@
     }
 
 }
-
+.post-detail-column {
+    flex: 1 1 auto;
+    // border: 1px solid red;
+}
 .search-column {
+    border: 1px solid rgba($baseText, 0.2);
     flex: 0 0 150px;
-    box-shadow: 0 0 20px 4px rgba(black, 0.1);
+    // box-shadow: 0 0 20px 4px rgba(black, 0.1);
     border-radius: 7px;
     padding: 10px;
     height: fit-content;

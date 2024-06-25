@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -34,6 +35,10 @@ Route::post('/store-message', [MessageController::class, 'store'])->name('store-
 Route::get('/report', [MessageController::class, 'report'])->name('report');
 Route::get('/search-phrase', [BlogController::class, 'searchPhrase'])->name('search-phrase');
 
+Route::resources([ 
+    'comments' => CommentController::class,
+]);
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -57,7 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::resources([ 
         'events'     => EventController::class,
         'categories' => CategoryController::class,
-        'posts'      => PostController::class
+        'posts'      => PostController::class,
     ]);
 });
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Comment;
 use App\Helpers\Breadcrumbs;
 use App\Helpers\Settings;
 
@@ -40,11 +41,12 @@ class BlogController extends Controller
     public function showPost($id)
     {
         $post = Post::with('category')->orderBy('created_at', 'desc')->findOrFail($id);
+        $comments = Comment::where('post_id', $id)->orderBy('created_at', 'desc')->get();
 
         $breadcrumbs = Breadcrumbs::buildBreadcrumbs('post', $post->category->title, $post->category->id);
         $categories = $this->categories;
 
-        return view('pages/site/post', compact('breadcrumbs', 'categories', 'post'));
+        return view('pages/site/post', compact('breadcrumbs', 'categories', 'post', 'comments'));
     }
 
     public function searchPhrase(Request $request)

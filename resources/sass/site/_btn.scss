@@ -176,3 +176,10 @@
         background-color: $btnRed;
     }
 }
+
+.btn-link-style {
+    background-color: transparent;
+    &__delete {
+        color: red;
+    }
+}

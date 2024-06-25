@@ -39,6 +39,7 @@
                         </div>
                     @endif
                 </div>
+                @include('blocks.comments')
             </div>    
 
             <div class="search-column">
