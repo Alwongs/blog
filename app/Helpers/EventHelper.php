@@ -8,6 +8,7 @@ class EventHelper
 {
     public static function chunckEventsToPeriods($events)
     {
+        date_default_timezone_set(DateHelper::TIMEZONE);
         $now = DateHelper::getCurrentDate();
     
         $overdue = [];
