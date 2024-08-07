@@ -51,6 +51,13 @@
             </a>
 
             <a 
+                href="{{ route('tasks.index') }}"
+                @if (in_array($currentRouteName, ['tasks.index', 'tasks.create', 'tasks.edit'])) class="active" @endif  
+            >
+                {{ __("tasks.tasks") }}                    
+            </a>            
+
+            <a 
                 href="{{ route('messages') }}"
                 @if (in_array($currentRouteName, ['messages'])) class="active" @endif 
             >

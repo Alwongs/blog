@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,7 @@ Route::middleware('auth')->group(function () {
         'events'     => EventController::class,
         'categories' => CategoryController::class,
         'posts'      => PostController::class,
+        'tasks'      => TaskController::class
     ]);
 });
 
