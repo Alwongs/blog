@@ -9,8 +9,9 @@
         <h2 class="aside-navigation__title">{{ __("common.website") }}</h2>
         <nav class="aside-navigation__body nav-site">
             <a href="{{ route('home') }}">{{ __("common.home") }}</a>
-            <a href="{{ route('blog') }}">{{ __("common.gallery") }}</a>
+            <a href="{{ route('blog') }}">{{ __("blog.blog") }}</a>
             @auth
+                <a href="{{ route('tasks.index') }}">{{ __("tasks.todo") }}</a>
                 <a href="{{ route('dashboard') }}">{{ __("dashboard.dashboard") }}</a>
             @endauth
         </nav>

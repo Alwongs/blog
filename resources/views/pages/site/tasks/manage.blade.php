@@ -4,8 +4,6 @@
         <h2>To Do List</h2>
     </section>
 
-
-
     <section class="section">
         <div class="todo-list-container">
 
@@ -18,11 +16,15 @@
                 </form> 
             </div> 
 
-            <ul class="todo-list">
-                @foreach($tasks as $task)
-                    @include("pages.site.tasks.components.todo-item")
-                @endforeach
-            </ul>
+            @if(count($tasks) > 0)
+                <ul class="todo-list">
+                    @foreach($tasks as $task)
+                        @include("pages.site.tasks.components.todo-item")
+                    @endforeach
+                </ul>
+            @else
+                <p class="empty-list-note">{{ __("tasks.no_tasks") }}</p>
+            @endif
 
         </div>
     </section>
