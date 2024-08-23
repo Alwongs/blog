@@ -294,6 +294,70 @@ a {
   margin-bottom: 10px;
 }
 
+.comp-nav-link-top-panel {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.1s ease-in-out;
+}
+.comp-nav-link-top-panel:hover {
+  color: yellow;
+  margin-top: 5px;
+}
+.comp-nav-link-top-panel.active {
+  color: yellow;
+}
+
+.comp-nav-link-home-page {
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+  background-color: #208179;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  font-size: 22px;
+}
+.comp-nav-link-home-page:hover {
+  background-color: #208179;
+}
+.comp-nav-link-home-page:active {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.comp-nav-link-auth-panel {
+  color: white;
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  height: 40px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.comp-nav-link-auth-panel:hover {
+  background-color: #208179;
+}
+.comp-nav-link-auth-panel:active {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.comp-nav-link-menu-panel {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding-left: 20px;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  text-transform: capitalize;
+}
+.comp-nav-link-menu-panel:hover {
+  background-color: #208179;
+}
+.comp-nav-link-menu-panel:active {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
 .aside {
   position: absolute;
   z-index: 5;
@@ -355,6 +419,7 @@ a {
   border-bottom: 1px solid rgb(100, 146, 160);
   transition: 0.2s;
   font-size: 18px;
+  color: rgb(0, 83, 118);
 }
 .aside-navigation a:hover {
   background-color: rgb(184, 220, 230);
@@ -459,6 +524,41 @@ a {
   .top-panel-false {
     height: 50px;
   }
+}
+
+.auth-panel {
+  box-shadow: -1px 0 3px 1px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  background-color: #208179;
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  transition: 0.4s;
+}
+.auth-panel.opened {
+  width: 250px;
+}
+@media (max-width: 767px) {
+  .auth-panel.opened {
+    width: 100%;
+  }
+}
+.auth-panel__btn-block {
+  display: flex;
+  justify-content: flex-start;
+  height: 50px;
+  padding-left: 10px;
+}
+.auth-panel__btn-close {
+  background-color: inherit;
+  font-size: 14px;
+  color: white;
+}
+.auth-panel__navigation {
+  padding-top: 30px;
 }
 
 .section-map {
@@ -1502,7 +1602,7 @@ select {
   border-radius: 4px;
   width: 32px;
   height: 32px;
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 600;
   color: green;
 }

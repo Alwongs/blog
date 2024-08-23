@@ -1,0 +1,45 @@
+.auth-panel {
+    // border: 2px solid #005586;
+    box-shadow: -1px 0 3px 1px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    background-color: #208179;
+    position: absolute;
+    overflow: hidden;
+    // right: -100%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    transition: .4s;
+    &.opened {
+        width: 250px;
+        @media (max-width: $mobile-max) {  
+            width: 100%; 
+        } 
+    }
+    &__btn-block {
+        display: flex;
+        justify-content: flex-start;
+        height: 50px;
+        padding-left: 10px;
+    }
+    &__btn-close {
+        background-color: inherit;
+        font-size: 14px;
+        color: white;
+
+    }
+    &__navigation {
+        padding-top: 30px;
+    }
+}
+
+// @media (min-width: $desktop-min) and (max-width: $desktop-max) {
+      
+// }     
+// @media (min-width: $tablet-min) and (max-width: $tablet-max) {  
+       
+// }           
+// @media (max-width: $mobile-max) {  
+             
+// }  

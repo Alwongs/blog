@@ -15,6 +15,7 @@
 
     </head>
     <body>
+        @include('includes.site.auth-panel')
         @if( Session::get("settings.is_develop_mode.value" ) == 'Y')
             @include('includes.common.dev_label')
         @endif

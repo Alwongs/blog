@@ -5459,9 +5459,40 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! ./menu */ "./resources/js/menu.js");
 __webpack_require__(/*! ./category-tree */ "./resources/js/category-tree.js");
+__webpack_require__(/*! ./auth-panel */ "./resources/js/auth-panel.js");
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
+
+/***/ }),
+
+/***/ "./resources/js/auth-panel.js":
+/*!************************************!*\
+  !*** ./resources/js/auth-panel.js ***!
+  \************************************/
+/***/ (() => {
+
+var authBtn = document.getElementById("top-panel-auth-opener");
+var authPanel = document.getElementById("auth-panel");
+var authBtnCloser = document.getElementById("auth-panel-closer");
+if (authBtn) {
+  authBtn.addEventListener('click', function () {
+    if (authPanel.classList.contains("opened")) {
+      authPanel.classList.remove('opened');
+    } else {
+      authPanel.classList.add('opened');
+    }
+  });
+}
+if (authBtnCloser) {
+  authBtnCloser.addEventListener('click', function () {
+    if (authPanel.classList.contains("opened")) {
+      authPanel.classList.remove('opened');
+    } else {
+      authPanel.classList.add('opened');
+    }
+  });
+}
 
 /***/ }),
 

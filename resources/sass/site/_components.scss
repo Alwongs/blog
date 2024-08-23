@@ -1,0 +1,64 @@
+.comp-nav-link-top-panel {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .1s ease-in-out;
+    &:hover {
+        color: yellow;
+        margin-top: 5px;
+    }       
+    &.active {
+        color: yellow;
+    }        
+}
+
+.comp-nav-link-home-page {
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #208179;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;   
+    font-size: 22px; 
+    &:hover {
+        background-color: #208179;
+    } 
+    &:active {
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    }  
+}
+
+.comp-nav-link-auth-panel {
+    color: white;
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+    height: 40px;   
+    font-size: 16px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+    &:hover {
+        background-color: #208179;
+    } 
+    &:active {
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    }  
+}
+
+.comp-nav-link-menu-panel {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;  
+    padding-left: 20px; 
+    font-size: 20px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    text-transform: capitalize;
+    &:hover {
+        background-color: #208179;
+    } 
+    &:active {
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    }  
+}

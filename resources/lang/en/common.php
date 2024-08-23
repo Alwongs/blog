@@ -5,5 +5,9 @@ return [
     'array_is_empty' => 'List is empty..',
     'read_more' => 'Read more',
     'home' => 'Home',
-    'search' => 'Search'
+    'menu' => 'Menu',
+    'search' => 'Search',
+    'profile' => 'Profile',
+    'dashboard' => 'Dashboard',
+    'logout' => 'Logout'
 ];
