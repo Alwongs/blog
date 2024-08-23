@@ -14,8 +14,15 @@
         <nav class="aside-navigation__body nav-site">
             <a href="{{ route('home') }}">{{ __("home.home") }}</a>
             <a href="{{ route('blog') }}">{{ __("blog.blog") }}</a>
+            @auth
+                <a href="{{ route('tasks.index') }}">{{ __("tasks.todo") }}</a>
+                {{-- <a href="{{ route('dashboard') }}">{{ __("dashboard.dashboard") }}</a> --}}
+            @endauth
         </nav>
     </div>
+
+
+
 
     @auth
     <div class="aside-navigation">
