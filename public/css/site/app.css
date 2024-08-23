@@ -68,6 +68,10 @@ body {
   height: 100%;
   font-family: "Open Sans";
   color: rgb(41, 67, 90);
+  -webkit-touch-callout: none; /* Safari */
+  -webkit-user-select: none; /* Chrome */
+  -moz-user-select: none; /* Firefox */ /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 html {
