@@ -21,7 +21,7 @@
                 <form class="btn-block" action="{{ route('clear-tasks') }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button class="btn-link btn-red" type="submit">Очистить</button> 
+                    <button class="btn btn-red" type="submit">Очистить</button> 
                 </form> 
 
             @else
