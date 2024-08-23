@@ -4,7 +4,7 @@
         <h2>To Do List</h2>
     </section>
 
-    <section class="section">
+    <section class="section todo-section">
         <div class="todo-list-container">
 
             <div class="todo-list-btn-block">

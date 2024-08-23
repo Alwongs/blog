@@ -1508,7 +1508,7 @@ select {
   height: 40px;
   display: flex;
   justify-content: space-between;
-  gap: 4px;
+  gap: 5px;
   align-items: center;
   border-bottom: 1px solid lightblue;
 }
@@ -1518,16 +1518,8 @@ select {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 100%;
-}
-.todo-item__title a {
-  display: flex;
-  align-items: center;
   color: rgb(0, 83, 118);
   height: 100%;
-}
-.todo-item__title a:hover {
-  background-color: lightblue;
 }
 .todo-item__actions button {
   display: block;
@@ -1538,4 +1530,8 @@ select {
   color: white;
   font-size: 18px;
   font-weight: 500;
+}
+
+.todo-section {
+  min-height: calc(100vh - 50px);
 }

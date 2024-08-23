@@ -45,26 +45,19 @@
     height: 40px;
     display: flex;
     justify-content: space-between;
-    gap: 4px;
+    gap: 5px;
     align-items: center;
     border-bottom: 1px solid lightblue;
 
     &__title {
         flex: 1 1 auto;
         font-size: 22px;
+
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis;    
-        height: 100%;
-    }
-    &__title a {
-        display: flex;
-        align-items: center;
+        text-overflow: ellipsis; 
         color: $baseText;
-        height: 100%;   
-        &:hover {
-            background-color: lightblue;
-        }
+        height: 100%;
     }
 
     &__actions button {
@@ -77,4 +70,8 @@
         font-size: 18px;
         font-weight: 500;
     }
+}
+
+.todo-section {
+    min-height: calc(100vh - 50px);
 }
