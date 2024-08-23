@@ -1496,13 +1496,18 @@ select {
   justify-content: space-between;
 }
 .todo-list-btn-block a {
-  display: block;
-  width: -moz-fit-content;
-  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
   font-size: 38px;
-  line-height: 34px;
   font-weight: 600;
   color: green;
+}
+.todo-list-btn-block a:hover {
+  border: 2px solid green;
 }
 
 .todo-list {
