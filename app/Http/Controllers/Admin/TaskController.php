@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Http\Requests\Task\StoreRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -18,7 +19,7 @@ class TaskController extends Controller
     {
         $tasks = Task::all();
 
-        return view('pages/admin/tasks/manage', compact('tasks'));
+        return view('pages/site/tasks/manage', compact('tasks'));
     }
 
     /**
@@ -28,7 +29,8 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('pages/admin/tasks/update');
+        $user_id = Auth::user()->id;
+        return view('pages/site/tasks/update', compact('user_id'));
     }
 
     /**
@@ -39,9 +41,14 @@ class TaskController extends Controller
      */
     public function store(StoreRequest $request)
     {
+
         if ($request->validated()) {
 
             $task = $request->all();
+
+            if ($task['user_id'] != Auth::user()->id) {
+                return redirect()->back()->with('status', 'not validated!'); 
+            }
 
             Task::create($task);
             
@@ -57,9 +64,9 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Task $task)
     {
-        //
+        return view('pages/site/tasks/detail', compact('task'));
     }
 
     /**
@@ -68,9 +75,10 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Task $task)
     {
-        //
+        $user_id = Auth::user()->id;
+        return view('pages/admin/tasks/update', compact('user_id', 'task'));
     }
 
     /**
@@ -80,9 +88,19 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Task $task)
     {
-        //
+        if ($request->user_id != $task->user_id) {
+            return redirect()->back()->with('status', 'not validated!'); 
+        }
+
+        $task->user_id = $request->user_id;
+        $task->title = $request->title;
+        $task->description = $request->description;
+        $task->rate = $request->rate;
+        $task->update();
+
+        return redirect()->route('tasks.edit', compact('task'))->with('info', 'Task has been updated!');
     }
 
     /**
@@ -91,8 +109,10 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Task $task)
     {
-        //
+        $task->delete();
+
+        return redirect()->back()->with('info', 'Запись успешно удалена'); 
     }
 }

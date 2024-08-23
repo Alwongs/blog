@@ -12,6 +12,12 @@
                 @foreach($tasks as $task)
                     <li class="manage-list__item">
 
+                        <div class="manage-list__item-title">
+                            <a href="{{ route('posts.edit', $post->id) }}">
+                                {{ $task->title }}
+                            </a>
+                        </div>                     
+
                         <div class="manage-list__item-title">{{ $task->title }}</div> 
 
                         <a href="{{ route('tasks.edit', $task->id) }}" class="cell-btn btn-icon-edit"></a>

@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\TaskController;
+use App\Http\Controllers\TaskController as TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/messages', [MessageController::class, 'index'])->name('messages');
         Route::get('/clear-messages', [MessageController::class, 'clear'])->name('clear-messages');
         Route::get('/message/{id}', [MessageController::class, 'show'])->name('message');
+        Route::delete('/clear-tasks', [TodoController::class, 'clear'])->name('clear-tasks');
 
         Route::resources([
             'settings' => SettingController::class, 

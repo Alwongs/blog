@@ -11,8 +11,12 @@
                 <a href="{{ route('blog') }}" >{{ __("blog.blog") }}</a> 
             @endif
 
+
+
             @Auth
                 <a href="{{ route('dashboard') }}">Dashboard</a> 
+
+                <a href="{{ route('tasks.index') }}">ToDo</a> 
             @endauth
         </nav>
         
@@ -26,3 +30,5 @@
         </div>
     </div>
 </header>
+
+<div class="top-panel-false "></div>

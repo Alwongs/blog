@@ -41,7 +41,7 @@ class StoreRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.unique'                  => 'The title is alredy exists in this category',
+            'title.unique' => 'The title is alredy exists in this category',
         ];
     }    
 }

@@ -76,7 +76,12 @@
     }           
     @media (max-width: $mobile-max) {  
         background-color: rgb(1, 124, 97);
-        position: relative;
+        position: fixed;
     }  
 
+}
+.top-panel-false {
+    @media (max-width: $mobile-max) {  
+        height: 50px;
+    }          
 }

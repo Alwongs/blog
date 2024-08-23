@@ -447,7 +447,13 @@ a {
 @media (max-width: 767px) {
   .top-panel {
     background-color: rgb(1, 124, 97);
-    position: relative;
+    position: fixed;
+  }
+}
+
+@media (max-width: 767px) {
+  .top-panel-false {
+    height: 50px;
   }
 }
 
@@ -1454,4 +1460,78 @@ select {
 }
 .comment__comment {
   font-style: italic;
+}
+
+.todo-list-container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .todo-list-container {
+    max-width: 800px;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .todo-list-container {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .todo-list-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.todo-list-btn-block {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.todo-list-btn-block a {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 28px;
+  line-height: 28px;
+  color: green;
+}
+
+.todo-item {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  align-items: center;
+  border-bottom: 1px solid lightblue;
+}
+.todo-item__title {
+  flex: 1 1 auto;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 100%;
+}
+.todo-item__title a {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 83, 118);
+  height: 100%;
+}
+.todo-item__title a:hover {
+  background-color: lightblue;
+}
+.todo-item__actions button {
+  display: block;
+  background: red;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
 }
