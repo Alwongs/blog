@@ -47,7 +47,7 @@
 }
 
 .todo-item {
-    height: 40px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     gap: 5px;
@@ -55,25 +55,33 @@
     border-bottom: 1px solid lightblue;
 
     &__title {
+        // border: 1px solid red;
         flex: 1 1 auto;
         font-size: 22px;
-
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
         color: $baseText;
-        height: 100%;
+        transition: 0.2s;
+        &:hover {
+            color: lighten($baseText, 10);
+        }
     }
 
     &__actions button {
         display: block;
-        background: red;
+        border: 1px solid red;
+        color: red;
         border-radius: 4px;
         width: 30px;
         height: 30px;
-        color: white;
         font-size: 18px;
         font-weight: 500;
+        transition: 0.2s;
+        &:hover {
+            background-color: red;
+            color: white;
+        }
     }
 }
 

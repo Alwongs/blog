@@ -23,7 +23,33 @@
         @media (max-width: $mobile-max) {  
             display: block;
             cursor: pointer;
+
+            position: absolute;
+            content: "";
+            width: 34px;
+            height: 34px;
+            background-image:  url('../../images/icons/menu.svg'); 
+            background-repeat: no-repeat;      
+            background-size: 80%; 
+            background-position: center;  
+            &:hover {
+                background-image:  url('../../images/icons/menu.svg');         
+            }              
         }   
+    }
+    &__profile-link {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 34px;
+        height: 34px;
+        background-image:  url('../../images/icons/person.svg'); 
+        background-repeat: no-repeat;      
+        background-size: 80%; 
+        background-position: center;  
+        &:hover {
+            background-image:  url('../../images/icons/person.svg');         
+        }         
     }
     a {
         position: relative;

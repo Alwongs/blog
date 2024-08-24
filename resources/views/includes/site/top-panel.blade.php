@@ -1,6 +1,6 @@
 <header class="top-panel">
     <div class="container top-panel__container">
-        <a id="top-panel-menu-link" href="#" class="top-panel__menu-link">{{ __("common.menu") }}</a>
+        <a id="top-panel-menu-link" href="#" class="top-panel__menu-link"></a>
 
         <nav class="top-panel__navigation">
             <a class="top-panel__home-link" href="/">{{ __("home.home") }}</a>  
@@ -23,9 +23,7 @@
         <div class="top-panel__auth">       
 
             @auth
-                <a id="top-panel-auth-opener" class="top-panel__profile-link">
-                    {{ Auth::user()->name }}
-                </a>
+                <a id="top-panel-auth-opener" class="top-panel__profile-link"></a>
             @else
                 <a href="{{ route('login') }}">Login</a> 
             @endauth

@@ -455,7 +455,32 @@ a {
   .top-panel__menu-link {
     display: block;
     cursor: pointer;
+    position: absolute;
+    content: "";
+    width: 34px;
+    height: 34px;
+    background-image: url(/images/menu.svg?fb214151dacd055371e09a549860e0be);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
   }
+  .top-panel__menu-link:hover {
+    background-image: url(/images/menu.svg?fb214151dacd055371e09a549860e0be);
+  }
+}
+.top-panel__profile-link {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 34px;
+  height: 34px;
+  background-image: url(/images/person.svg?a413c466d4607604465581196c565225);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+.top-panel__profile-link:hover {
+  background-image: url(/images/person.svg?a413c466d4607604465581196c565225);
 }
 .top-panel a {
   position: relative;
@@ -1614,7 +1639,7 @@ select {
   margin-bottom: 20px;
 }
 .todo-item {
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   gap: 5px;
@@ -1628,17 +1653,25 @@ select {
   overflow: hidden;
   text-overflow: ellipsis;
   color: rgb(0, 83, 118);
-  height: 100%;
+  transition: 0.2s;
+}
+.todo-item__title:hover {
+  color: #0077a9;
 }
 .todo-item__actions button {
   display: block;
-  background: red;
+  border: 1px solid red;
+  color: red;
   border-radius: 4px;
   width: 30px;
   height: 30px;
-  color: white;
   font-size: 18px;
   font-weight: 500;
+  transition: 0.2s;
+}
+.todo-item__actions button:hover {
+  background-color: red;
+  color: white;
 }
 
 .todo-section {
