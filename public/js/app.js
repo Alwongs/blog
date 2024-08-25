@@ -5572,26 +5572,24 @@ if (closeMenuBtn) {
   \******************************/
 /***/ (() => {
 
-window.onload = function () {
-  document.querySelectorAll('.todo-item__actions').forEach(function (item) {
-    item.addEventListener('click', function (e) {
-      var modal = item.querySelector('.todo-item__modal');
-      modal.classList.remove('hidden');
-      setTimeout(function () {
-        document.addEventListener('click', function (e) {
-          if (!modal.contains(e.target) && e.target.id != modal.id) {
-            modal.classList.add('hidden');
-          }
-        });
-        document.addEventListener('keydown', function (e) {
-          if (e.keyCode == 27) {
-            modal.classList.add('hidden');
-          }
-        });
-      }, 100);
-    });
+document.querySelectorAll('.todo-item__actions').forEach(function (item) {
+  item.addEventListener('click', function (e) {
+    var modal = item.querySelector('.todo-item__modal');
+    modal.classList.remove('hidden');
+    setTimeout(function () {
+      document.addEventListener('click', function (e) {
+        if (!modal.contains(e.target) && e.target.id != modal.id) {
+          modal.classList.add('hidden');
+        }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.keyCode == 27) {
+          modal.classList.add('hidden');
+        }
+      });
+    }, 100);
   });
-};
+});
 
 /***/ }),
 
