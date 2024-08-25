@@ -1720,7 +1720,6 @@ select {
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center;
-  background-color: orange;
   cursor: pointer;
 }
 .three-dots-icon:hover {
