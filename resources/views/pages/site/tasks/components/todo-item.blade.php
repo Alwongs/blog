@@ -2,12 +2,28 @@
 
     <a class="todo-item__title" href="{{ route('tasks.show', $task->id) }}" >{{$task->title}}</a>
 
+
     <div class="todo-item__actions">
-        <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit">D</button> 
-        </form>   
+        <div id="{{ $task->id }}" class="three-dots-icon"></div>
+
+    
+        <div id="{{ $task->id }}" class="todo-item__modal hidden">
+            <ul class="todo-item__action-list">
+                <li>
+                    <a href="{{ route('tasks.edit', $task->id) }}">Edit</a>
+                </li>
+                <li>
+                    <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Delete</button> 
+                    </form>                  
+                </li>
+            </ul> 
+        </div>
     </div>
 
 </li>
+
+
+

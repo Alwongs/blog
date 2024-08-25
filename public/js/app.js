@@ -5460,6 +5460,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! ./menu */ "./resources/js/menu.js");
 __webpack_require__(/*! ./category-tree */ "./resources/js/category-tree.js");
 __webpack_require__(/*! ./auth-panel */ "./resources/js/auth-panel.js");
+__webpack_require__(/*! ./todo */ "./resources/js/todo.js");
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
@@ -5562,6 +5563,35 @@ if (closeMenuBtn) {
     aside.classList.toggle('_active');
   });
 }
+
+/***/ }),
+
+/***/ "./resources/js/todo.js":
+/*!******************************!*\
+  !*** ./resources/js/todo.js ***!
+  \******************************/
+/***/ (() => {
+
+window.onload = function () {
+  document.querySelectorAll('.todo-item__actions').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      var modal = item.querySelector('.todo-item__modal');
+      modal.classList.remove('hidden');
+      setTimeout(function () {
+        document.addEventListener('click', function (e) {
+          if (!modal.contains(e.target) && e.target.id != modal.id) {
+            modal.classList.add('hidden');
+          }
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.keyCode == 27) {
+            modal.classList.add('hidden');
+          }
+        });
+      }, 100);
+    });
+  });
+};
 
 /***/ }),
 

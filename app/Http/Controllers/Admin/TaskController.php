@@ -100,7 +100,7 @@ class TaskController extends Controller
         $task->rate = $request->rate;
         $task->update();
 
-        return redirect()->route('tasks.edit', compact('task'))->with('info', 'Task has been updated!');
+        return redirect()->route('tasks.index')->with('info', 'Task has been updated!');
     }
 
     /**

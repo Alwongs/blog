@@ -55,7 +55,6 @@
     border-bottom: 1px solid lightblue;
 
     &__title {
-        // border: 1px solid red;
         flex: 1 1 auto;
         font-size: 22px;
         white-space: nowrap;
@@ -68,23 +67,79 @@
         }
     }
 
-    &__actions button {
-        display: block;
-        border: 1px solid red;
-        color: red;
-        border-radius: 4px;
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
-        font-weight: 500;
-        transition: 0.2s;
-        &:hover {
-            background-color: red;
-            color: white;
+    &__actions {
+        flex: 0 0 34px;
+        position: relative;
+        height: 34px;
+    }
+    &__modal {
+        width: 120px;
+        position: absolute;
+        right: 0;
+        z-index: 5;
+        box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        &.hidden {
+            display: none;
         }
+
+    }
+    &__action-list {
+        li {
+            height: 44px;
+            border-bottom: 1px solid green;
+        }
+        li a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding-left: 10px;
+            color: blue;
+            &:hover {
+                background-color: blue;
+                color: white;
+            }
+        }
+        li form {
+            height: 100%;
+        }
+        li form button {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding-left: 10px;
+            color: red;
+            &:hover {
+                background-color: red;
+                color: white;
+            }
+        }
+        
     }
 }
 
 .todo-section {
     min-height: calc(100vh - 50px);
 }
+
+.three-dots-icon {
+    position: absolute;
+    content: "";
+    width: 34px;
+    height: 34px;
+    background-image:  url('../../images/icons/three_dots.svg'); 
+    background-repeat: no-repeat;      
+    background-size: 80%; 
+    background-position: center;  
+    background-color: orange;
+    cursor: pointer;
+
+    &:hover {
+
+        background-image:  url('../../images/icons/three_dots.svg');         
+    } 
+}
+

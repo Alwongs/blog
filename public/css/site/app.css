@@ -1658,22 +1658,71 @@ select {
 .todo-item__title:hover {
   color: #0077a9;
 }
-.todo-item__actions button {
-  display: block;
-  border: 1px solid red;
-  color: red;
-  border-radius: 4px;
-  width: 30px;
-  height: 30px;
-  font-size: 18px;
-  font-weight: 500;
-  transition: 0.2s;
+.todo-item__actions {
+  flex: 0 0 34px;
+  position: relative;
+  height: 34px;
 }
-.todo-item__actions button:hover {
+.todo-item__modal {
+  width: 120px;
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+.todo-item__modal.hidden {
+  display: none;
+}
+.todo-item__action-list li {
+  height: 44px;
+  border-bottom: 1px solid green;
+}
+.todo-item__action-list li a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  color: blue;
+}
+.todo-item__action-list li a:hover {
+  background-color: blue;
+  color: white;
+}
+.todo-item__action-list li form {
+  height: 100%;
+}
+.todo-item__action-list li form button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  color: red;
+}
+.todo-item__action-list li form button:hover {
   background-color: red;
   color: white;
 }
 
 .todo-section {
   min-height: calc(100vh - 50px);
+}
+
+.three-dots-icon {
+  position: absolute;
+  content: "";
+  width: 34px;
+  height: 34px;
+  background-image: url(/images/three_dots.svg?718b74c5e6f4908088b9291c51d5f8bd);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  background-color: orange;
+  cursor: pointer;
+}
+.three-dots-icon:hover {
+  background-image: url(/images/three_dots.svg?718b74c5e6f4908088b9291c51d5f8bd);
 }
