@@ -1,4 +1,4 @@
-
+// task-item menu
 document.querySelectorAll('.todo-item__actions').forEach(item => {
     item.addEventListener('click', function(e) {
         let modal = item.querySelector('.todo-item__modal');
@@ -20,4 +20,14 @@ document.querySelectorAll('.todo-item__actions').forEach(item => {
     });
 });
 
-
+// confirm clear task list
+const clearTasksBtn = document.getElementById('clear-tasks-btn');
+if (clearTasksBtn) {
+    clearTasksBtn.addEventListener('click', function(e) {
+        if (confirm("Are you cure?")) {
+            return true;
+        } else {
+            e.preventDefault();
+        }
+    });
+}

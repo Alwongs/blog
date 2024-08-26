@@ -5572,6 +5572,7 @@ if (closeMenuBtn) {
   \******************************/
 /***/ (() => {
 
+// task-item menu
 document.querySelectorAll('.todo-item__actions').forEach(function (item) {
   item.addEventListener('click', function (e) {
     var modal = item.querySelector('.todo-item__modal');
@@ -5590,6 +5591,18 @@ document.querySelectorAll('.todo-item__actions').forEach(function (item) {
     }, 100);
   });
 });
+
+// confirm clear task list
+var clearTasksBtn = document.getElementById('clear-tasks-btn');
+if (clearTasksBtn) {
+  clearTasksBtn.addEventListener('click', function (e) {
+    if (confirm("Are you cure?")) {
+      return true;
+    } else {
+      e.preventDefault();
+    }
+  });
+}
 
 /***/ }),
 

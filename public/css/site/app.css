@@ -1034,12 +1034,28 @@ select {
   cursor: pointer;
 }
 
+.btn-grey {
+  border: 1px solid rgb(117, 134, 146);
+  color: rgb(117, 134, 146);
+}
+.btn-grey:hover {
+  background-color: rgb(117, 134, 146);
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .btn-grey {
+    background-color: rgb(117, 134, 146);
+    color: #fff;
+  }
+}
+
 .btn-green {
   border: 1px solid #009859;
   color: #009859;
 }
 .btn-green:hover {
   background-color: #009859;
+  color: #fff;
 }
 @media (max-width: 767px) {
   .btn-green {
@@ -1054,6 +1070,7 @@ select {
 }
 .btn-blue:hover {
   background-color: #1a80cf;
+  color: #fff;
 }
 @media (max-width: 767px) {
   .btn-blue {
@@ -1676,7 +1693,7 @@ select {
   display: none;
 }
 .todo-item__action-list li {
-  height: 44px;
+  height: 48px;
   border-bottom: 1px solid lightgrey;
 }
 .todo-item__action-list li a {
@@ -1733,7 +1750,6 @@ select {
 }
 
 .task-detail__title {
-  text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
 }
@@ -1745,5 +1761,40 @@ select {
   margin-left: 40px;
 }
 .task-detail li {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+}
+
+.clear-tasks-btn {
+  border: 1px solid red;
+  color: red;
+  font-size: 18px;
+  font-weight: normal;
+  width: 130px;
+  height: 38px;
+  transition: 0.2s;
+  align-self: center;
+}
+.clear-tasks-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+.task-detail-btn-block {
+  display: flex;
+  gap: 11px;
+}
+
+.task-detail-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 90px;
+  height: 44px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.task-detail-btn button {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
 }

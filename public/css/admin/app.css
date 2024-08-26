@@ -668,6 +668,13 @@ a {
 .btn-blue:hover {
   background-color: #1a80cf;
 }
+@media (max-width: 767px) {
+  .btn-blue {
+    background-color: #1a80cf;
+    color: #fff;
+  }
+}
+
 .btn-red {
   border: 2px solid #fe4747;
   color: #fe4747;
@@ -677,6 +684,13 @@ a {
 .btn-red:hover {
   background-color: #fe4747;
 }
+@media (max-width: 767px) {
+  .btn-red {
+    background-color: #fe4747;
+    color: #fff;
+  }
+}
+
 .btn-icon-edit {
   background-image: url(/images/edit-dark.svg?53cfaf3622000793dd2b1176498262f6);
   background-repeat: no-repeat;

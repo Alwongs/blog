@@ -39,7 +39,20 @@
             </div>
 
 
+           
+
+
         </form>
+
+        <div class="task-detail-btn-block">
+            <a class="task-detail-btn btn-grey" href="{{ route('tasks.index') }}">Back</a>
+
+            <form class="task-detail-btn btn-red" action="{{ route('tasks.destroy', $task->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button id="clear-tasks-btn" class="btn-red" type="submit">Delete</button> 
+            </form> 
+        </div> 
 
     </main>
 

@@ -113,6 +113,6 @@ class TaskController extends Controller
     {
         $task->delete();
 
-        return redirect()->back()->with('info', 'Запись успешно удалена'); 
+        return redirect()->route('tasks.index')->with('info', 'Запись успешно удалена'); 
     }
 }

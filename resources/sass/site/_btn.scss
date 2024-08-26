@@ -42,11 +42,25 @@
     cursor: pointer;
 }
 
+.btn-grey {
+    border: 1px solid $btnGrey;  
+    color: $btnGrey;  
+    &:hover {
+        background-color: $btnGrey;
+        color: $white;  
+    }
+    @media (max-width: $mobile-max) {  
+        background-color: $btnGrey;
+        color: $white;        
+    }      
+}
+
 .btn-green {
     border: 1px solid $btnGreen;  
     color: $btnGreen;  
     &:hover {
         background-color: $btnGreen;
+        color: $white;  
     }
     @media (max-width: $mobile-max) {  
         background-color: $btnGreen;
@@ -58,6 +72,7 @@
     color: $btnBlue;
     &:hover {
         background-color: $btnBlue;
+        color: $white;  
     }
     @media (max-width: $mobile-max) {  
         background-color: $btnBlue;
