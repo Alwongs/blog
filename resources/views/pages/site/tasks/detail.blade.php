@@ -1,15 +1,12 @@
 <x-site-layout>
 
-    @include('includes.common.notification')
-
     <section class="section">
         <div class="page-container task-detail">
 
+            <h3 class="task-detail__title">{{ $task->title }}</h3>
 
-            <h3 class="post-detail__title">{{ $task->title }}</h3>
-
-            <div class="post-detail__body">
-                <div class="text-container post-detail__text tinymce-content">
+            <div class="task-detail__body">
+                <div class="text-container task-detail__text tinymce-content">
                     {!! $task->description !!}
                 </div>
             </div>

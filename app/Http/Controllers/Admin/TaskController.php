@@ -78,7 +78,7 @@ class TaskController extends Controller
     public function edit(Task $task)
     {
         $user_id = Auth::user()->id;
-        return view('pages/admin/tasks/update', compact('user_id', 'task'));
+        return view('pages/site/tasks/update', compact('user_id', 'task'));
     }
 
     /**

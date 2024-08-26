@@ -31,6 +31,7 @@
         </div>
 
         <!-- Scripts -->
-        @stack('jquery')        
+        @stack('jquery')  
+        @stack('tinymce')      
     </body>
 </html>

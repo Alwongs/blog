@@ -359,7 +359,7 @@ a {
 }
 
 .aside {
-  position: absolute;
+  position: fixed;
   z-index: 5;
   top: 0;
   left: -100%;
@@ -555,7 +555,7 @@ a {
   box-shadow: -1px 0 3px 1px rgba(0, 0, 0, 0.2);
   z-index: 5;
   background-color: #208179;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   right: 0;
   top: 0;
@@ -900,8 +900,8 @@ a {
 }
 
 .form__textarea-block {
-  height: 100px;
   margin-bottom: 16px;
+  border: 2px solid rgba(0, 83, 118, 0.5);
 }
 .form__textarea-block textarea {
   font-family: Arial, Helvetica, sans-serif;
@@ -1664,11 +1664,12 @@ select {
   height: 34px;
 }
 .todo-item__modal {
-  width: 120px;
+  width: 140px;
   position: absolute;
-  right: 0;
+  right: 25px;
+  top: 20px;
   z-index: 5;
-  box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.2);
   background-color: #fff;
 }
 .todo-item__modal.hidden {
@@ -1676,7 +1677,7 @@ select {
 }
 .todo-item__action-list li {
   height: 44px;
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid lightgrey;
 }
 .todo-item__action-list li a {
   display: flex;
@@ -1685,6 +1686,8 @@ select {
   height: 100%;
   padding-left: 10px;
   color: blue;
+  font-size: 20px;
+  transition: 0.2s;
 }
 .todo-item__action-list li a:hover {
   background-color: blue;
@@ -1694,6 +1697,7 @@ select {
   height: 100%;
 }
 .todo-item__action-list li form button {
+  background-color: #fff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -1701,6 +1705,8 @@ select {
   height: 100%;
   padding-left: 10px;
   color: red;
+  font-size: 20px;
+  transition: 0.2s;
 }
 .todo-item__action-list li form button:hover {
   background-color: red;
@@ -1724,4 +1730,20 @@ select {
 }
 .three-dots-icon:hover {
   background-image: url(/images/three_dots.svg?718b74c5e6f4908088b9291c51d5f8bd);
+}
+
+.task-detail__title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.task-detail__body {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.task-detail ul, .task-detail ol {
+  margin-left: 40px;
+}
+.task-detail li {
+  margin-bottom: 5px;
 }

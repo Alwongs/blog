@@ -73,11 +73,12 @@
         height: 34px;
     }
     &__modal {
-        width: 120px;
+        width: 140px;
         position: absolute;
-        right: 0;
+        right: 25px;
+        top: 20px;
         z-index: 5;
-        box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.3);
+        box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.2);
         background-color: #fff;
         &.hidden {
             display: none;
@@ -87,7 +88,8 @@
     &__action-list {
         li {
             height: 44px;
-            border-bottom: 1px solid green;
+            border-bottom: 1px solid lightgrey;
+
         }
         li a {
             display: flex;
@@ -96,6 +98,8 @@
             height: 100%;
             padding-left: 10px;
             color: blue;
+            font-size: 20px;
+            transition: 0.2s;
             &:hover {
                 background-color: blue;
                 color: white;
@@ -105,6 +109,7 @@
             height: 100%;
         }
         li form button {
+            background-color: #fff;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -112,6 +117,8 @@
             height: 100%;
             padding-left: 10px;
             color: red;
+            font-size: 20px;
+            transition: 0.2s;
             &:hover {
                 background-color: red;
                 color: white;
@@ -142,3 +149,21 @@
     } 
 }
 
+.task-detail {
+
+    &__title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    &__body {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    ul, ol {
+        margin-left: 40px;
+    }
+    li {
+        margin-bottom: 5px;
+    }
+}

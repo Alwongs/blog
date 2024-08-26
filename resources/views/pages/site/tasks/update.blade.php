@@ -26,7 +26,7 @@
 
             <div class="form__textarea-block">
                 <textarea id="mytextarea" name="description" placeholder="description">{{ isset($task) ? $task->description : '' }}</textarea>
-            </div>            
+            </div> 
 
             <div class="form__btn-block">
                 <button type="submit" class="btn btn-green">
@@ -37,9 +37,25 @@
                     @endif
                 </button>              
             </div>
+
+
         </form>
 
     </main>
+
+    @push('tinymce')
+        <script 
+            src="https://cdn.tiny.cloud/1/81udwibp5bnpl1hfw94bct46jrb2sxrc01vkn1abbktr17jn/tinymce/7/tinymce.min.js" 
+            referrerpolicy="origin"
+        ></script>
+        <script>
+            tinymce.init({
+                selector: '#mytextarea',
+                plugins: 'code table lists',
+                toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code '
+            });
+        </script>
+    @endpush
 
 </x-site-layout>
 
