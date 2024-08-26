@@ -30,7 +30,7 @@
 
             <div class="form__btn-block">
                 <button type="submit" class="btn btn-green">
-                    @if(isset($post))
+                    @if(isset($task))
                         Update
                     @else
                         Save
@@ -47,11 +47,13 @@
         <div class="task-detail-btn-block">
             <a class="task-detail-btn btn-grey" href="{{ route('tasks.index') }}">Back</a>
 
-            <form class="task-detail-btn btn-red" action="{{ route('tasks.destroy', $task->id) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button id="clear-tasks-btn" class="btn-red" type="submit">Delete</button> 
-            </form> 
+            @if(isset($task))
+                <form class="task-detail-btn btn-red" action="{{ route('tasks.destroy', $task->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button id="clear-tasks-btn" class="btn-red" type="submit">Delete</button> 
+                </form> 
+            @endif
         </div> 
 
     </main>
