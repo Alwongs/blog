@@ -342,6 +342,7 @@ a {
 @media (max-width: 767px) {
   .comp-nav-link-auth-panel {
     font-size: 24px;
+    height: 70px;
   }
 }
 
