@@ -43,6 +43,10 @@
     &:active {
         box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
     }  
+
+    @media (max-width: $mobile-max) {  
+        font-size: 24px;
+    }      
 }
 
 .comp-nav-link-menu-panel {

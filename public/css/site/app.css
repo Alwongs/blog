@@ -339,6 +339,11 @@ a {
 .comp-nav-link-auth-panel:active {
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 767px) {
+  .comp-nav-link-auth-panel {
+    font-size: 24px;
+  }
+}
 
 .comp-nav-link-menu-panel {
   color: white;
@@ -594,6 +599,11 @@ a {
 }
 .auth-panel__navigation {
   padding-top: 30px;
+}
+@media (max-width: 767px) {
+  .auth-panel__navigation {
+    font-size: 30px;
+  }
 }
 
 .section-map {
