@@ -413,6 +413,11 @@ a {
   padding: 0 20px;
   margin-bottom: 10px;
 }
+@media (max-width: 767px) {
+  .aside-navigation__title {
+    font-size: 24px;
+  }
+}
 .aside-navigation a {
   display: block;
   padding: 10px 10px 10px 40px;
@@ -420,6 +425,11 @@ a {
   transition: 0.2s;
   font-size: 18px;
   color: rgb(0, 83, 118);
+}
+@media (max-width: 767px) {
+  .aside-navigation a {
+    font-size: 22px;
+  }
 }
 .aside-navigation a:hover {
   background-color: rgb(184, 220, 230);

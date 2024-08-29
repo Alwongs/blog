@@ -60,6 +60,10 @@
         font-size: 20px;
         padding: 0 20px;
         margin-bottom: 10px;
+
+        @media (max-width: $mobile-max) {  
+            font-size: 24px;
+        }          
     }
     a {
         display: block;
@@ -68,8 +72,12 @@
         transition: 0.2s;
         font-size: 18px;
         color: $baseText;
+
+        @media (max-width: $mobile-max) {  
+            font-size: 22px;
+        }           
     }
     a:hover {
         background-color: rgb(184, 220, 230);        
-    }
+    }  
 }
