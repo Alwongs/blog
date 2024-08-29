@@ -19,11 +19,9 @@
                         <button type="submit">Delete</button> 
                     </form>                  
                 </li>
-                @foreach ([1,2,3,4,5] as $item)
-                <li>
-                    <a href="#">{{ $item }}</a>
-                </li>
-                @endforeach
+
+                @include('pages.site.tasks.components.todo-item-rates')
+
             </ul> 
         </div>
     </div>
