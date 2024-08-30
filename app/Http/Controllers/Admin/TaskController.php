@@ -17,7 +17,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::all();
+        $tasks = Task::orderBy('rate', 'DESC')->get();
 
         return view('pages/site/tasks/manage', compact('tasks'));
     }

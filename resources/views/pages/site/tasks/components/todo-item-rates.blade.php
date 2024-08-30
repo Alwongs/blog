@@ -1,11 +1,11 @@
 @php
     $rates = [
         [
-            "value" => 1,
+            "value" => 5,
             "color" => "red",
         ],
         [
-            "value" => 2,
+            "value" => 4,
             "color" => "orange",
         ],
         [
@@ -13,11 +13,11 @@
             "color" => "yellow",
         ],
         [
-            "value" => 4,
+            "value" => 2,
             "color" => "cyan",
         ],
         [
-            "value" => 5,
+            "value" => 1,
             "color" => "green",
         ],
     ];

@@ -62,6 +62,7 @@
         text-overflow: ellipsis; 
         color: $baseText;
         transition: 0.2s;
+        padding-left: 5px;
         &:hover {
             color: lighten($baseText, 10);
         }
@@ -203,4 +204,20 @@
         font-size: 18px;
     }
     
+}
+
+.item-bg-color-1 {
+    background-color: #dbfff3;
+}
+.item-bg-color-2 {
+    background-color: #d8ffd7;
+}
+.item-bg-color-3 {
+    background-color: #fffec3;
+}
+.item-bg-color-4 {
+    background-color: #ffdcb5;
+}
+.item-bg-color-5 {
+    background-color: #ffcfcf;
 }
