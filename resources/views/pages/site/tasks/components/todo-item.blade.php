@@ -19,7 +19,7 @@
                     </form>                  
                 </li>
 
-                @include('pages.site.tasks.components.todo-item-rates')
+
 
             </ul> 
         </div>

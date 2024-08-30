@@ -20,9 +20,22 @@
                 <input name="title" type="text" placeholder="title" value="{{ isset($task) ? $task->title : '' }}" required />
             </div>    
 
-            <div class="form__input-block">
-                <input name="rate" type="text" placeholder="{{ __("task.rate") }}" value="{{ isset($task) ? $task->rate : 5 }}" required/>
-            </div>  
+            <div class="form__color-block">
+                @foreach(App\Enum\Rates::RATES as $key=>$rate)
+                    <input 
+                        id="rate-color-{{ $key }}" 
+                        type="radio" 
+                        name="rate" 
+                        class="{{ $rate }}" 
+                        value="{{ $key }}" 
+                        @if(isset($task) && $task->rate == $key)
+                            checked
+                        @endif
+                    />
+                    <label for="rate-color-{{ $key }}" class="{{ $rate }}"></label>
+                @endforeach
+            </div> 
+
 
             <div class="form__textarea-block">
                 <textarea id="mytextarea" name="description" placeholder="description">{{ isset($task) ? $task->description : '' }}</textarea>
@@ -37,10 +50,6 @@
                     @endif
                 </button>              
             </div>
-
-
-           
-
 
         </form>
 

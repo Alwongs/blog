@@ -904,6 +904,11 @@ a {
   outline: none;
   color: rgb(0, 83, 118);
 }
+@media (max-width: 767px) {
+  .form__input-block input {
+    font-size: 22px;
+  }
+}
 .form__input-block input::-moz-placeholder {
   color: rgba(0, 83, 118, 0.4);
 }
@@ -935,6 +940,11 @@ a {
   border: 1px solid rgba(0, 83, 118, 0.4);
   color: rgb(0, 83, 118);
 }
+@media (max-width: 767px) {
+  .form__textarea-block textarea {
+    font-size: 22px;
+  }
+}
 .form__textarea-block textarea::-moz-placeholder {
   color: rgba(0, 83, 118, 0.4);
 }
@@ -949,6 +959,39 @@ a {
 }
 .form__textarea-block textarea:focus::placeholder {
   color: rgba(0, 83, 118, 0.1);
+}
+
+.form__color-block {
+  height: 38px;
+  margin-bottom: 16px;
+}
+.form__color-block label {
+  display: inline-block;
+  border: 1px solid rgba(0, 83, 118, 0.4);
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+.form__color-block input {
+  display: none;
+}
+.form__color-block input::-moz-placeholder {
+  color: rgba(0, 83, 118, 0.4);
+}
+.form__color-block input::placeholder {
+  color: rgba(0, 83, 118, 0.4);
+}
+.form__color-block input:focus {
+  border-bottom: 1px solid blue;
+}
+.form__color-block input:focus::-moz-placeholder {
+  color: rgba(0, 83, 118, 0.1);
+}
+.form__color-block input:focus::placeholder {
+  color: rgba(0, 83, 118, 0.1);
+}
+.form__color-block input[type=radio]:checked + label {
+  border: 2px solid rgba(0, 83, 118, 0.7);
 }
 
 .form__image-block {
@@ -984,6 +1027,11 @@ select {
   padding-right: 7px;
   outline: none;
   height: 100%;
+  width: 100%;
+}
+
+option {
+  height: 50px;
 }
 
 .input-type-block {

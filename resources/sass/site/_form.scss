@@ -26,6 +26,9 @@
         border-bottom: 1px solid rgba($baseText, .4);			
         outline: none;
         color: $baseText;
+        @media (max-width: $mobile-max) {  
+            font-size: 22px;            
+        } 
     }
     input::placeholder  {
         color: rgba($baseText, 0.4);
@@ -36,35 +39,8 @@
     input:focus::placeholder {
         color: rgba($baseText, 0.1);
     }
+    
 }
-
-
-
-// .form__textarea-block {
-//     height: 100px;
-//     margin-bottom: 16px;
-
-//     textarea {
-//         font-family:  Arial, Helvetica, sans-serif;
-//         width: 100%;
-//         height: 100%;
-//         padding: 8px;
-//         font-size: 18px;		
-//         resize: none;
-//         outline: none;
-//         border:  1px solid rgba($baseText, .4);
-//         color: $baseText;
-//     }
-//     textarea::placeholder  {
-//         color: rgba($baseText, 0.4);
-//     } 	
-//     textarea:focus {
-//         border: 1px solid $blueFocus;
-//     }  
-//     textarea:focus::placeholder {
-//         color: rgba($baseText, 0.1);
-//     }	
-// }
 
 .form__textarea-block {
     // height: 200px;
@@ -80,6 +56,9 @@
         outline: none;
         border:  1px solid rgba($baseText, .4);
         color: $baseText;
+        @media (max-width: $mobile-max) {  
+            font-size: 22px;            
+        }         
     }
     textarea::placeholder  {
         color: rgba($baseText, 0.4);
@@ -92,7 +71,33 @@
     }	
 }
 
-
+.form__color-block {
+    height: 38px;
+    margin-bottom: 16px;
+    label {
+        display: inline-block;
+        border: 1px solid rgba($baseText, .4);	
+        width: 38px;
+        height: 38px; 
+        cursor: pointer;       
+    }
+    input {
+        display: none;
+    }
+    input::placeholder  {
+        color: rgba($baseText, 0.4);
+    }  
+    input:focus {
+        border-bottom: 1px solid $blueFocus;
+    }  
+    input:focus::placeholder {
+        color: rgba($baseText, 0.1);
+    }
+    input[type="radio"]:checked+label {
+        border: 2px solid rgba($baseText, .7);	
+    }
+        
+}
 
 
 
@@ -130,7 +135,12 @@ select {
     padding-right: 7px;
     outline: none;
     height: 100%;
-}   
+    width: 100%;
+}  
+
+option {
+    height: 50px;
+}
 
 
 .input-type-block {   
