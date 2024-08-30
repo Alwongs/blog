@@ -27,8 +27,10 @@
                         type="radio" 
                         name="rate" 
                         class="{{ $rate }}" 
-                        value="{{ $key }}" 
+                        value="{{ $key }}"
                         @if(isset($task) && $task->rate == $key)
+                            checked
+                        @elseif(!isset($task) && $key == 5)
                             checked
                         @endif
                     />

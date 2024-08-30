@@ -84,6 +84,7 @@
     color: $btnRed;
     &:hover {
         background-color: $btnRed;
+        color: $white; 
     }
     @media (max-width: $mobile-max) {  
         background-color: $btnRed;

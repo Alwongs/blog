@@ -20,10 +20,10 @@
 
                 <a class="task-detail-btn btn-blue" href="{{ route('tasks.edit', $task->id) }}">Edit</a>
 
-                <form class="task-detail-btn btn-red" action="{{ route('tasks.destroy', $task->id) }}" method="POST">
+                <form class="task-detail-btn" action="{{ route('tasks.destroy', $task->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button id="clear-tasks-btn" class="btn-red" type="submit">Delete</button> 
+                    <button id="clear-tasks-btn" class="task-detail-btn btn-red" type="submit">Delete</button> 
                 </form> 
             </div>
                          

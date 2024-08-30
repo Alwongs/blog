@@ -1154,6 +1154,7 @@ option {
 }
 .btn-red:hover {
   background-color: #fe4747;
+  color: #fff;
 }
 @media (max-width: 767px) {
   .btn-red {
@@ -1765,6 +1766,7 @@ option {
 .todo-item__action-list li {
   height: 48px;
   border-bottom: 1px solid lightgrey;
+  position: relative;
 }
 .todo-item__action-list li a {
   display: flex;
@@ -1853,6 +1855,7 @@ option {
 .task-detail-btn-block {
   display: flex;
   gap: 11px;
+  margin-bottom: 20px;
 }
 
 .task-detail-btn {
@@ -1862,7 +1865,6 @@ option {
   flex: 0 0 90px;
   height: 44px;
   font-size: 18px;
-  margin-bottom: 20px;
 }
 .task-detail-btn button {
   width: 100%;
@@ -1888,4 +1890,19 @@ option {
 
 .item-bg-color-5 {
   background-color: #ffcfcf;
+}
+
+.select-color-modal {
+  border: 1px solid red;
+  background-color: #fff;
+  position: absolute;
+  width: 250px;
+  height: 300px;
+  right: 0;
+  top: 50px;
+  display: none;
+}
+
+.todo-item__action-list > li:hover .select-color-modal {
+  display: block;
 }
