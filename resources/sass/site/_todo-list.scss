@@ -41,7 +41,7 @@
 .todo-list {
     margin-bottom: 20px;
     &__item {
-
+        padding-left: 4px;
         // margin-bottom: 10px;
     }
 }
@@ -209,19 +209,19 @@
 }
 
 .item-bg-color-1 {
-    background-color: #dbfff3;
+    background-color: #e3feff;
 }
 .item-bg-color-2 {
-    background-color: #d8ffd7;
+    background-color: #e7ffe5;
 }
 .item-bg-color-3 {
-    background-color: #fffec3;
+    background-color: #fffedc;
 }
 .item-bg-color-4 {
-    background-color: #ffdcb5;
+    background-color: #ffefdc;
 }
 .item-bg-color-5 {
-    background-color: #ffcfcf;
+    background-color: #ffe6e6;
 }
 
 .select-color-modal {
