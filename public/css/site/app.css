@@ -96,10 +96,6 @@ a {
   text-decoration: none;
 }
 
-.hidden {
-  display: none;
-}
-
 .website {
   min-height: 500px;
 }
@@ -1752,6 +1748,7 @@ option {
   height: 34px;
 }
 .todo-item__modal {
+  display: block;
   width: 140px;
   position: absolute;
   right: 25px;
@@ -1759,6 +1756,7 @@ option {
   z-index: 5;
   box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.2);
   background-color: #fff;
+  transition: 0.4s;
 }
 .todo-item__modal.hidden {
   display: none;
@@ -1779,14 +1777,14 @@ option {
   transition: 0.2s;
 }
 .todo-item__action-list li a:hover {
-  background-color: blue;
+  background: blue;
   color: white;
 }
 .todo-item__action-list li form {
   height: 100%;
 }
 .todo-item__action-list li form button {
-  background-color: #fff;
+  background: #fff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -1798,7 +1796,7 @@ option {
   transition: 0.2s;
 }
 .todo-item__action-list li form button:hover {
-  background-color: red;
+  background: red;
   color: white;
 }
 
@@ -1893,16 +1891,29 @@ option {
 }
 
 .select-color-modal {
-  border: 1px solid red;
+  box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   position: absolute;
-  width: 250px;
-  height: 300px;
-  right: 0;
-  top: 50px;
+  width: 220px;
+  right: 100%;
+  top: 0;
   display: none;
+  padding: 4px 6px 0 6px;
+  transition: 0.4s;
+}
+.select-color-modal input, .select-color-modal label {
+  transition: 0.4s;
+}
+.select-color-modal input:hover, .select-color-modal label:hover {
+  border: 1px solid red;
 }
 
 .todo-item__action-list > li:hover .select-color-modal {
   display: block;
+}
+
+.form__color-block {
+  margin: 0;
+  height: -moz-fit-content;
+  height: fit-content;
 }

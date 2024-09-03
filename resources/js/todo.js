@@ -1,24 +1,32 @@
-// task-item menu
-document.querySelectorAll('.todo-item__actions').forEach(item => {
-    item.addEventListener('click', function(e) {
-        let modal = item.querySelector('.todo-item__modal');
-        modal.classList.remove('hidden');
 
-        setTimeout(() => {
-            document.addEventListener('click', (e) => {
-                if (!modal.contains(e.target) && e.target.id != modal.id) {
-                    modal.classList.add('hidden');
+// item menu modal open and close 
+const todoList = document.querySelector('.todo-list');
+if (todoList) {
+    todoList.addEventListener('click', function(e) {
+        let modals = document.querySelectorAll('.todo-item__modal');
+        if (e.target.classList.contains('three-dots-icon')) {
+            modals.forEach(element => {
+                if (!element.classList.contains('hidden')) {
+                    element.classList.add('hidden');
                 }
-            });
-            document.addEventListener('keydown', (e) => {
-                if ( e.keyCode == 27 ) {
-                    modal.classList.add('hidden');
-                }
-            });
-        }, 100);
-
+            })
+            e.target.nextElementSibling.classList.toggle('hidden');
+        }
     });
+}
+document.addEventListener('click', (e) => {
+    let modal = document.querySelector('.todo-item__modal:not(.hidden)')
+    if (modal && !e.target.classList.contains('three-dots-icon') && e.target.dataset.type != 'color-label') {
+        modal.classList.add('hidden');
+    }
 });
+document.addEventListener('keydown', (e) => {
+    let modal = document.querySelector('.todo-item__modal:not(.hidden)')
+    if (modal && e.keyCode == 27) {
+        modal.classList.add('hidden');
+    }
+});
+
 
 // confirm clear task list
 const clearTasksBtn = document.getElementById('clear-tasks-btn');
@@ -31,4 +39,5 @@ if (clearTasksBtn) {
         }
     });
 }
+
 

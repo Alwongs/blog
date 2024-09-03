@@ -4,7 +4,7 @@
         <h2>To Do List</h2>
     </section>
 
-            @include('includes.common.notification')
+    @include('includes.common.notification')
 
     <section class="section todo-section">
         <div class="todo-list-container">

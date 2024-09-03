@@ -1,13 +1,16 @@
+{{-- <script>
+    var taskId = {!! json_encode($task->id) !!};
+</script> --}}
+
 <li class="todo-list__item todo-item {{ App\Enum\Rates::RATES[$task->rate] }}">
 
     <a class="todo-item__title" href="{{ route('tasks.show', $task->id) }}" >&bull; {{$task->title}}</a>
 
-
     <div class="todo-item__actions">
-        <div id="{{ $task->id }}" class="three-dots-icon"></div>
+        <i class="three-dots-icon"></i>
 
-        <div id="{{ $task->id }}" class="todo-item__modal hidden">
-            <ul class="todo-item__action-list">
+        <div class="todo-item__modal hidden">
+            <ul class="todo-item__action-list">           
                 <li>
                     <a href="{{ route('tasks.edit', $task->id) }}">Edit</a>
                 </li>
@@ -25,10 +28,10 @@
                     </form>                  
                 </li>
                 <li>
-                    <a>Rating</a>
+                    <a id="select-color-modal-opener-{{ $task->id }}" data-task="{{ $task->id }}" class="select-color-modal-opener">Rating</a>
 
-                    <div class="select-color-modal">
-                        <form class="form__color-block" action="{{ route('tasks.update', $task) }}" method="POST">
+                    <div id="select-color-modal-{{ $task->id }}" class="select-color-modal hidden">
+                        <form id="select-color-form-{{ $task->id }}" class="form__color-block" action="{{ route('tasks.update', $task) }}" method="POST">
                             @method('PUT')
                             @csrf
 
@@ -37,10 +40,11 @@
 
                             @foreach(App\Enum\Rates::RATES as $key=>$rate)
                                 <input 
-                                    id="rate-color-{{ $key }}" 
+                                    id="task-{{ $task->id }}-rate-color-{{ $key }}" 
+                                    data-type="color-label" 
                                     type="radio" 
                                     name="rate" 
-                                    class="{{ $rate }}" 
+                                    class="{{ $rate }} input-radio-color" 
                                     value="{{ $key }}"
                                     @if(isset($task) && $task->rate == $key)
                                         checked
@@ -49,8 +53,8 @@
                                     @endif
                                     onclick="this.closest('form').submit();"
                                 />
-                                <label for="rate-color-{{ $key }}" class="{{ $rate }}"></label>
-                            @endforeach
+                                <label data-type="color-label"  for="task-{{ $task->id }}-rate-color-{{ $key }}" class="{{ $rate }}"></label>
+                            @endforeach                          
                         </form>
                     </div>
                 </li>
@@ -59,6 +63,4 @@
     </div>
 
 </li>
-
-
 
