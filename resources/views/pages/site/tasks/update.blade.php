@@ -5,7 +5,7 @@
 
     @include('includes.common.notification')
 
-    <main class="main">
+    <main class="main  todo-section">
         @if(isset($task))
             <form class="form" action="{{ route('tasks.update', $task) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
@@ -54,6 +54,8 @@
             </div>
 
         </form>
+
+        <div class="divider"></div>
 
         <div class="task-detail-btn-block">
             <a class="task-detail-btn btn-grey" href="{{ route('tasks.index') }}">Back</a>

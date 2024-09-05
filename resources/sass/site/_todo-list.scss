@@ -162,6 +162,12 @@
         font-size: 20px;
         margin-bottom: 20px;
     }
+    &__fieldset {
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
     ul, ol {
         margin-left: 40px;
     }

@@ -1831,6 +1831,12 @@ option {
   font-size: 20px;
   margin-bottom: 20px;
 }
+.task-detail__fieldset {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
 .task-detail ul, .task-detail ol {
   margin-left: 40px;
 }
