@@ -1,7 +1,12 @@
 @props(['title', 'events', 'class'])
 
 <div class="dashboard-card dashboard-item">
-    <h2 class="dashboard-card__title">{{ $title }}</h2>
+    <div class="dashboard-card__title">
+        <h2>{{ $title }}</h2>
+        @if($title == "today")
+            <a class="dashboard-card__link" href="{{ route("tasks.index") }}">todo list</a>
+        @endif
+    </div>
     @if($events)
         <ul class="dashboard-card__content-list">
             @foreach($events as $event)

@@ -168,9 +168,14 @@
         margin-bottom: 20px;
         padding: 10px;
     }
-    ul, ol {
-        margin-left: 40px;
+    ul {
+        padding-left: 25px;
     }
+
+    ol {  
+        padding-left: 40px;     
+    }
+
     li {
         margin-bottom: 4px;
     }

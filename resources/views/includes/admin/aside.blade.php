@@ -55,14 +55,7 @@
                 @if (in_array($currentRouteName, ['posts.index', 'posts.create', 'posts.edit'])) class="active" @endif  
             >
                 {{ __("blog.posts") }}                    
-            </a>
-
-            <a 
-                href="{{ route('tasks.index') }}"
-                @if (in_array($currentRouteName, ['tasks.index', 'tasks.create', 'tasks.edit'])) class="active" @endif  
-            >
-                {{ __("tasks.tasks") }}                    
-            </a>            
+            </a>          
 
             <a 
                 href="{{ route('messages') }}"

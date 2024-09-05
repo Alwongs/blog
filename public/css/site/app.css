@@ -1107,12 +1107,6 @@ option {
   background-color: rgb(117, 134, 146);
   color: #fff;
 }
-@media (max-width: 767px) {
-  .btn-grey {
-    background-color: rgb(117, 134, 146);
-    color: #fff;
-  }
-}
 
 .btn-green {
   border: 1px solid #009859;
@@ -1137,12 +1131,6 @@ option {
   background-color: #1a80cf;
   color: #fff;
 }
-@media (max-width: 767px) {
-  .btn-blue {
-    background-color: #1a80cf;
-    color: #fff;
-  }
-}
 
 .btn-red {
   border: 1px solid #fe4747;
@@ -1151,12 +1139,6 @@ option {
 .btn-red:hover {
   background-color: #fe4747;
   color: #fff;
-}
-@media (max-width: 767px) {
-  .btn-red {
-    background-color: #fe4747;
-    color: #fff;
-  }
 }
 
 .btn-icon-edit {
@@ -1837,8 +1819,11 @@ option {
   margin-bottom: 20px;
   padding: 10px;
 }
-.task-detail ul, .task-detail ol {
-  margin-left: 40px;
+.task-detail ul {
+  padding-left: 25px;
+}
+.task-detail ol {
+  padding-left: 40px;
 }
 .task-detail li {
   margin-bottom: 4px;

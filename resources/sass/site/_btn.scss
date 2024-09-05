@@ -49,10 +49,10 @@
         background-color: $btnGrey;
         color: $white;  
     }
-    @media (max-width: $mobile-max) {  
-        background-color: $btnGrey;
-        color: $white;        
-    }      
+    // @media (max-width: $mobile-max) {  
+    //     background-color: $btnGrey;
+    //     color: $white;        
+    // }      
 }
 
 .btn-green {
@@ -74,10 +74,10 @@
         background-color: $btnBlue;
         color: $white;  
     }
-    @media (max-width: $mobile-max) {  
-        background-color: $btnBlue;
-        color: $white;        
-    }     
+    // @media (max-width: $mobile-max) {  
+    //     background-color: $btnBlue;
+    //     color: $white;        
+    // }     
 }
 .btn-red {
     border: 1px solid $btnRed;
@@ -86,10 +86,10 @@
         background-color: $btnRed;
         color: $white; 
     }
-    @media (max-width: $mobile-max) {  
-        background-color: $btnRed;
-        color: $white;        
-    }     
+    // @media (max-width: $mobile-max) {  
+    //     background-color: $btnRed;
+    //     color: $white;        
+    // }     
 }
 
 .btn-icon-edit {

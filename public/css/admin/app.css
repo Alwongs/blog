@@ -1077,6 +1077,7 @@ select {
   min-height: 200px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .dashboard-card__title {
   text-align: center;
@@ -1084,6 +1085,16 @@ select {
 }
 .dashboard-card__title:first-letter {
   text-transform: capitalize;
+}
+.dashboard-card__link {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  color: red;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  text-decoration: underline;
 }
 .dashboard-card__content-list {
   border-radius: 10px;

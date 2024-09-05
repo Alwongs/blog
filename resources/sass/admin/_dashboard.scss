@@ -64,12 +64,23 @@
     min-height: 200px;
     display: flex;
     flex-direction: column;
+    position: relative;
     &__title {
         &:first-letter {
             text-transform: capitalize;
         }
         text-align: center;
         padding: 10px 0;
+    }
+    &__link {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        color: red;
+        font-size: 14px;
+        font-weight: 300;
+        font-style: italic;
+        text-decoration: underline;
     }
     &__content-list {
         border-radius: 10px;
