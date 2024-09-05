@@ -1102,6 +1102,7 @@ option {
 .btn-grey {
   border: 1px solid rgb(117, 134, 146);
   color: rgb(117, 134, 146);
+  transition: 0.2s;
 }
 .btn-grey:hover {
   background-color: rgb(117, 134, 146);
@@ -1111,6 +1112,7 @@ option {
 .btn-green {
   border: 1px solid #009859;
   color: #009859;
+  transition: 0.2s;
 }
 .btn-green:hover {
   background-color: #009859;
@@ -1126,6 +1128,7 @@ option {
 .btn-blue {
   border: 1px solid #1a80cf;
   color: #1a80cf;
+  transition: 0.2s;
 }
 .btn-blue:hover {
   background-color: #1a80cf;
@@ -1135,6 +1138,7 @@ option {
 .btn-red {
   border: 1px solid #fe4747;
   color: #fe4747;
+  transition: 0.2s;
 }
 .btn-red:hover {
   background-color: #fe4747;

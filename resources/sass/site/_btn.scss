@@ -45,6 +45,7 @@
 .btn-grey {
     border: 1px solid $btnGrey;  
     color: $btnGrey;  
+    transition: 0.2s;
     &:hover {
         background-color: $btnGrey;
         color: $white;  
@@ -58,6 +59,8 @@
 .btn-green {
     border: 1px solid $btnGreen;  
     color: $btnGreen;  
+    transition: 0.2s;
+
     &:hover {
         background-color: $btnGreen;
         color: $white;  
@@ -70,6 +73,7 @@
 .btn-blue {
     border: 1px solid $btnBlue;
     color: $btnBlue;
+    transition: 0.2s;
     &:hover {
         background-color: $btnBlue;
         color: $white;  
@@ -82,6 +86,7 @@
 .btn-red {
     border: 1px solid $btnRed;
     color: $btnRed;
+    transition: 0.2s;
     &:hover {
         background-color: $btnRed;
         color: $white; 
