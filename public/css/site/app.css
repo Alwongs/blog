@@ -1718,6 +1718,7 @@ option {
   gap: 5px;
   align-items: center;
   border-bottom: 1px solid lightblue;
+  margin-bottom: 10px;
 }
 .todo-item__title {
   flex: 1 1 auto;
