@@ -1,5 +1,5 @@
 .home-page-banner {
-    background-image: url('../../images/banners/main-banner-1.jpg');
+    background-image: url('../../images/banners/main-banner-1.webp');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
@@ -51,18 +51,18 @@
 }
 @keyframes changeBanner {
     0% {
-        background-image: url('../../images/banners/main-banner-1.jpg');   
+        background-image: url('../../images/banners/main-banner-1.webp');   
     }
     50% {
-        background-image: url('../../images/banners/main-banner-2.jpg');
+        background-image: url('../../images/banners/main-banner-2.webp');
     }
     100% {
-        background-image: url('../../images/banners/main-banner-1.jpg');     
+        background-image: url('../../images/banners/main-banner-1.webp');     
     }
 }
 
 .page-banner {
-    background-image: url('../../images/banners/page-banner.jpg');
+    background-image: url('../../images/banners/page-banner.webp');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

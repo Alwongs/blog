@@ -1294,7 +1294,7 @@ option {
 }
 
 .home-page-banner {
-  background-image: url(/images/main-banner-1.jpg?178f35bc690e1beabbe65e0ff1db1c45);
+  background-image: url(/images/main-banner-1.webp?ce41cc78cdf6fc52fe6c57bb9b891822);
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -1350,17 +1350,17 @@ option {
 
 @keyframes changeBanner {
   0% {
-    background-image: url(/images/main-banner-1.jpg?178f35bc690e1beabbe65e0ff1db1c45);
+    background-image: url(/images/main-banner-1.webp?ce41cc78cdf6fc52fe6c57bb9b891822);
   }
   50% {
-    background-image: url(/images/main-banner-2.jpg?57d06438348e037564d633bf58024e25);
+    background-image: url(/images/main-banner-2.webp?067751c97aba313428fa042f0f5044fb);
   }
   100% {
-    background-image: url(/images/main-banner-1.jpg?178f35bc690e1beabbe65e0ff1db1c45);
+    background-image: url(/images/main-banner-1.webp?ce41cc78cdf6fc52fe6c57bb9b891822);
   }
 }
 .page-banner {
-  background-image: url(/images/page-banner.jpg?30c7b3ed5e53004482c16ee4832ec8c9);
+  background-image: url(/images/page-banner.webp?678e77b92b3215227ca2b0b5218067d5);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
