@@ -1717,7 +1717,7 @@ option {
   justify-content: space-between;
   gap: 5px;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .todo-item__title {
