@@ -1,0 +1,41 @@
+.schedule-container {
+    background-color: #fff;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto
+}
+
+.schedule-table {
+    display: flex;
+    // border: 1px solid red;
+}
+.schedule-col {
+    border: 1px solid rgba(0, 0, 255, 0.479);
+    flex: 0 0 calc(100% / 31);
+}
+.schedule-col-small {
+    border: 1px solid rgba(0, 0, 255, 0.479);
+    flex: 0 0 30px;
+}
+
+.schedule-col_td {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.schedule-col_td-small {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.schedule-D {
+    background-color: rgb(255, 153, 0);
+    color: white;
+}
+.schedule-N {
+    background-color: blue;
+    color: white;
+}

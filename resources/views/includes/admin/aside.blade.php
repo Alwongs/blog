@@ -35,6 +35,13 @@
             >
                 {{ __("dashboard.dashboard") }}
             </a>
+
+            <a 
+                href="{{ route('schedules.index') }}"
+                @if (in_array($currentRouteName, ['schedule'])) class="active" @endif
+            >
+                {{ __("dashboard.work_schedule") }}
+            </a>            
             
             <a 
                 href="{{ route('events.index') }}"

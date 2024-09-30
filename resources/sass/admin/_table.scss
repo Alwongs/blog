@@ -99,6 +99,15 @@
             display: none;
         }                 
     }
+    &__item-schedule-month {
+        flex: 0 0 150px;
+        // @media (max-width: $tablet-max) {  
+        //     flex: 0 0 100px;        
+        // } 
+        // @media (max-width: $mobile-max) {  
+        //     display: none;
+        // }                 
+    }    
     &__item-type {
         flex: 0 0 80px;     
         @media (max-width: $desktop-max) {  

@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\TaskController;
 use App\Http\Controllers\TaskController as TodoController;
+use App\Http\Controllers\Admin\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,7 @@ Route::resources([
 
 Route::middleware('auth')->group(function () {
 
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/events/postpone/{id}', [DashboardController::class, 'postpone'])->name('events.postpone');
     Route::delete('/dashboard/remove-categories', [DashboardController::class, 'removeCategoriesAndPosts'])->name('remove-categories');
@@ -66,7 +68,8 @@ Route::middleware('auth')->group(function () {
         'events'     => EventController::class,
         'categories' => CategoryController::class,
         'posts'      => PostController::class,
-        'tasks'      => TaskController::class
+        'tasks'      => TaskController::class,
+        'schedules'  => ScheduleController::class,
     ]);
 });
 

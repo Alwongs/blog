@@ -471,13 +471,13 @@ a {
     content: "";
     width: 34px;
     height: 34px;
-    background-image: url(/images/menu.svg?fb214151dacd055371e09a549860e0be);
+    background-image: url(/images/menu.svg?d4d320cd378fd6b3542b1d2a137afd6a);
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center;
   }
   .top-panel__menu-link:hover {
-    background-image: url(/images/menu.svg?fb214151dacd055371e09a549860e0be);
+    background-image: url(/images/menu.svg?d4d320cd378fd6b3542b1d2a137afd6a);
   }
 }
 .top-panel__profile-link {
