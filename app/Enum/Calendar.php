@@ -20,6 +20,16 @@ class Calendar
     ];
 
     const WEEK_DAYS = [
+        1 => 'Mon',
+        2 => 'Tue',
+        3 => 'Wed',
+        4 => 'Thu',
+        5 => 'Fri',
+        6 => 'Sat',
+        7 => 'Sun'
+    ];
+
+    const WEEK_DAYS_FULL = [
         1 => 'Monday',
         2 => 'Tuesday',
         3 => 'Wednesday',

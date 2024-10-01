@@ -24,7 +24,15 @@
                             <div class="schedule-table">
                                 @foreach (unserialize($schedule['schedule']) as $key => $day)
                                     <div class="schedule-col-small">
-                                        <div class="schedule-col_td-small schedule-{{ $day }}">
+                                        <div
+                                            class="schedule-col_th-small"
+                                            @if($day['week_day'] == 6 || $day['week_day'] == 7)
+                                                style="color: red;"
+                                            @endif                                            
+                                        >
+                                            {{ App\Enum\Calendar::WEEK_DAYS[$day['week_day']] }}
+                                        </div>
+                                        <div class="schedule-col_td-small schedule-{{ $day['work_shift'] }}">
                                             {{ $key }}
                                         </div>
                                     </div>

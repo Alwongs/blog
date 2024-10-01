@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-// use App\Enum\DayStatuses;
+use App\Enum\Calendar;
 
 class Schedule
 {
@@ -23,15 +23,20 @@ class Schedule
         self::DAY_OFF, self::DAY_OFF, self::DAY_OFF,
     ];  
 
-    public static function createSchedule($days_in_month, $first_day_index)
+    public static function createSchedule($days_in_month, $first_day_index, $first_week_day)
     {
         $currentDay = 1;
         $currentIndex = $first_day_index;
+        $currentWeekDay = $first_week_day;
         $new_array = [];
         while ($currentDay <= $days_in_month) {
-            $new_array[$currentDay] = self::WORK_SCHEDULE[$currentIndex];
+            $new_array[$currentDay]['work_shift'] = self::WORK_SCHEDULE[$currentIndex];
+            $new_array[$currentDay]['week_day'] = $currentWeekDay;
+
+
             $currentDay = $currentDay + 1;
             $currentIndex = self::getNextIndex($currentIndex);
+            $currentWeekDay = self::getNextWeekDay($currentWeekDay);
         }
         return $new_array;
     }
@@ -44,4 +49,13 @@ class Schedule
             return 0;
         }
     }
+
+    public static function getNextWeekDay($currentWeekDay)
+    {
+        if ($currentWeekDay < count(Calendar::WEEK_DAYS)) {
+            return $currentWeekDay + 1;
+        } else {
+            return 1;
+        }
+    }    
 }

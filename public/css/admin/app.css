@@ -1240,16 +1240,31 @@ select {
 }
 
 .schedule-col {
-  border: 1px solid rgba(0, 0, 255, 0.479);
   flex: 0 0 3.2258064516%;
 }
 
 .schedule-col-small {
-  border: 1px solid rgba(0, 0, 255, 0.479);
   flex: 0 0 30px;
 }
 
+.schedule-col_th {
+  font-size: 12px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.schedule-col_th-small {
+  font-size: 10px;
+  height: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .schedule-col_td {
+  border: 1px solid rgba(0, 0, 255, 0.479);
   height: 40px;
   display: flex;
   justify-content: center;
@@ -1257,6 +1272,7 @@ select {
 }
 
 .schedule-col_td-small {
+  border: 1px solid rgba(0, 0, 255, 0.479);
   height: 30px;
   display: flex;
   justify-content: center;
@@ -1264,11 +1280,13 @@ select {
 }
 
 .schedule-D {
-  background-color: rgb(255, 153, 0);
+  background-color: rgb(233, 140, 0);
   color: white;
+  font-weight: 600;
 }
 
 .schedule-N {
-  background-color: blue;
+  background-color: rgb(34, 85, 194);
   color: white;
+  font-weight: 600;
 }

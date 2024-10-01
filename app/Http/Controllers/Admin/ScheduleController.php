@@ -34,7 +34,9 @@ class ScheduleController extends Controller
                 return redirect()->back()->with('status', 'not validated!'); 
             }
 
-            $schedule = Schedule::createSchedule($schedule_data['days_in_month'], $schedule_data['first_day_index']);
+            $schedule = Schedule::createSchedule($schedule_data['days_in_month'], $schedule_data['first_day_index'], $schedule_data['first_week_day']);
+
+            // dd($schedule);
 
             WorkSchedule::create([
                 'user_id' => $schedule_data['user_id'],
