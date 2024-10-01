@@ -7,14 +7,11 @@
 
 .schedule-table {
     display: flex;
-    // border: 1px solid red;
 }
 .schedule-col {
-    // border: 1px solid rgba(0, 0, 255, 0.479);
     flex: 0 0 calc(100% / 31);
 }
 .schedule-col-small {
-    // border: 1px solid rgba(0, 0, 255, 0.479);
     flex: 0 0 30px;
 }
 

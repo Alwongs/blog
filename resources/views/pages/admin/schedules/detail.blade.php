@@ -13,7 +13,7 @@
                     <div
                         class="schedule-col_th"
                         @if($day['week_day'] == 6 || $day['week_day'] == 7)
-                            style="color: red;"
+                            style="color: red; font-weight:600;"
                         @endif
                     >
                         {{ App\Enum\Calendar::WEEK_DAYS[$day['week_day']] }}
