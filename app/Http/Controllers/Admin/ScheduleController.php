@@ -53,8 +53,34 @@ class ScheduleController extends Controller
     
     public function show(WorkSchedule $schedule)
     {
-        // dd($schedule);
-        return view('pages/admin/schedules/detail', compact('schedule'));
+        $serialized_schedule = unserialize($schedule->schedule);
+        $weeks = [];
+        $week_N = 1;
+
+        foreach ($serialized_schedule as $key => $day) {
+
+            foreach ([1,2,3,4,5,6,7] as $week_day) {
+                if (!isset($weeks[$week_N][$week_day])) {
+                    $weeks[$week_N][$week_day] = [
+                        "day" => "",
+                        "work_shift" => "",
+                        "week_day" => $week_day
+                    ];
+                }
+            }
+
+            $weeks[$week_N][$day['week_day']] = [
+                "day" => $key,
+                "work_shift" => $day["work_shift"],
+                "week_day" => $day["week_day"],
+            ];
+
+            if ($day['week_day'] == 7) {
+                $week_N = $week_N + 1;
+            }
+        }
+// dd($weeks);
+        return view('pages/admin/schedules/detail', compact('schedule', 'weeks'));
     }   
     
     public function destroy(WorkSchedule $schedule)

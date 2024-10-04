@@ -4,46 +4,42 @@
     height: 100%;
     margin: 0 auto
 }
-
 .schedule-table {
     display: flex;
 }
 .schedule-col {
     flex: 0 0 calc(100% / 31);
+    &__th {
+        font-size: 12px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__td {
+        border: 1px solid rgba(0, 0, 255, 0.479);
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }  
+    &__th-small {
+        font-size: 10px;
+        height: 17px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }      
+    &__td-small {
+        border: 1px solid rgba(0, 0, 255, 0.479);
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }    
 }
 .schedule-col-small {
     flex: 0 0 30px;
-}
-
-.schedule-col_th {
-    font-size: 12px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.schedule-col_th-small {
-    font-size: 10px;
-    height: 17px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.schedule-col_td {
-    border: 1px solid rgba(0, 0, 255, 0.479);
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.schedule-col_td-small {
-    border: 1px solid rgba(0, 0, 255, 0.479);
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .schedule-D {
@@ -55,4 +51,49 @@
     background-color: rgb(34, 85, 194);
     color: white;
     font-weight: 600;
+}
+
+
+
+
+
+.m-schedule-D {
+    background-color: rgb(233, 140, 0);
+    color: white;
+    font-weight: 600;
+}
+.m-schedule-N {
+    background-color: rgb(34, 85, 194);
+    color: white;
+    font-weight: 600;
+}
+
+
+.m-schedule-table {
+    // border: 1px solid red;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.m-week-row-th {
+    display: flex;    
+    &__th {
+        font-size: 12px;
+        height: 30px;
+        flex: 0 0 calc(300px / 7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.m-week-row-td {
+    display: flex;
+    &__td {
+        border: 1px solid rgba(0, 0, 255, 0.2);
+        height: 40px;
+        flex: 0 0 calc(300px / 7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
