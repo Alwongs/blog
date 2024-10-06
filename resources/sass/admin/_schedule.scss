@@ -71,8 +71,11 @@
 
 .m-schedule-table {
     // border: 1px solid red;
-    width: 300px;
+    width: 500px;
     margin: 0 auto;
+    @media (max-width: $mobile-max) {  
+        width: 100%;
+    }       
 }
 
 .m-week-row-th {
@@ -80,7 +83,7 @@
     &__th {
         font-size: 12px;
         height: 30px;
-        flex: 0 0 calc(300px / 7);
+        flex: 0 0 calc(100% / 7);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -90,8 +93,8 @@
     display: flex;
     &__td {
         border: 1px solid rgba(0, 0, 255, 0.2);
-        height: 40px;
-        flex: 0 0 calc(300px / 7);
+        height: 50px;
+        flex: 0 0 calc(100% / 7);
         display: flex;
         justify-content: center;
         align-items: center;

@@ -1300,8 +1300,13 @@ select {
 }
 
 .m-schedule-table {
-  width: 300px;
+  width: 500px;
   margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .m-schedule-table {
+    width: 100%;
+  }
 }
 
 .m-week-row-th {
@@ -1310,7 +1315,7 @@ select {
 .m-week-row-th__th {
   font-size: 12px;
   height: 30px;
-  flex: 0 0 42.8571428571px;
+  flex: 0 0 14.2857142857%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1321,8 +1326,8 @@ select {
 }
 .m-week-row-td__td {
   border: 1px solid rgba(0, 0, 255, 0.2);
-  height: 40px;
-  flex: 0 0 42.8571428571px;
+  height: 50px;
+  flex: 0 0 14.2857142857%;
   display: flex;
   justify-content: center;
   align-items: center;
