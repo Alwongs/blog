@@ -1332,3 +1332,8 @@ select {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 767px) {
+  .m-week-row-td__td {
+    font-size: 18px;
+  }
+}

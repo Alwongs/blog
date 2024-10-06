@@ -98,5 +98,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @media (max-width: $mobile-max) {  
+            font-size: 18px;
+        }            
     }
 }
