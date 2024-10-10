@@ -37,6 +37,7 @@
 
                             <input type="hidden" name="user_id" value="{{ $task->user_id }}" />
                             <input type="hidden" name="title" value="{{ $task->title }}" />
+                            <input type="hidden" name="description" value="{{ $task->description }}" />
 
                             @foreach(App\Enum\Rates::RATES as $key=>$rate)
                                 <input 

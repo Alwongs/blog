@@ -1684,21 +1684,25 @@ option {
 }
 
 .todo-list-btn-block {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-.todo-list-btn-block a {
+  margin-top: -30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
-  width: 32px;
-  height: 32px;
+  margin-bottom: 20px;
+}
+.todo-list-btn-block a {
+  background: green;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   font-size: 42px;
+  line-height: 42px;
   font-weight: 600;
-  color: green;
+  color: white;
 }
 .todo-list-btn-block a:hover {
   border: 2px solid green;
