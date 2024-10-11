@@ -73,7 +73,7 @@
 
 .form__color-block {
     height: 38px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     label {
         display: inline-block;
         border: 1px solid rgba($baseText, .4);	
@@ -95,6 +95,42 @@
     }
     input[type="radio"]:checked+label {
         border: 2px solid rgba($baseText, .7);	
+    }
+        
+}
+
+.form__status-block {
+    height: 38px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba($baseText, .4);	
+        width: 100px;
+        height: 38px; 
+        color: rgba($baseText, .5);
+        cursor: pointer;       
+    }
+    input {
+        display: none;
+    }
+    input::placeholder  {
+        color: rgba($baseText, 0.4);
+    }  
+    input:focus {
+        border-bottom: 1px solid $blueFocus;
+
+    }  
+    input:focus::placeholder {
+        color: rgba($baseText, 0.1);
+    }
+    input[type="radio"]:checked+label {
+        border: 2px solid rgba($baseText, .7);	
+        background-color: rgba($baseText, .8);
+        color: white;
     }
         
 }

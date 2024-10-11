@@ -41,7 +41,6 @@ class TaskController extends Controller
      */
     public function store(StoreRequest $request)
     {
-
         if ($request->validated()) {
 
             $task = $request->all();

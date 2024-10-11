@@ -6,6 +6,8 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\Admin\ProductListController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -44,7 +46,6 @@ Route::resources([
 
 Route::middleware('auth')->group(function () {
 
-
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/events/postpone/{id}', [DashboardController::class, 'postpone'])->name('events.postpone');
     Route::delete('/dashboard/remove-categories', [DashboardController::class, 'removeCategoriesAndPosts'])->name('remove-categories');
@@ -70,6 +71,8 @@ Route::middleware('auth')->group(function () {
         'posts'      => PostController::class,
         'tasks'      => TaskController::class,
         'schedules'  => ScheduleController::class,
+        'product-lists' => ProductListController::class,
+        'products' => ProductController::class,
     ]);
 });
 
