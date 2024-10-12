@@ -2053,6 +2053,32 @@ option {
   font-weight: 500;
   color: red;
 }
+.product-list-item__status button {
+  background-color: #fff;
+  border-radius: 12px;
+  height: 24px;
+  width: 50px;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+  transition: 0.3s;
+}
+.product-list-item__status button.action-list-disable {
+  border: 1px solid rgb(0, 83, 118);
+  color: rgb(0, 83, 118);
+}
+.product-list-item__status button.action-list-disable:hover {
+  background-color: rgb(0, 83, 118);
+  color: white;
+}
+.product-list-item__status button.action-list-active {
+  border: 1px solid grey;
+  color: grey;
+  opacity: 0.4;
+}
+.product-list-item__status button.action-list-active:hover {
+  background-color: grey;
+  color: white;
+}
 .product-list-item__actions {
   flex: 0 0 34px;
   position: relative;
@@ -2201,7 +2227,7 @@ option {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 0 0 90px;
+  flex: 0 0 120px;
   height: 44px;
   font-size: 18px;
 }

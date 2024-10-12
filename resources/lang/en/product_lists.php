@@ -8,5 +8,7 @@ return [
     'no_products' => 'No products',
     'sum' => 'Sum',
     'products' => 'Products',
-    'add_product' => 'Add product'
+    'add_product' => 'Add product',
+    'activate_all' => 'Activate all',
+    'disable_all' => 'Disable all'
 ];

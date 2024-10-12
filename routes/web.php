@@ -8,6 +8,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\ProductController as SiteProductController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -59,6 +60,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/clear-messages', [MessageController::class, 'clear'])->name('clear-messages');
         Route::get('/message/{id}', [MessageController::class, 'show'])->name('message');
         Route::delete('/clear-tasks', [TodoController::class, 'clear'])->name('clear-tasks');
+        
+        Route::put('/activate-products/{id}', [SiteProductController::class, 'activateProducts'])->name('activate-products');
+        Route::put('/disable-products/{id}', [SiteProductController::class, 'disableProducts'])->name('disable-products');
 
         Route::resources([
             'settings' => SettingController::class, 

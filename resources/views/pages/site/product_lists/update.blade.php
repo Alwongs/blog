@@ -9,12 +9,14 @@
         @if(isset($product_list))
             <form class="form" action="{{ route('product-lists.update', $product_list) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
+                <input type="hidden" name="user_id" value="{{ $product_list->user_id }}" />
         @else
             <form class="form" action="{{ route('product-lists.store') }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="user_id" value="{{ $user_id }}" />
         @endif
             @csrf
 
-            <input type="hidden" name="user_id" value="{{ $product_list->user_id }}" />
+
 
             <div class="form__input-block">
                 <input name="title" type="text" placeholder="title" value="{{ isset($product_list) ? $product_list->title : '' }}" required />

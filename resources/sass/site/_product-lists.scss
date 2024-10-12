@@ -49,7 +49,6 @@
     margin-bottom: 20px;
     &__item {
         padding-left: 4px;
-        // margin-bottom: 10px;
     }
 }
 
@@ -81,6 +80,35 @@
         padding-right: 15px;
         font-weight: 500;
         color: red;
+    }
+
+    &__status {
+        button {
+            background-color: #fff;
+            border-radius: 12px;
+            height: 24px;
+            width: 50px;
+            font-size: 10px;
+            letter-spacing: 0.4px;
+            transition: 0.3s;
+            &.action-list-disable {
+                border: 1px solid $baseText;
+                color: $baseText;
+                &:hover {
+                    background-color: $baseText;
+                    color: white;
+                }
+            }
+            &.action-list-active {
+                border: 1px solid grey;
+                color: grey;
+                opacity: 0.4;
+                &:hover {
+                    background-color: grey;
+                    color: white;
+                }                
+            }            
+        }
     }
 
     &__actions {
@@ -242,7 +270,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0 0 90px;
+    flex: 0 0 120px;
     height: 44px;
     font-size: 18px;
     button {
