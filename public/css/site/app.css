@@ -2053,6 +2053,9 @@ option {
   font-weight: 500;
   color: red;
 }
+.product-list-item__status {
+  flex: 0 0 50px;
+}
 .product-list-item__status button {
   background-color: #fff;
   border-radius: 12px;
@@ -2305,5 +2308,5 @@ option {
   font-weight: 700;
 }
 .product-list-sum__space {
-  flex: 0 0 34px;
+  flex: 0 0 90px;
 }

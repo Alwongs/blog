@@ -83,6 +83,7 @@
     }
 
     &__status {
+        flex: 0 0 50px;
         button {
             background-color: #fff;
             border-radius: 12px;
@@ -348,6 +349,6 @@
         font-weight: 700;      
     }
     &__space {
-        flex: 0 0 34px;
+        flex: 0 0 90px;
     }
 }
