@@ -86,7 +86,7 @@
             <a class="product-list-detail-btn btn-grey" href="{{ route('products.index') }}">Back</a>
 
             @if(isset($product))
-                <form class="product-detail-btn btn-red" action="{{ route('products.destroy', $product->id) }}" method="POST">
+                <form class="product-list-detail-btn btn-red" action="{{ route('products.destroy', $product->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button id="clear-products-btn" class="btn-red" type="submit">Delete</button> 

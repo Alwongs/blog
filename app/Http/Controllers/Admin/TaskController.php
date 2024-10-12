@@ -89,10 +89,6 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        // dd($task);
-
-
-
         if ($request->user_id != $task->user_id) {
             return redirect()->back()->with('status', 'not validated!'); 
         }

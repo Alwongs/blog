@@ -40,10 +40,6 @@ class ProductController extends Controller
      */
     public function store(StoreRequest $request)
     {
-
-
-
-
         if ($request->validated()) {
 
             $product = $request->all();
@@ -75,7 +71,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $product_list_id = $product->product_list_id;
+
+        return view('pages/site/products/update', compact('product', 'product_list_id'));
     }
 
     /**
@@ -87,7 +85,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->product_list_id = $request->product_list_id;
+        $product->title = $request->title;
+        $product->rate = $request->rate;
+        $product->price = $request->price;
+        $product->status = $request->status;
+        $product->update();
+
+        return redirect()->route('product-lists.show', $product->product_list_id)->with('info', 'Post has been updated!'); 
     }
 
     /**

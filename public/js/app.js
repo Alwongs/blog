@@ -5461,6 +5461,7 @@ __webpack_require__(/*! ./menu */ "./resources/js/menu.js");
 __webpack_require__(/*! ./category-tree */ "./resources/js/category-tree.js");
 __webpack_require__(/*! ./auth-panel */ "./resources/js/auth-panel.js");
 __webpack_require__(/*! ./todo */ "./resources/js/todo.js");
+__webpack_require__(/*! ./product-lists */ "./resources/js/product-lists.js");
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
@@ -5561,6 +5562,54 @@ if (openMenuBtn) {
 if (closeMenuBtn) {
   closeMenuBtn.addEventListener("click", function (e) {
     aside.classList.toggle('_active');
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/product-lists.js":
+/*!***************************************!*\
+  !*** ./resources/js/product-lists.js ***!
+  \***************************************/
+/***/ (() => {
+
+// item menu modal open and close 
+var todoList = document.querySelector('.product-list');
+if (todoList) {
+  todoList.addEventListener('click', function (e) {
+    var modals = document.querySelectorAll('.product-list-item__modal');
+    if (e.target.classList.contains('three-dots-icon')) {
+      modals.forEach(function (element) {
+        if (!element.classList.contains('hidden')) {
+          element.classList.add('hidden');
+        }
+      });
+      e.target.nextElementSibling.classList.toggle('hidden');
+    }
+  });
+}
+document.addEventListener('click', function (e) {
+  var modal = document.querySelector('.product-list-item__modal:not(.hidden)');
+  if (modal && !e.target.classList.contains('three-dots-icon') && e.target.dataset.type != 'color-label') {
+    modal.classList.add('hidden');
+  }
+});
+document.addEventListener('keydown', function (e) {
+  var modal = document.querySelector('.product-list-item__modal:not(.hidden)');
+  if (modal && e.keyCode == 27) {
+    modal.classList.add('hidden');
+  }
+});
+
+// confirm clear task list
+var clearTasksBtn = document.getElementById('clear-tasks-btn');
+if (clearTasksBtn) {
+  clearTasksBtn.addEventListener('click', function (e) {
+    if (confirm("Are you cure?")) {
+      return true;
+    } else {
+      e.preventDefault();
+    }
   });
 }
 

@@ -14,21 +14,24 @@
             </div> 
 
             @if(count($product_list->products) > 0)
-                <ul class="todo-list">
+                <ul class="product-list">
                     @foreach($product_list->products as $product)
                         @include("pages.site.products.components.product-item")
                     @endforeach
                 </ul>
-
-                {{-- <form class="btn-block" action="{{ route('clear-products') }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button id="clear-products-btn" class="clear-products-btn" type="submit">Clear</button> 
-                </form>  --}}
             @else
                 <p class="empty-list-note">{{ __("products.no_products") }}</p>
             @endif
 
+            <div class="product-list-sum">
+                <div class="product-list-sum__label">
+                    {{ __("product_lists.sum") }}:
+                </div>
+                <div class="product-list-sum__sum">
+                    {{ $sum }} р
+                </div>
+                <div class="product-list-sum__space"></div>                
+            </div>
         </div>
     </section>
 

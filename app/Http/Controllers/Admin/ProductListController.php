@@ -66,7 +66,9 @@ class ProductListController extends Controller
      */
     public function show(ProductList $product_list)
     {
-        return view('pages/site/products/manage', compact('product_list'));
+        $sum = $product_list->products->where('status', 'A')->sum('price');
+
+        return view('pages/site/products/manage', compact('product_list', 'sum'));
     }
 
     /**

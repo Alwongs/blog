@@ -1,7 +1,3 @@
-{{-- <script>
-    var taskId = {!! json_encode($task->id) !!};
-</script> --}}
-
 <li class="todo-list__item todo-item {{ App\Enum\Rates::RATES[$task->rate] }}">
 
     <a class="todo-item__title" href="{{ route('tasks.show', $task->id) }}" >&bull; {{$task->title}}</a>
