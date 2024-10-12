@@ -27,7 +27,6 @@
 
             <div class="form__status-block">
                 @foreach(App\Enum\Status::STATUSES as $key=>$status)
-                    {{-- <label for="status-{{ $key }}">{{ $status }}</label> --}}
                     <input 
                         id="status-{{ $status }}" 
                         type="radio" 
@@ -83,7 +82,7 @@
         <div class="divider"></div>
 
         <div class="product-list-detail-btn-block">
-            <a class="product-list-detail-btn btn-grey" href="{{ route('products.index') }}">Back</a>
+            <a class="product-list-detail-btn btn-grey" href="{{ route('product-lists.show', $product_list_id) }}">Back</a>
 
             @if(isset($product))
                 <form class="product-list-detail-btn btn-red" action="{{ route('products.destroy', $product->id) }}" method="POST">
