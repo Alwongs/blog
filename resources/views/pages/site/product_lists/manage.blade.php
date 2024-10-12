@@ -19,12 +19,6 @@
                         @include("pages.site.product_lists.components.list-item")
                     @endforeach
                 </ul>
-
-                <form class="btn-block" action="{{ route('clear-tasks') }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button id="clear-tasks-btn" class="clear-tasks-btn" type="submit">Clear</button> 
-                </form> 
             @else
                 <p class="empty-list-note">{{ __("product_lists.no_product_lists") }}</p>
             @endif

@@ -14,7 +14,7 @@
         @endif
             @csrf
 
-            <input type="hidden" name="user_id" value="{{ $user_id }}" />
+            <input type="hidden" name="user_id" value="{{ $product_list->user_id }}" />
 
             <div class="form__input-block">
                 <input name="title" type="text" placeholder="title" value="{{ isset($product_list) ? $product_list->title : '' }}" required />

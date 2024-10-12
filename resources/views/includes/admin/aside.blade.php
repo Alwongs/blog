@@ -16,7 +16,7 @@
             <a href="{{ route('blog') }}">{{ __("blog.blog") }}</a>
             @auth
                 <a href="{{ route('tasks.index') }}">{{ __("tasks.todo") }}</a>
-                {{-- <a href="{{ route('dashboard') }}">{{ __("dashboard.dashboard") }}</a> --}}
+                <a href="{{ route('product-lists.index') }}">{{ __("product_lists.products") }}</a>
             @endauth
         </nav>
     </div>

@@ -77,9 +77,10 @@ class ProductListController extends Controller
      * @param  \App\Models\ProductList  $productList
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProductList $productList)
+    public function edit(ProductList $product_list)
     {
-        //
+
+        return view('pages/site/product_lists/update', compact('product_list')); 
     }
 
     /**
@@ -89,9 +90,13 @@ class ProductListController extends Controller
      * @param  \App\Models\ProductList  $productList
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductList $productList)
+    public function update(Request $request, ProductList $product_list)
     {
-        //
+        $product_list->title = $request->title;
+        $product_list->user_id = $request->user_id;
+        $product_list->update();
+
+        return redirect()->route('product-lists.index')->with('info', 'Product list has been updated!'); 
     }
 
     /**
@@ -100,9 +105,9 @@ class ProductListController extends Controller
      * @param  \App\Models\ProductList  $productList
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductList $productList)
+    public function destroy(ProductList $product_list)
     {
-        $productList->delete();
+        $product_list->delete();
 
         return redirect()->back()->with('info', 'Запись успешно удалена'); 
     }

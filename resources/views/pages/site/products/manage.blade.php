@@ -9,8 +9,11 @@
     <section class="section todo-section">
         <div class="todo-list-container">
 
-            <div class="todo-list-btn-block">
-                <a title="add new product" href="{{ route('products.create') }}?product_list_id={{ $product_list->id }}">+</a>
+            <div class="product-list-btn-block">
+                <h2 class="">{{ $product_list->title }}</h2>
+                <a title="add new product" href="{{ route('products.create') }}?product_list_id={{ $product_list->id }}">
+                    {{ __("product_lists.add_product") }}
+                </a>
             </div> 
 
             @if(count($product_list->products) > 0)
@@ -20,7 +23,7 @@
                     @endforeach
                 </ul>
             @else
-                <p class="empty-list-note">{{ __("products.no_products") }}</p>
+                <p class="empty-list-note">{{ __("product-lists.no_products") }}</p>
             @endif
 
             <div class="product-list-sum">
@@ -32,7 +35,14 @@
                 </div>
                 <div class="product-list-sum__space"></div>                
             </div>
+
+            <div class="divider"></div>
+            
+            <div class="product-list-detail-btn-block">
+                <a class="product-list-detail-btn btn-grey" href="{{ route('product-lists.index') }}">Back</a>
+            </div>             
         </div>
     </section>
+
 
 </x-site-layout>

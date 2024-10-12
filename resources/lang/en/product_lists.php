@@ -7,5 +7,6 @@ return [
     'no_product_lists' => 'No product lists',
     'no_products' => 'No products',
     'sum' => 'Sum',
-    'products' => 'Products'
+    'products' => 'Products',
+    'add_product' => 'Add product'
 ];
