@@ -68,7 +68,7 @@
             </div> 
 
             <div class="form__btn-block">
-                <button type="submit" class="btn btn-green">
+                <button type="submit" class="btn btn-green btn-save">
                     @if(isset($product))
                         Update
                     @else

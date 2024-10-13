@@ -64,11 +64,14 @@
     &:hover {
         background-color: $btnGreen;
         color: $white;  
-    }
-    @media (max-width: $mobile-max) {  
-        background-color: $btnGreen;
-        color: $white;        
-    }      
+    }    
+}
+.btn-save {
+    background-color: $btnGreen;
+    color: $white;  
+    &:hover {
+        background-color: rgb(96, 177, 96);   
+    }    
 }
 .btn-blue {
     border: 1px solid $btnBlue;

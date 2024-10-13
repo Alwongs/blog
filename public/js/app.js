@@ -5613,6 +5613,34 @@ if (clearTasksBtn) {
   });
 }
 
+// item menu modal open and close 
+var prodList = document.querySelector('.prod-list');
+if (prodList) {
+  prodList.addEventListener('click', function (e) {
+    var modals = document.querySelectorAll('.prod-list-item__modal');
+    if (e.target.classList.contains('three-dots-icon')) {
+      modals.forEach(function (element) {
+        if (!element.classList.contains('hidden')) {
+          element.classList.add('hidden');
+        }
+      });
+      e.target.nextElementSibling.classList.toggle('hidden');
+    }
+  });
+}
+document.addEventListener('click', function (e) {
+  var modal = document.querySelector('.prod-list-item__modal:not(.hidden)');
+  if (modal && !e.target.classList.contains('three-dots-icon') && e.target.dataset.type != 'color-label') {
+    modal.classList.add('hidden');
+  }
+});
+document.addEventListener('keydown', function (e) {
+  var modal = document.querySelector('.prod-list-item__modal:not(.hidden)');
+  if (modal && e.keyCode == 27) {
+    modal.classList.add('hidden');
+  }
+});
+
 /***/ }),
 
 /***/ "./resources/js/todo.js":

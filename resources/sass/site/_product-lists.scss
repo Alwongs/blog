@@ -31,7 +31,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 25px;
         max-width: fit-content;
         padding: 0 20px;
         height: 44px;
@@ -52,6 +51,7 @@
     }
 }
 
+// styles for products
 .product-list-item {
     height: 34px;
     display: flex;
@@ -351,4 +351,159 @@
     &__space {
         flex: 0 0 90px;
     }
+}
+
+
+// styles for product-list
+.prod-list-item {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    &:hover {
+        opacity: 0.9;
+    }
+    &__title {
+        flex: 1 1 auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        color: $white;
+        transition: 0.2s;
+        padding-left: 20px;
+    }
+
+    &__price {
+        flex: 0 0 70px;
+        text-align: end;
+        padding-right: 15px;
+        font-weight: 500;
+        color: red;
+    }
+
+    &__status {
+        flex: 0 0 50px;
+        button {
+            background-color: #fff;
+            border-radius: 12px;
+            height: 24px;
+            width: 50px;
+            font-size: 10px;
+            letter-spacing: 0.4px;
+            transition: 0.3s;
+            &.action-list-disable {
+                border: 1px solid $baseText;
+                color: $baseText;
+                &:hover {
+                    background-color: $baseText;
+                    color: white;
+                }
+            }
+            &.action-list-active {
+                border: 1px solid grey;
+                color: grey;
+                opacity: 0.4;
+                &:hover {
+                    background-color: grey;
+                    color: white;
+                }                
+            }            
+        }
+    }
+
+    &__actions {
+        flex: 0 0 34px;
+        position: relative;
+        height: 34px;
+    }
+    &__modal {
+        display: block;
+        width: 140px;
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        z-index: 5;
+        box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        transition: 0.4s;
+        &.hidden {
+            display: none;
+        }
+    }
+    &__action-list {
+        li {
+            height: 48px;
+            border-bottom: 1px solid lightgrey;
+            position: relative;
+        }
+        li a {
+
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding-left: 10px;
+            font-size: 20px;
+            transition: 0.2s;
+            &:hover {
+                background: blue;
+                color: white;
+            }
+        }
+        li form {
+            height: 100%;
+        }
+        li form button {
+            background: #fff;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding-left: 10px;
+            font-size: 20px;
+            transition: 0.2s;
+            &:hover {
+                background: red;
+                color: white;
+            }
+        }
+    }
+    &.mute  {
+        .prod-list-item__title, .prod-list-item__price {
+            opacity: 0.2;
+            text-decoration: line-through;
+        }
+        .three-dots-icon {
+            opacity: 0.2;
+        }
+    }
+}
+
+.common-bg-color-0 {
+    background-color: rgba(40, 71, 100, 0.8);
+}
+
+.common-bg-color-1 {
+    background-color: rgba(40, 100, 92, 0.8);
+}
+
+.common-bg-color-2 {
+    background-color: rgba(151, 83, 28, 0.8);
+}
+
+.common-bg-color-3 {
+    background-color: rgba(170, 153, 0, 0.8);
+}
+
+.common-bg-color-4 {
+    background-color: rgba(104, 48, 48, 0.8);
 }

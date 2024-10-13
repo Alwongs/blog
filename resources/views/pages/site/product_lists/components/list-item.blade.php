@@ -1,12 +1,12 @@
-<li class="todo-list__item todo-item">
+<li class="prod-list-item {{ $bg_color }}">
 
-    <a class="todo-item__title" href="{{ route('product-lists.show', $list->id) }}" >&bull; {{$list->title}}</a>
+    <a class="prod-list-item__title" href="{{ route('product-lists.show', $list->id) }}" >{{$list->title}}</a>
 
-    <div class="todo-item__actions">
+    <div class="prod-list-item__actions">
         <i class="three-dots-icon"></i>
 
-        <div class="todo-item__modal hidden">
-            <ul class="todo-item__action-list">           
+        <div class="prod-list-item__modal hidden">
+            <ul class="prod-list-item__action-list">           
                 <li>
                     <a href="{{ route('product-lists.edit', $list->id) }}">Edit</a>
                 </li>
@@ -15,6 +15,7 @@
                         @csrf
                         @method('DELETE')
                         <button 
+                            class="action-list-delete"
                             id="delete-list-btn" 
                             type="submit"
                             onclick="event.preventDefault(); if (confirm('are you sure?')) this.closest('form').submit();"

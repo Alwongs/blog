@@ -41,3 +41,33 @@ if (clearTasksBtn) {
 }
 
 
+
+
+
+// item menu modal open and close 
+const prodList = document.querySelector('.prod-list');
+if (prodList) {
+    prodList.addEventListener('click', function(e) {
+        let modals = document.querySelectorAll('.prod-list-item__modal');
+        if (e.target.classList.contains('three-dots-icon')) {
+            modals.forEach(element => {
+                if (!element.classList.contains('hidden')) {
+                    element.classList.add('hidden');
+                }
+            })
+            e.target.nextElementSibling.classList.toggle('hidden');
+        }
+    });
+}
+document.addEventListener('click', (e) => {
+    let modal = document.querySelector('.prod-list-item__modal:not(.hidden)')
+    if (modal && !e.target.classList.contains('three-dots-icon') && e.target.dataset.type != 'color-label') {
+        modal.classList.add('hidden');
+    }
+});
+document.addEventListener('keydown', (e) => {
+    let modal = document.querySelector('.prod-list-item__modal:not(.hidden)')
+    if (modal && e.keyCode == 27) {
+        modal.classList.add('hidden');
+    }
+});

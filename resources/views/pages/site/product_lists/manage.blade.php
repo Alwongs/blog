@@ -9,14 +9,17 @@
     <section class="section todo-section">
         <div class="todo-list-container">
 
-            <div class="todo-list-btn-block">
-                <a title="add new task" href="{{ route('product-lists.create') }}">+</a>
-            </div> 
+            <div class="product-list-btn-block">
+                <a title="add new product" href="{{ route('product-lists.create') }}">
+                    {{ __("product_lists.add_product_list") }}
+                </a>
+            </div>             
 
             @if(count($product_lists) > 0)
-                <ul class="todo-list">
-                    @foreach($product_lists as $list)
-                        @include("pages.site.product_lists.components.list-item")
+                <ul class="prod-list">
+                    @foreach($product_lists as $key => $list)
+                        @php $bg_color = 'common-bg-color-' . $key; @endphp
+                        @include("pages.site.product_lists.components.list-item", compact('bg_color'))
                     @endforeach
                 </ul>
             @else
