@@ -37,6 +37,13 @@
             </a>
 
             <a 
+                href="#"
+                style="color:red;"
+            >
+                APPS IDEAS
+            </a>
+
+            <a 
                 href="{{ route('schedules.index') }}"
                 @if (in_array($currentRouteName, ['schedule'])) class="active" @endif
             >

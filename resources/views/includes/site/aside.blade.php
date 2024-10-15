@@ -32,6 +32,13 @@
             >
                 {{ __("dashboard.dashboard") }}
             </a>
+
+            <a 
+                href="#"
+                style="color:red;"
+            >
+                APPS IDEAS
+            </a>
             
             <a 
                 href="{{ route('events.index') }}"
