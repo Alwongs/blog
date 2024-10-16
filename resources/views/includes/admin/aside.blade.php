@@ -37,13 +37,6 @@
             </a>
 
             <a 
-                href="#"
-                style="color:red;"
-            >
-                APPS IDEAS
-            </a>
-
-            <a 
                 href="{{ route('schedules.index') }}"
                 @if (in_array($currentRouteName, ['schedule'])) class="active" @endif
             >
@@ -89,6 +82,14 @@
             >
                 Settings
             </a>
+
+            <a 
+            href="{{ route('ideas.index') }}"
+            @if (in_array($currentRouteName, ['ideas.index'])) class="active" @endif 
+                style="color:red;"
+            >
+                APPS IDEAS
+            </a>            
         </nav>
     </div>
     @endauth

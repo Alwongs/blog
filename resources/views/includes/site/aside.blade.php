@@ -32,13 +32,6 @@
             >
                 {{ __("dashboard.dashboard") }}
             </a>
-
-            <a 
-                href="#"
-                style="color:red;"
-            >
-                APPS IDEAS
-            </a>
             
             <a 
                 href="{{ route('events.index') }}"
@@ -86,6 +79,13 @@
             >
                 Settings
             </a>
+
+            <a 
+                href="#"
+                style="color:red;"
+            >
+                APPS IDEAS
+            </a>            
         </nav>
     </div>
     @endauth    

@@ -18,8 +18,6 @@
                             </a>
                         </div>   
                         
-
-
                         <div class="manage-list__item-title">
                             <div class="schedule-table">
                                 @foreach (unserialize($schedule['schedule']) as $key => $day)
@@ -39,8 +37,6 @@
                                 @endforeach
                             </div>
                         </div>                           
-
-
 
                         <a href="{{ route('schedules.edit', $schedule->id) }}" class="cell-btn btn-icon-edit"></a>
                         <form action="{{ route('schedules.destroy', $schedule->id) }}" method="POST">

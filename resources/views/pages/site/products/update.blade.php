@@ -43,12 +43,6 @@
                 @endforeach
             </div> 
 
-
-
-
-
-
-
             <div class="form__color-block">
                 @foreach(App\Enum\Rates::RATES as $key=>$rate)
                     <input 

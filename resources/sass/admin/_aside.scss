@@ -1,26 +1,22 @@
 .aside {
     background-color: rgb(166, 199, 207);
-    transition: 0.2s ease-in-out;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.4s ease-in-out;
     height: 100%;
-    width: 100%;
-    @media (min-width: $desktop-min) and (max-width: $desktop-max) {
-        
-    }     
-    @media (min-width: $tablet-min) and (max-width: $tablet-max) {  
-        
-    }           
+    width: 270px;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: -100%;
+    &._active {
+        left: 0; 
+    }         
     @media (max-width: $mobile-max) {  
-        position: absolute;
-        z-index: 4;
-        top: 0;
-        left: -100%;
-        &._active {
-            left: 0; 
-        }
+        width: 100%;
     }  
 }
 .aside__btn-block {
-    margin-bottom: 100px;
+    margin-bottom: 35px;
     display: flex;
     justify-content: flex-end;
 
@@ -34,16 +30,6 @@
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    display: none;
-    @media (min-width: $desktop-min) and (max-width: $desktop-max) {
-        
-    }     
-    @media (min-width: $tablet-min) and (max-width: $tablet-max) {  
-        
-    }           
-    @media (max-width: $mobile-max) {  
-        display: block;
-    } 
 }
 
 .aside-navigation {

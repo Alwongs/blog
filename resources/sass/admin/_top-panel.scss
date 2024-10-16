@@ -11,15 +11,17 @@
     }
     &__home-link {    
         text-transform: capitalize;
+        display: none;  
         @media (max-width: $mobile-max) {  
-            display: none;   
+ 
         }          
     }
     &__menu-link {
-        display: none;          
+        display: block;
+        cursor: pointer;         
         @media (max-width: $mobile-max) {  
-            display: block;
-            cursor: pointer;
+            // display: block;
+            // cursor: pointer;
         }   
     }
     @media (min-width: $desktop-min) and (max-width: $desktop-max) {
