@@ -1,6 +1,101 @@
+
+
+.schedule-list {
+
+    &__item {
+
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    &__item-title {
+        // border: 1px solid red;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+
+        a {
+            color: lighten($baseText, 9); 
+        }
+            
+        @media (max-width: $mobile-max) {  
+            font-size: 20px;
+            width: 20ch;             
+            max-width: 100%;             
+            flex: 1 0 200px;               
+        }            
+    }
+    // &__item-date {
+    //     flex: 0 0 120px;
+    //     @media (max-width: $tablet-max) {  
+    //         flex: 0 0 100px;        
+    //     } 
+    //     @media (max-width: $mobile-max) {  
+    //         display: none;
+    //     }                 
+    // }
+    &__item-schedule-month {
+        // flex: 0 0 150px;
+        margin-bottom: 10px;
+               
+    }    
+    &__item-type {
+        flex: 0 0 80px;     
+        @media (max-width: $desktop-max) {  
+            display: none;                
+        }         
+    }
+    &__btn-block {
+        display: flex;
+        justify-content: center;
+        flex: 0 0 76px;
+        gap: 5px;
+        @media (max-width: $mobile-max) {  
+            flex: 0 0 36px;        
+        } 
+    }
+    &__item-value {
+        flex: 0 0 70px;
+        height: 25px;
+        // border: 1px solid red;
+        @media (max-width: $mobile-max) {  
+            height: 34px; 
+            font-size: 18px;              
+        } 
+        input {
+            font-size: 14px;
+            @media (max-width: $mobile-max) {   
+                font-size: 18px;              
+            } 
+        }
+        input[type=text]  {
+            border: 1px solid $baseText;
+            height: 100%;
+            width: 100%;
+            padding-left: 5px;
+            color: $baseText;
+            &:focus {
+                outline: 1px solid $baseBg;
+            }
+
+        }
+        input[type=checkbox] {
+            outline: 1px solid $baseText;
+            border: none;
+            width: 20px;
+            height: 20px;
+            @media (max-width: $mobile-max) {   
+                height: 30px;
+                width: 30px;            
+            } 
+        }
+    }
+}
+
+
+
 .schedule-container {
     background-color: #fff;
-    width: 1000px;
+    // width: 1000px;
     height: 100%;
     margin: 0 auto
 }
