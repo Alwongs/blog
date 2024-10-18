@@ -9,7 +9,7 @@
 
         @if(count($schedules) != 0)
             <ul class="schedule-list">
-                @foreach($schedules as $schedule)
+                @foreach($schedules as $index => $schedule)
                     <li class="schedule-list__item">
 
                         <div class="schedule-list__item-schedule-month">
@@ -18,7 +18,7 @@
                             </a>
                         </div>   
                         
-                        <div class="schedule-list__item-title">
+                        {{-- <div class="schedule-list__item-title">
                             <div class="schedule-table">
                                 @foreach (unserialize($schedule['schedule']) as $key => $day)
                                     <div class="schedule-col-small">
@@ -36,7 +36,38 @@
                                     </div>
                                 @endforeach
                             </div>
-                        </div>                           
+                        </div>    --}}
+                        
+                        <div class="m-schedule-table">
+                            <div class="m-week-row-th">
+                                @foreach(App\Enum\Calendar::WEEK_DAYS as $key => $week_day)
+                                    <div 
+                                        class="m-week-row-th__th"                    
+                                        @if($key == 6 || $key == 7)
+                                            style="color: red; font-weight:600;"
+                                        @endif                    
+                                    >
+                                        {{ App\Enum\Calendar::WEEK_DAYS[$key] }}
+                                    </div>
+                                @endforeach
+                            </div>
+                
+                            @foreach ($weeksArray[$index] as $row)
+                                <div class="m-week-row-td">
+                                    @foreach ($row as $key => $day)
+                                        <div 
+                                            class="m-week-row-td__td m-schedule-{{ $day['work_shift'] }}"
+                                        >
+                                            {{ $day['day'] }}
+                
+                                            @if($day['is_gone'])<div class="m-week-row-td__td-dark-filter"></div>@endif                            
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endforeach
+                        </div>  
+
+
 
                         <div class="schedule-btn-block">
                             <a href="{{ route('schedules.edit', $schedule->id) }}" class="btn btn-blue">Edit</a>
