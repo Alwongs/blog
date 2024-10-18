@@ -1,42 +1,27 @@
-
-
 .schedule-list {
-
     &__item {
-
         width: 100%;
         margin-bottom: 20px;
     }
     &__item-title {
-        // border: 1px solid red;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
-
+        margin-bottom: 20px;
         a {
             color: lighten($baseText, 9); 
         }
-            
+        
         @media (max-width: $mobile-max) {  
             font-size: 20px;
-            width: 20ch;             
+            // width: 20ch;             
             max-width: 100%;             
             flex: 1 0 200px;               
         }            
     }
-    // &__item-date {
-    //     flex: 0 0 120px;
-    //     @media (max-width: $tablet-max) {  
-    //         flex: 0 0 100px;        
-    //     } 
-    //     @media (max-width: $mobile-max) {  
-    //         display: none;
-    //     }                 
-    // }
+
     &__item-schedule-month {
-        // flex: 0 0 150px;
         margin-bottom: 10px;
-               
     }    
     &__item-type {
         flex: 0 0 80px;     
@@ -56,7 +41,6 @@
     &__item-value {
         flex: 0 0 70px;
         height: 25px;
-        // border: 1px solid red;
         @media (max-width: $mobile-max) {  
             height: 34px; 
             font-size: 18px;              
@@ -90,12 +74,8 @@
         }
     }
 }
-
-
-
 .schedule-container {
     background-color: #fff;
-    // width: 1000px;
     height: 100%;
     margin: 0 auto
 }
@@ -150,8 +130,6 @@
 
 
 
-
-
 .m-schedule-D {
     background-color: rgb(233, 140, 0);
     color: white;
@@ -165,7 +143,6 @@
 
 
 .m-schedule-table {
-    // border: 1px solid red;
     width: 500px;
     margin: 0 auto;
     @media (max-width: $mobile-max) {  
@@ -187,6 +164,7 @@
 .m-week-row-td {
     display: flex;
     &__td {
+        position: relative;
         border: 1px solid rgba(0, 0, 255, 0.2);
         height: 50px;
         flex: 0 0 calc(100% / 7);
@@ -197,4 +175,31 @@
             font-size: 18px;
         }            
     }
+    &__td-dark-filter {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(31, 17, 17, 0.8);
+    }
+}
+
+.schedule-btn-block {
+    // border: 1px solid red;
+    display: flex;
+    gap: 20px;
+    form {
+        flex: 0 0 120px;
+    }
+    form button {
+        width: 100%;
+    }
+    .btn {
+        flex: 0 0 120px;
+    }
+}
+.is-gone {
+    background-color: rgba(44, 14, 14, 0.8);
+    color: grey;
 }

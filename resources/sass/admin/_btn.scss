@@ -63,8 +63,8 @@
         background-color: $btnBlue;
     }
     @media (max-width: $mobile-max) {  
-        background-color: $btnBlue;
-        color: $white;        
+        // background-color: $btnBlue;
+        // color: $white;        
     }     
 }
 .btn-red {
@@ -76,8 +76,8 @@
         background-color: $btnRed;
     }
     @media (max-width: $mobile-max) {  
-        background-color: $btnRed;
-        color: $white;        
+        // background-color: $btnRed;
+        // color: $white;        
     }     
 }
 
