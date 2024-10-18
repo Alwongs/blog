@@ -64,7 +64,7 @@ class ScheduleController extends Controller
             foreach ([1,2,3,4,5,6,7] as $week_day) {
                 if (!isset($weeks[$week_N][$week_day])) {
                     $weeks[$week_N][$week_day] = [
-                        "is_today" => false,
+                        // "is_today" => false,
                         "is_gone" => false,
                         "day" => "",
                         "work_shift" => "",
@@ -75,10 +75,10 @@ class ScheduleController extends Controller
 
             $keyTS = strtotime($key . '-' . $month . '-' . $year);
             $is_gone = ($keyTS + 60*60*24 < $currentTS) ? true : false;
-            $is_today = ($currentTS > $keyTS && $currentTS < $keyTS + 60*60*24) ? true : false;
+            // $is_today = ($currentTS > $keyTS && $currentTS < $keyTS + 60*60*24) ? true : false;
 
             $weeks[$week_N][$day['week_day']] = [
-                "is_today" => $is_today,
+                // "is_today" => $is_today,
                 "is_gone" => $is_gone,
                 "day" => $key,
                 "work_shift" => $day["work_shift"],
@@ -89,8 +89,6 @@ class ScheduleController extends Controller
                 $week_N = $week_N + 1;
             }
         }
-
-        // exit;
 
         return view('pages/admin/schedules/detail', compact('schedule', 'weeks'));
     }   
