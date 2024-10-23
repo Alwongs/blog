@@ -8,5 +8,8 @@ return [
     "manage_days" => "Manage days",
     "add_manage_time" => "Add manage time",
     "new_manage_time" => "New manage time",
-    "minutes_short" => "m"
+    "minutes_short" => "m",
+    "minutes_middle" => "min",
+    "general_time" => "General time",
+    "hours_short" => "h"
 ];

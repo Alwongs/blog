@@ -66,12 +66,18 @@ class ManageDayController extends Controller
      */
     public function show(ManageDay $manage_day)
     {
+
+        $sum = 0;
         foreach ($manage_day->manageTimes as $manage_time) {
 
-            $manage_time->duration_time = TimeHelper::countDurationTime($manage_time);
+            $time = TimeHelper::countDurationTime($manage_time);
+            $manage_time->duration_time = $time;
+            $sum = $sum + $time;
         }
 
-        return view('pages/site/manage_times/manage', compact('manage_day'));
+        $general_time = round($sum / 60, 1);
+
+        return view('pages/site/manage_times/manage', compact('manage_day', 'general_time'));
     }
 
     /**

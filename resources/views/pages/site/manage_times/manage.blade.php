@@ -9,7 +9,7 @@
     <section class="section todo-section">
         <div class="todo-list-container">
 
-            <div class="product-list-btn-block">
+            <div class="manage-day-btn-block">
                 <h2 class="">{{ $manage_day->title }}</h2>
                 <a title="add new manage time" href="{{ route('manage-times.create') }}?manage_day_id={{ $manage_day->id }}">
                     {{ __("time_management.add_manage_time") }}
@@ -17,7 +17,7 @@
             </div> 
 
             @if(count($manage_day->manageTimes) > 0)
-                <ul class="product-list">
+                <ul class="manage-day">
                     @foreach($manage_day->manageTimes as $manage_time)
                         @include("pages.site.manage_times.components.time-item")
                     @endforeach
@@ -26,25 +26,25 @@
                 <p class="empty-list-note">{{ __("product_lists.no_products") }}</p>
             @endif
 
-            {{-- @if(count($manage_day->manage_times) > 1)
-                <div class="product-list-sum">
-                    <div class="product-list-sum__label">
-                        {{ __("product_lists.sum") }}:
+            @if(count($manage_day->manageTimes) > 1)
+                <div class="manage-day-sum">
+                    <div class="manage-day-sum__label">
+                        {{ __("time_management.general_time") }}:
                     </div>
-                    <div class="product-list-sum__sum">
-                        {{ $sum }} р
+                    <div class="manage-day-sum__sum @if($general_time > 24) text-red @endif">
+                        {{ $general_time }} <small>{{ __("time_management.hours_short") }}</small>
                     </div>
-                    <div class="product-list-sum__space"></div>                
+                    <div class="manage-day-sum__space"></div>                
                 </div>
 
                 <div class="divider"></div>
-            @endif  --}}
+            @endif 
             
-            <div class="product-list-detail-btn-block">
-                <a class="product-list-detail-btn btn-grey" href="{{ route('product-lists.index') }}">Back</a>
+            <div class="manage-day-detail-btn-block">
+                <a class="manage-day-detail-btn btn-grey" href="{{ route('product-lists.index') }}">Back</a>
 
                 @if(count($manage_day->manageTimes) > 1)
-                    <form class="product-list-detail-btn btn-green" action="{{ route('activate-products', $manage_day->id) }}" method="POST">
+                    <form class="manage-day-detail-btn btn-green" action="{{ route('activate-products', $manage_day->id) }}" method="POST">
                         @csrf
                         @method('PUT')
 
@@ -53,7 +53,7 @@
                         </button> 
                     </form> 
 
-                    <form class="product-list-detail-btn btn-red" action="{{ route('disable-products', $manage_day->id) }}" method="POST">
+                    <form class="manage-day-detail-btn btn-red" action="{{ route('disable-products', $manage_day->id) }}" method="POST">
                         @csrf
                         @method('PUT')
 
