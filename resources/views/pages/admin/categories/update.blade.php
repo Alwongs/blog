@@ -29,6 +29,8 @@
                     name="category_name"
                     placeholder="category name"
                     value="{{ isset($category) ? $category->category_name : '' }}"
+                    required
+                    autofocus
                 />
             </div>   
 
@@ -48,7 +50,7 @@
             </div>  
 
             <div class="form__btn-block">
-                <button type="submit" class="btn btn-green submit"> @if(isset($category)) Update @else Save @endif </button>
+                <button type="submit" class="btn btn-green btn-save submit"> @if(isset($category)) Update @else Save @endif </button>
             </div>
         </form>
 

@@ -17,6 +17,7 @@
             @auth
                 <a href="{{ route('tasks.index') }}">{{ __("tasks.todo") }}</a>
                 <a href="{{ route('product-lists.index') }}">{{ __("product_lists.products") }}</a>
+                <a href="{{ route('manage-days.index') }}">{{ __("time_management.time_management") }}</a>
             @endauth
         </nav>
     </div>

@@ -12,13 +12,11 @@
         @else
             <form class="form" action="{{ route('events.store') }}" method="POST">
         @endif
-
             @csrf
-
             <input type="hidden" name="return_url" value="{{ $return_url }}">
 
             <div class="form__input-block">
-                <input name="event" type="text" placeholder="event" value="{{ isset($event) ? $event->event : '' }}" />
+                <input name="event" type="text" placeholder="event" value="{{ isset($event) ? $event->event : '' }}" required  autofocus />
             </div>    
 
             <div class="form__textarea-block">
@@ -38,7 +36,7 @@
             </div>  
 
             <div class="form__btn-block">
-                <button type="submit" class="btn btn-green">
+                <button type="submit" class="btn btn-green btn-save">
                     @if(isset($event))
                         Update
                     @else

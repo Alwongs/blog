@@ -14,9 +14,10 @@
 
 
             @Auth
-                <a href="{{ route('dashboard') }}">Dashboard</a> 
-                <a href="{{ route('tasks.index') }}">ToDo</a> 
-                <a href="{{ route('product-lists.index') }}">Product-Lists</a> 
+                <a href="{{ route('dashboard') }}">Dashboard</a>
+                <a href="{{ route('tasks.index') }}">ToDo</a>
+                <a href="{{ route('product-lists.index') }}">Product-Lists</a>
+                <a href="{{ route('manage-days.index') }}">Time-Management</a>
             @endauth
         </nav>
         

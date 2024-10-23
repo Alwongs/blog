@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\TaskController;
 use App\Http\Controllers\Admin\IdeaController;
+use App\Http\Controllers\Admin\ManageDayController;
+use App\Http\Controllers\Admin\ManageTimeController;
 use App\Http\Controllers\TaskController as TodoController;
 use App\Http\Controllers\Admin\ScheduleController;
 
@@ -71,14 +73,16 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::resources([ 
-        'events'        => EventController::class,
-        'categories'    => CategoryController::class,
-        'posts'         => PostController::class,
-        'tasks'         => TaskController::class,
-        'schedules'     => ScheduleController::class,
-        'product-lists' => ProductListController::class,
-        'products'      => ProductController::class,
-        'ideas'         => IdeaController::class
+        'events'          => EventController::class,
+        'categories'      => CategoryController::class,
+        'posts'           => PostController::class,
+        'tasks'           => TaskController::class,
+        'schedules'       => ScheduleController::class,
+        'product-lists'   => ProductListController::class,
+        'products'        => ProductController::class,
+        'ideas'           => IdeaController::class,
+        'manage-days'     => ManageDayController::class,
+        'manage-times'    => ManageTimeController::class
     ]);
 });
 

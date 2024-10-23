@@ -41,7 +41,6 @@ class ProductListController extends Controller
      */
     public function store(StoreRequest $request)
     {
-
         if ($request->validated()) {
 
             $product_list = $request->all();

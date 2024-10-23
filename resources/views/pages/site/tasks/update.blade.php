@@ -13,11 +13,10 @@
             <form class="form" action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data">
         @endif
             @csrf
-
             <input type="hidden" name="user_id" value="{{ $user_id }}" />
 
             <div class="form__input-block">
-                <input name="title" type="text" placeholder="title" value="{{ isset($task) ? $task->title : '' }}" required />
+                <input name="title" type="text" placeholder="title" value="{{ isset($task) ? $task->title : '' }}" required autofocus />
             </div>    
 
             <div class="form__color-block">
@@ -44,7 +43,7 @@
             </div> 
 
             <div class="form__btn-block">
-                <button type="submit" class="btn btn-green">
+                <button type="submit" class="btn btn-green btn-save">
                     @if(isset($task))
                         Update
                     @else

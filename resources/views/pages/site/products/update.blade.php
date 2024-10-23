@@ -13,11 +13,10 @@
             <form class="form" action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
         @endif
             @csrf
-
             <input type="hidden" name="product_list_id" value="{{ $product_list_id }}">
 
             <div class="form__input-block">
-                <input name="title" type="text" placeholder="title" value="{{ isset($product) ? $product->title : '' }}" required />
+                <input name="title" type="text" placeholder="title" value="{{ isset($product) ? $product->title : '' }}" required  autofocus />
             </div>    
 
             <div class="form__input-block">

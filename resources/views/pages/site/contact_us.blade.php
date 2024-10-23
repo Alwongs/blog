@@ -16,11 +16,11 @@
         <form class="form" action="{{ route('store-message') }}" method="POST">
             @csrf
             <div class="form__input-block">
-                <input name="name" type="text" placeholder="name" value="" />
+                <input name="name" type="text" placeholder="name" value="" required  autofocus/>
             </div>    
 
             <div class="form__textarea-block">
-                <textarea name="message" placeholder="message"></textarea>
+                <textarea name="message" placeholder="message" reauired></textarea>
             </div>
 
             <div class="form__btn-block btn-block">

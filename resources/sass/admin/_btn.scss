@@ -54,6 +54,13 @@
         // color: $white;        
     }      
 }
+.btn-save {
+    background-color: $btnGreen;
+    color: $white;  
+    &:hover {
+        background-color: rgb(96, 177, 96);   
+    }    
+}
 .btn-blue {
     border: 2px solid $btnBlue;
     color: $btnBlue;

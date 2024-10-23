@@ -15,7 +15,6 @@
             <form class="form" action="{{ route('schedules.store') }}" method="POST" enctype="multipart/form-data">
         @endif
             @csrf
-
             <input type="hidden" name="user_id" value="{{ $user_id }}" />
 
             <div class="form__input-block input-type-block">
@@ -64,7 +63,7 @@
             </div>              
 
             <div class="form__btn-block">
-                <button type="submit" class="btn btn-green">
+                <button type="submit" class="btn btn-green btn-save">
                     @if(isset($schedule))
                         Update
                     @else

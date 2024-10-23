@@ -14,6 +14,7 @@
         @endif
             @csrf
             <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+            
             <div class="form__input-block">
                 @if($categories)
                     <select name="category_id" id="album" required>
@@ -59,15 +60,12 @@
                     id="input_file"
                     name="image"
                     type="file"
-                    {{-- @if(!isset($post)) 
-                        required
-                    @endif --}}
                 />
                 <p id="error" style="color: red;"></p>
             </div>  
 
             <div class="form__btn-block">
-                <button type="submit" class="btn btn-green">
+                <button type="submit" class="btn btn-green btn-save">
                     @if(isset($post))
                         Update
                     @else

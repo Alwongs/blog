@@ -15,7 +15,7 @@
             @csrf
 
             <div class="form__input-block">
-                <input name="title" type="text" placeholder="title" value="{{ isset($idea) ? $idea->title : '' }}" required />
+                <input name="title" type="text" placeholder="title" value="{{ isset($idea) ? $idea->title : '' }}" required  autofocus />
             </div>    
 
             <div class="form__textarea-block">
@@ -61,7 +61,7 @@
 
 
             <div class="form__btn-block">
-                <button type="submit" class="btn btn-green">
+                <button type="submit" class="btn btn-green btn-save">
                     @if(isset($idea))
                         Update
                     @else
