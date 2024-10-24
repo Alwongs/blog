@@ -27,6 +27,10 @@
                 <input name="time_to" type="text" placeholder="time to" value="{{ isset($manage_time) ? $manage_time->time_to : '' }}" required />
             </div>  
 
+            <div class="form__input-block input-date-block">
+                @include('components.time-picker')                     
+            </div>            
+
 
             <div class="form__status-block">
                 @foreach(App\Enum\Status::STATUSES as $key=>$status)

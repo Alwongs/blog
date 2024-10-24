@@ -28,6 +28,7 @@
         <input type="hidden" name="title" value="{{ $manage_time->title }}" />
         <input type="hidden" name="manage_day_id" value="{{ $manage_time->manage_day_id }}" />
         <input type="hidden" name="time_from" value="{{ $manage_time->time_from }}" />
+        <input type="hidden" name="time_to" value="{{ $manage_time->time_to }}" />
 
         @if($manage_time->status == App\Enum\Status::ACTIVE)
             <input type="hidden" name="status" value="{{ App\Enum\Status::DISABLE }}" />

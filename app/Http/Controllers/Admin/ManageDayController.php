@@ -8,6 +8,7 @@ use App\Models\ManageDay;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ManageDay\StoreRequest;
 use App\Helpers\TimeHelper;
+use App\Enum\Status;
 
 class ManageDayController extends Controller
 {
@@ -72,7 +73,9 @@ class ManageDayController extends Controller
 
             $time = TimeHelper::countDurationTime($manage_time);
             $manage_time->duration_time = $time;
-            $sum = $sum + $time;
+            if ($manage_time->status == Status::ACTIVE) {
+                $sum = $sum + $time;
+            }
         }
 
         $general_time = round($sum / 60, 1);

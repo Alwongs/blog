@@ -7,6 +7,7 @@ use App\Models\ProductList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProductList\StoreRequest;
+use App\Enum\Status;
 
 class ProductListController extends Controller
 {
@@ -65,7 +66,7 @@ class ProductListController extends Controller
      */
     public function show(ProductList $product_list)
     {
-        $sum = $product_list->products->where('status', 'A')->sum('price');
+        $sum = $product_list->products->where('status', Status::ACTIVE)->sum('price');
 
         return view('pages/site/products/manage', compact('product_list', 'sum'));
     }
