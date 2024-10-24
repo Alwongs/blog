@@ -3,7 +3,6 @@
 const todoList = document.querySelector('.manage-day');
 if (todoList) {
     todoList.addEventListener('click', function(e) {
-        console.log('hi');
         let modals = document.querySelectorAll('.manage-day-item__modal');
         if (e.target.classList.contains('three-dots-icon')) {
             modals.forEach(element => {

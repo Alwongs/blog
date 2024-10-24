@@ -5462,6 +5462,7 @@ __webpack_require__(/*! ./category-tree */ "./resources/js/category-tree.js");
 __webpack_require__(/*! ./auth-panel */ "./resources/js/auth-panel.js");
 __webpack_require__(/*! ./todo */ "./resources/js/todo.js");
 __webpack_require__(/*! ./product-lists */ "./resources/js/product-lists.js");
+__webpack_require__(/*! ./time-management */ "./resources/js/time-management.js");
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
@@ -5596,6 +5597,82 @@ document.addEventListener('click', function (e) {
 });
 document.addEventListener('keydown', function (e) {
   var modal = document.querySelector('.product-list-item__modal:not(.hidden)');
+  if (modal && e.keyCode == 27) {
+    modal.classList.add('hidden');
+  }
+});
+
+// confirm clear task list
+var clearTasksBtn = document.getElementById('clear-tasks-btn');
+if (clearTasksBtn) {
+  clearTasksBtn.addEventListener('click', function (e) {
+    if (confirm("Are you cure?")) {
+      return true;
+    } else {
+      e.preventDefault();
+    }
+  });
+}
+
+// item menu modal open and close 
+var prodList = document.querySelector('.prod-list');
+if (prodList) {
+  prodList.addEventListener('click', function (e) {
+    var modals = document.querySelectorAll('.prod-list-item__modal');
+    if (e.target.classList.contains('three-dots-icon')) {
+      modals.forEach(function (element) {
+        if (!element.classList.contains('hidden')) {
+          element.classList.add('hidden');
+        }
+      });
+      e.target.nextElementSibling.classList.toggle('hidden');
+    }
+  });
+}
+document.addEventListener('click', function (e) {
+  var modal = document.querySelector('.prod-list-item__modal:not(.hidden)');
+  if (modal && !e.target.classList.contains('three-dots-icon') && e.target.dataset.type != 'color-label') {
+    modal.classList.add('hidden');
+  }
+});
+document.addEventListener('keydown', function (e) {
+  var modal = document.querySelector('.prod-list-item__modal:not(.hidden)');
+  if (modal && e.keyCode == 27) {
+    modal.classList.add('hidden');
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/time-management.js":
+/*!*****************************************!*\
+  !*** ./resources/js/time-management.js ***!
+  \*****************************************/
+/***/ (() => {
+
+// item menu modal open and close 
+var todoList = document.querySelector('.manage-day');
+if (todoList) {
+  todoList.addEventListener('click', function (e) {
+    var modals = document.querySelectorAll('.manage-day-item__modal');
+    if (e.target.classList.contains('three-dots-icon')) {
+      modals.forEach(function (element) {
+        if (!element.classList.contains('hidden')) {
+          element.classList.add('hidden');
+        }
+      });
+      e.target.nextElementSibling.classList.toggle('hidden');
+    }
+  });
+}
+document.addEventListener('click', function (e) {
+  var modal = document.querySelector('.manage-day-item__modal:not(.hidden)');
+  if (modal && !e.target.classList.contains('three-dots-icon') && e.target.dataset.type != 'color-label') {
+    modal.classList.add('hidden');
+  }
+});
+document.addEventListener('keydown', function (e) {
+  var modal = document.querySelector('.manage-day-item__modal:not(.hidden)');
   if (modal && e.keyCode == 27) {
     modal.classList.add('hidden');
   }

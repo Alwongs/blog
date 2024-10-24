@@ -13,14 +13,14 @@
         {{$manage_time->title}}
     </a>
 
-    <div class="manage-day-item__duration-time">
+    {{-- <div class="manage-day-item__duration-time">
         @if($manage_time->duration_time < 60)
             {{ $manage_time->duration_time }} <small>{{ __("time_management.minutes_middle") }}</small>
         @else
             {{ round($manage_time->duration_time / 60, 1) }} <small>{{ __("time_management.hours_short") }}</small>
         @endif
 
-    </div>
+    </div> --}}
 
     <form class="manage-day-item__status" action="{{ route('manage-times.update', $manage_time) }}" method="POST">
         @method('PUT')
