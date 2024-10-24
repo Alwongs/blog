@@ -64,7 +64,7 @@
             <a class="product-list-detail-btn btn-grey" href="{{ route('manage-days.show', $manage_day_id) }}">Back</a>
 
             @if(isset($manage_time))
-                <form class="product-list-detail-btn btn-red" action="{{ route('manage_times.destroy', $manage_time->id) }}" method="POST">
+                <form class="product-list-detail-btn btn-red" action="{{ route('manage-times.destroy', $manage_time->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button id="clear-products-btn" class="btn-red" type="submit">Delete</button> 

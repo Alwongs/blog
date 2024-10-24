@@ -41,22 +41,20 @@
             @endif 
             
             <div class="manage-day-detail-btn-block">
-                <a class="manage-day-detail-btn btn-grey" href="{{ route('product-lists.index') }}">Back</a>
+                <a class="manage-day-detail-btn btn-grey" href="{{ route('manage-days.index') }}">Back</a>
 
                 @if(count($manage_day->manageTimes) > 1)
-                    <form class="manage-day-detail-btn btn-green" action="{{ route('activate-products', $manage_day->id) }}" method="POST">
+                    <form class="manage-day-detail-btn btn-green" action="{{ route('activate-times', $manage_day->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-
                         <button id="clear-products-btn" class="btn-green" type="submit">
                             {{ __("product_lists.activate_all") }}
                         </button> 
                     </form> 
 
-                    <form class="manage-day-detail-btn btn-red" action="{{ route('disable-products', $manage_day->id) }}" method="POST">
+                    <form class="manage-day-detail-btn btn-red" action="{{ route('disable-times', $manage_day->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-
                         <button id="clear-products-btn" class="btn-red" type="submit">
                             {{ __("product_lists.disable_all") }}
                         </button> 

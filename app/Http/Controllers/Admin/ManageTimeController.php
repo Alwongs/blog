@@ -69,9 +69,11 @@ class ManageTimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ManageTime $manage_time)
     {
-        //
+        $manage_day_id = $manage_time->manage_day_id;
+
+        return view('pages/site/manage_times/update', compact('manage_time', 'manage_day_id'));
     }
 
     /**
@@ -81,9 +83,16 @@ class ManageTimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ManageTime $manage_time)
     {
-        //
+        $manage_time->manage_day_id = $request->manage_day_id;
+        $manage_time->title = $request->title;
+        $manage_time->time_from = $request->time_from;
+        $manage_time->time_to = $request->time_to;
+        $manage_time->status = $request->status;
+        $manage_time->update();
+
+        return redirect()->route('manage-days.show', $request->manage_day_id)->with('info', 'Post has been updated!'); 
     }
 
     /**

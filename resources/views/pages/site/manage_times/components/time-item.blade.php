@@ -1,8 +1,8 @@
 <li 
     @if($manage_time->status == App\Enum\Status::DISABLE)
-        class="manage-day__item product-list-item mute" 
+        class="manage-day__item manage-day-item mute" 
     @else
-        class="manage-day__item product-list-item" 
+        class="manage-day__item manage-day-item" 
     @endif
 >
     <div class="manage-day-item__time">

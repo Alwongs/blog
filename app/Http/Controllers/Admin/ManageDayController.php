@@ -86,9 +86,9 @@ class ManageDayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ManageDay $manage_day)
     {
-        //
+        return view('pages/site/manage_days/update', compact('manage_day')); 
     }
 
     /**
@@ -98,9 +98,13 @@ class ManageDayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ManageDay $manage_day)
     {
-        //
+        $manage_day->title = $request->title;
+        $manage_day->user_id = $request->user_id;
+        $manage_day->update();
+
+        return redirect()->route('manage-days.index')->with('info', 'Product list has been updated!'); 
     }
 
     /**
@@ -109,8 +113,10 @@ class ManageDayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ManageDay $manage_day)
     {
-        //
+        $manage_day->delete();
+
+        return redirect()->back()->with('info', 'Запись успешно удалена'); 
     }
 }

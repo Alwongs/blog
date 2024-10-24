@@ -9,6 +9,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProductController as SiteProductController;
+use App\Http\Controllers\TimeManagementController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -66,6 +67,9 @@ Route::middleware('auth')->group(function () {
         
         Route::put('/activate-products/{id}', [SiteProductController::class, 'activateProducts'])->name('activate-products');
         Route::put('/disable-products/{id}', [SiteProductController::class, 'disableProducts'])->name('disable-products');
+
+        Route::put('/activate-times/{id}', [TimeManagementController::class, 'activateTimes'])->name('activate-times');
+        Route::put('/disable-times/{id}', [TimeManagementController::class, 'disableTimes'])->name('disable-times');
 
         Route::resources([
             'settings' => SettingController::class, 

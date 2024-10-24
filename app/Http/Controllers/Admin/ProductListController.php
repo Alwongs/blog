@@ -78,7 +78,6 @@ class ProductListController extends Controller
      */
     public function edit(ProductList $product_list)
     {
-
         return view('pages/site/product_lists/update', compact('product_list')); 
     }
 
