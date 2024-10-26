@@ -39,10 +39,14 @@ class ManageTimeController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        // dd($request);
+
+
         if ($request->validated()) {
 
             $manage_time = $request->all();
+
+            // $manage_time['time_from'] = $manage_time['time_from']['hours'] . ":" . $manage_time['time_from']['minutes'];
+            // $manage_time['time_to'] = $manage_time['time_to']['hours'] . ":" . $manage_time['time_to']['minutes'];
 
             ManageTime::create($manage_time);
             

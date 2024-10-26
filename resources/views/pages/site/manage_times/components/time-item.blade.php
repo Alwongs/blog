@@ -32,10 +32,10 @@
 
         @if($manage_time->status == App\Enum\Status::ACTIVE)
             <input type="hidden" name="status" value="{{ App\Enum\Status::DISABLE }}" />
-            <button class="action-list-disable" type="submit">{{ App\Enum\Status::STATUSES[App\Enum\Status::ACTIVE] }}</button>
+            <button class="action-list-disable" type="submit">{{ App\Enum\Status::STATUSES_SHORT[App\Enum\Status::ACTIVE] }}</button>
         @else
             <input type="hidden" name="status" value="{{ App\Enum\Status::ACTIVE }}" />
-            <button class="action-list-active" type="submit">{{ App\Enum\Status::STATUSES[App\Enum\Status::DISABLE] }}</button>
+            <button class="action-list-active" type="submit">{{ App\Enum\Status::STATUSES_SHORT[App\Enum\Status::DISABLE] }}</button>
         @endif
     </form>      
 

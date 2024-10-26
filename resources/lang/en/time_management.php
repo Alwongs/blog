@@ -11,5 +11,5 @@ return [
     "minutes_short" => "m",
     "minutes_middle" => "min",
     "general_time" => "General time",
-    "hours_short" => "h"
+    "hours_short" => "h",
 ];

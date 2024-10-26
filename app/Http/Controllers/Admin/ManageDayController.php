@@ -78,7 +78,11 @@ class ManageDayController extends Controller
             }
         }
 
-        $general_time = round($sum / 60, 1);
+        if ($sum < 60) {
+            $general_time = $sum . " " . __("time_management.minutes_short");
+        } else {
+            $general_time = round($sum / 60, 1) . " " . __("time_management.hours_short");
+        }
 
         return view('pages/site/manage_times/manage', compact('manage_day', 'general_time'));
     }

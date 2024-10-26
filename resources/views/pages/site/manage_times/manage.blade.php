@@ -31,9 +31,11 @@
                     <div class="manage-day-sum__label">
                         {{ __("time_management.general_time") }}:
                     </div>
+
                     <div class="manage-day-sum__sum @if($general_time > 24) text-red @endif">
-                        {{ $general_time }} <small>{{ __("time_management.hours_short") }}</small>
+                        {{ $general_time }}
                     </div>
+
                     <div class="manage-day-sum__space"></div>                
                 </div>
 

@@ -63,13 +63,14 @@
 
     &__time {
         flex: 0 0 80px;
-        font-size: 12px;
+        font-size: 13px;
         color: green;
     }
 
     &__title {
         flex: 1 1 auto;
         font-size: 18px;
+        font-weight: 500;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
@@ -91,12 +92,12 @@
     }
 
     &__status {
-        flex: 0 0 50px;
+        flex: 0 0 30px;
         button {
             background-color: #fff;
-            border-radius: 12px;
-            height: 24px;
-            width: 50px;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
             font-size: 10px;
             letter-spacing: 0.4px;
             transition: 0.3s;

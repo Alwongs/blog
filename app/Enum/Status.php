@@ -16,4 +16,9 @@ class Status
         'A' => "Active",
         'D' => "Disable",
     ];
+
+    const STATUSES_SHORT = [
+        'A' => "Act",
+        'D' => "Dis",
+    ];
 }

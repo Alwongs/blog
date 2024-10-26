@@ -29,10 +29,7 @@ class StoreRequest extends FormRequest
             'title'       => [
                 'required', 
                 'string', 
-                'max:255',
-                Rule::unique('manage_times', 'title')->where(function ($query) {
-                    return $query->where('manage_day_id', $this->manage_day_id);
-                }),              
+                'max:255',             
             ],
             'time_from' => ['required'],
             'time_to' => ['required'],
@@ -43,7 +40,6 @@ class StoreRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.unique'                  => 'The title is alredy exists in this category',
             'manage_day_id.required'      => 'The manage day id field is required',
             'status.required'               => 'Status is required'
         ];
