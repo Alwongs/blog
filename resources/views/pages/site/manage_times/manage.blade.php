@@ -32,8 +32,12 @@
                         {{ __("time_management.general_time") }}:
                     </div>
 
-                    <div class="manage-day-sum__sum @if($general_time > 24) text-red @endif">
-                        {{ $general_time }}
+                    <div class="manage-day-sum__sum @if($general_time > 24 * 60) text-red @endif">
+                        @if ($general_time < 60) 
+                            {{ $general_time }} <small>{{ __("time_management.minutes_short") }}</small>
+                        @else
+                            {{ round($general_time / 60, 1) }} <small>{{ __("time_management.hours_short") }}</small>
+                        @endif
                     </div>
 
                     <div class="manage-day-sum__space"></div>                
