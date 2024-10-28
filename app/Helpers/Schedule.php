@@ -65,12 +65,12 @@ class Schedule
         $year = $schedule->year;
         $month = $schedule->month;
         $weeks = [];
-        $week_N = 1;
+        $week_number = 1;
         $currentTS = time();
         foreach ($serialized_schedule as $key => $day) {
             foreach ([1,2,3,4,5,6,7] as $week_day) {
-                if (!isset($weeks[$week_N][$week_day])) {
-                    $weeks[$week_N][$week_day] = [
+                if (!isset($weeks[$week_number][$week_day])) {
+                    $weeks[$week_number][$week_day] = [
                         "is_gone" => false,
                         "day" => "",
                         "work_shift" => "",
@@ -79,15 +79,24 @@ class Schedule
                 }
             }
             $keyTS = strtotime($key . '-' . $month . '-' . $year);
-            $is_gone = ($keyTS + 60*60*24 < $currentTS) ? true : false;
-            $weeks[$week_N][$day['week_day']] = [
+
+            // timezone shifts
+            if ($day["work_shift"] == self::DAY) {
+                $is_gone = ($keyTS + 60*60*24 < $currentTS - 8 * 60 * 60) ? true : false;
+            } else if ($day["work_shift"] == self::NIGHT) {
+                $is_gone = ($keyTS + 60*60*24 < $currentTS + 4 * 60 * 60) ? true : false;
+            } else if ($day["work_shift"] == self::DAY_OFF) {
+                $is_gone = ($keyTS + 60*60*24 < $currentTS - 4 * 60 * 60) ? true : false;
+            }
+
+            $weeks[$week_number][$day['week_day']] = [
                 "is_gone" => $is_gone,
                 "day" => $key,
                 "work_shift" => $day["work_shift"],
                 "week_day" => $day["week_day"],
             ];
             if ($day['week_day'] == 7) {
-                $week_N = $week_N + 1;
+                $week_number = $week_number + 1;
             }
         }
         return $weeks;        

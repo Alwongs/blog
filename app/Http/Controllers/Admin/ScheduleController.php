@@ -19,8 +19,6 @@ class ScheduleController extends Controller
             $weeksArray[] = ScheduleHelper::formatMonth($schedule);
         }
 
-        // dd($weeksArray);
-
         return view('pages/admin/schedules/manage', compact('schedules', 'weeksArray'));
     }
 
