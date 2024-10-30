@@ -2361,15 +2361,15 @@ option {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: red;
-  font-size: 12px;
-  font-weight: 600;
+  background-color: rgb(20, 218, 53);
+  font-size: 14px;
+  font-weight: 700;
   display: flex;
   justify-content: center;
   align-items: center;
-  right: 5px;
-  top: 5px;
-  color: white;
+  left: 10px;
+  top: 10px;
+  color: green;
 }
 .prod-list-item__price {
   flex: 0 0 70px;

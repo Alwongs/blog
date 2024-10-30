@@ -7,8 +7,8 @@
             <section class="reminder-section">
                 <div class="add-btn-group">
                     <a class="add-btn btn-icon-add" title="add new event" href="{{ route('events.create') }}?return_url=dashboard"></a>
-                </div>    
-{{ $tasksCount }}
+                </div>
+    
                 <div class="dashboard-row">  
                     <x-dashboard-card :events="$overdue" :title="'overdue'" :class="'overdue'" :count="''" />
                     <x-dashboard-card :events="$today" :title="'today'" :class="'today'" :count="$tasksCount" />
