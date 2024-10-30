@@ -20,7 +20,6 @@ class ManageDayController extends Controller
     public function index()
     {
         $manage_days = ManageDay::orderBy('position', 'DESC')->get();
-
         return view('pages/site/manage_days/manage', compact('manage_days'));
     }
 
@@ -79,12 +78,6 @@ class ManageDayController extends Controller
         }
 
         $general_time = $sum;
-
-        // if ($sum < 60) {
-        //     $general_time = $sum . " " . __("time_management.minutes_short");
-        // } else {
-        //     $general_time = round($sum / 60, 1) . " " . __("time_management.hours_short");
-        // }
 
         return view('pages/site/manage_times/manage', compact('manage_day', 'general_time'));
     }

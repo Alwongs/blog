@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Enum\Status;
 
 class ProductList extends Model
 {
@@ -13,5 +14,9 @@ class ProductList extends Model
 
     public function products() {
         return $this->hasMany(Product::class)->orderBy('status', 'ASC');
+    }
+
+    public function activeProducts() {
+        return $this->hasMany(Product::class)->where('status', Status::ACTIVE);
     }
 }

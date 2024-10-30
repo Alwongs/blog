@@ -1145,13 +1145,28 @@ select {
 }
 .dashboard-card__link {
   position: absolute;
-  right: 20px;
+  right: 30px;
   top: 10px;
   color: red;
   font-size: 14px;
   font-weight: 300;
   font-style: italic;
   text-decoration: underline;
+}
+.dashboard-card__link-label {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: red;
+  right: 10px;
+  top: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dashboard-card__content-list {
   border-radius: 10px;

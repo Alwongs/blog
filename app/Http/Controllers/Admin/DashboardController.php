@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Models\Message;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Task;
 
 use App\Helpers\EventHelper;
 use App\Helpers\DateHelper;
@@ -52,10 +53,12 @@ class DashboardController extends Controller
             'photoCount'    => $photoCount,
         ]);
 
+        $tasksCount = Task::count();
+
         $events = Event::where('user_id', Auth::id())->get();
         list($overdue, $today, $tomorrow, $in_week) = EventHelper::chunckEventsToPeriods($events); 
 
-        return view('dashboard', compact('events', 'overdue', 'today', 'tomorrow', 'in_week'));
+        return view('dashboard', compact('events', 'overdue', 'today', 'tomorrow', 'in_week', 'tasksCount'));
     }
 
     public function postpone($id)

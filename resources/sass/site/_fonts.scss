@@ -42,10 +42,16 @@
     font-weight: 700;
     font-style: light;
 }
-
 @font-face {
     font-family: 'Disket Mono';
     src:    url('../../fonts/Disket_Mono/Disket-Mono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: light;
+}
+
+@font-face {
+    font-family: 'Disket Mono';
+    src:    url('../../fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: light;
 }

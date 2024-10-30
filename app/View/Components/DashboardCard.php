@@ -9,12 +9,14 @@ class DashboardCard extends Component
     public $events;
     public $title;
     public $class;
+    public $count;
  
-    public function __construct($events, $title, $class)
+    public function __construct($events, $title, $class, $count)
     {
         $this->events = $events;
         $this->title = $title;
         $this->class = $class;
+        $this->count = $count;
     }
  
     public function render()

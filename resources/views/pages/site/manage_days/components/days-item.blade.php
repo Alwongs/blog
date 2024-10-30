@@ -24,9 +24,8 @@
                         </button> 
                     </form>                  
                 </li>
-            </ul> 
+            </ul>            
         </div>
     </div>
-
 </li>
 

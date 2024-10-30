@@ -1,6 +1,7 @@
 <li class="prod-list-item {{ $bg_color }}">
 
     <a class="prod-list-item__title" href="{{ route('product-lists.show', $list->id) }}" >{{$list->title}}</a>
+    <span class="prod-list-item__title-label">{{ $list->activeProducts->count() }}</span>
 
     <div class="prod-list-item__actions">
         <i class="three-dots-icon"></i>
@@ -26,6 +27,7 @@
                 </li>
             </ul> 
         </div>
+ 
     </div>
 
 </li>

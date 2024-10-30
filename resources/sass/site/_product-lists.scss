@@ -356,6 +356,7 @@
 
 // styles for product-list
 .prod-list-item {
+    position: relative;
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -380,7 +381,21 @@
         transition: 0.2s;
         padding-left: 20px;
     }
-
+    &__title-label {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: red;
+        font-size: 12px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 5px;
+        top: 5px;
+        color: white;
+    }
     &__price {
         flex: 0 0 70px;
         text-align: end;

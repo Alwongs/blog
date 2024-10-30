@@ -1,11 +1,13 @@
-@props(['title', 'events', 'class'])
+@props(['title', 'events', 'class', 'count'])
 
 <div class="dashboard-card dashboard-item">
     <div class="dashboard-card__title">
         <h2>{{ $title }}</h2>
         @if($title == "today")
             <a class="dashboard-card__link" href="{{ route("tasks.index") }}">todo list</a>
+            <a class="dashboard-card__link-label" href="{{ route("tasks.index") }}">{{ $count }}</a>
         @endif
+
     </div>
     @if($events)
         <ul class="dashboard-card__content-list">
