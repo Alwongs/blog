@@ -5,7 +5,9 @@
         <h2>{{ $title }}</h2>
         @if($title == "today")
             <a class="dashboard-card__link" href="{{ route("tasks.index") }}">todo list</a>
-            <a class="dashboard-card__link-label" href="{{ route("tasks.index") }}">{{ $count }}</a>
+            @if ($count != 0)
+                <a class="dashboard-card__link-label" href="{{ route("tasks.index") }}">{{ $count }}</a>
+            @endif
         @endif
 
     </div>

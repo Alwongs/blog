@@ -1,7 +1,13 @@
+@php
+    $count = $list->activeProducts->count();
+@endphp
+
 <li class="prod-list-item {{ $bg_color }}">
 
     <a class="prod-list-item__title" href="{{ route('product-lists.show', $list->id) }}" >{{$list->title}}</a>
-    <span class="prod-list-item__title-label">{{ $list->activeProducts->count() }}</span>
+    @if ($count != 0)
+        <span class="prod-list-item__title-label">{{ $count }}</span>
+    @endif
 
     <div class="prod-list-item__actions">
         <i class="three-dots-icon"></i>
