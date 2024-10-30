@@ -19,7 +19,7 @@ class ManageDayController extends Controller
      */
     public function index()
     {
-        $manage_days = ManageDay::orderBy('position', 'DESC')->get();
+        $manage_days = ManageDay::orderBy('position', 'ASC')->get();
         return view('pages/site/manage_days/manage', compact('manage_days'));
     }
 
@@ -102,6 +102,7 @@ class ManageDayController extends Controller
      */
     public function update(Request $request, ManageDay $manage_day)
     {
+        $manage_day->position = $request->position;
         $manage_day->title = $request->title;
         $manage_day->user_id = $request->user_id;
         $manage_day->update();

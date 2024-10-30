@@ -20,6 +20,10 @@
                 <input name="title" type="text" placeholder="title" value="{{ isset($manage_day) ? $manage_day->title : '' }}" required  autofocus />
             </div>    
 
+            <div class="form__input-block">
+                <input name="position" type="text" placeholder="position" value="{{ isset($manage_day) ? $manage_day->position : 0 }}" required  />
+            </div>              
+
             <div class="form__btn-block">
                 <button type="submit" class="btn btn-green btn-save">
                     @if(isset($manage_day))
@@ -35,7 +39,7 @@
         <div class="divider"></div>
 
         <div class="product-list-detail-btn-block">
-            <a class="product-list-detail-btn btn-grey" href="{{ route('product-lists.index') }}">Back</a>
+            <a class="product-list-detail-btn btn-grey" href="{{ route('manage-days.index') }}">Back</a>
 
             @if(isset($manage_day))
                 <form class="product-list-detail-btn btn-red" action="{{ route('product-lists.destroy', $manage_day->id) }}" method="POST">

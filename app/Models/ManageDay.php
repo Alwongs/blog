@@ -9,7 +9,7 @@ class ManageDay extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'user_id'];
+    protected $fillable = ['title', 'user_id', 'position'];
 
     public function manageTimes() {
         return $this->hasMany(ManageTime::class)->orderBy('time_from', 'ASC');
