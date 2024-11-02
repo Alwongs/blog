@@ -55,9 +55,9 @@ class ScheduleController extends Controller
     
     public function show(Schedule $schedule)
     {
-        $weeks = ScheduleHelper::formatMonth($schedule);
+        list($weeks, $additional_data) = ScheduleHelper::formatMonth($schedule);
 
-        return view('pages/admin/schedules/detail', compact('schedule', 'weeks'));
+        return view('pages/admin/schedules/detail', compact('schedule', 'weeks', 'additional_data'));
     }   
     
     public function destroy(Schedule $schedule)
