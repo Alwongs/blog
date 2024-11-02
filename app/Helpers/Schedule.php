@@ -114,8 +114,8 @@ class Schedule
             }
         }
         return [
-            $weeks,
-            [
+            'weeks' => $weeks,
+            'additional_data' => [
                 "work_days_qty" => $work_days_qty,
                 "work_nights_qty" => $work_nights_qty,
                 "days_off_qty" => $days_off_qty,

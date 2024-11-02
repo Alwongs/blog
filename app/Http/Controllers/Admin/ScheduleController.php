@@ -16,7 +16,7 @@ class ScheduleController extends Controller
         $schedules = Schedule::orderBy('month', 'ASC')->get();
         $weeksArray = [];
         foreach ($schedules as $schedule) {
-            $weeksArray[] = ScheduleHelper::formatMonth($schedule);
+            $weeksArray[] = ScheduleHelper::formatMonth($schedule)['weeks'];
         }
 
         return view('pages/admin/schedules/manage', compact('schedules', 'weeksArray'));
@@ -55,7 +55,8 @@ class ScheduleController extends Controller
     
     public function show(Schedule $schedule)
     {
-        list($weeks, $additional_data) = ScheduleHelper::formatMonth($schedule);
+        $weeks = ScheduleHelper::formatMonth($schedule)['weeks'];
+        $additional_data = ScheduleHelper::formatMonth($schedule)['additional_data'];
 
         return view('pages/admin/schedules/detail', compact('schedule', 'weeks', 'additional_data'));
     }   
