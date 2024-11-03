@@ -13,7 +13,7 @@ class ScheduleController extends Controller
 {
     public function index()
     {
-        $schedules = Schedule::orderBy('month', 'ASC')->get();
+        $schedules = Schedule::orderBy('year', 'ASC')->orderBy('month', 'ASC')->get();
         $weeksArray = [];
         foreach ($schedules as $schedule) {
             $weeksArray[] = ScheduleHelper::formatMonth($schedule)['weeks'];
