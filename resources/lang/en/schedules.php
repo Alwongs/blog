@@ -9,6 +9,6 @@ return [
     'select_month' => 'Select month',
     'first_week_day' => 'First week day',
     'work_days_qty' => 'Work days total',
-    'work_nights_qty' => 'Work days total',
+    'work_nights_qty' => 'Work nights total',
     'days_off_qty' => 'Days off total'
 ];

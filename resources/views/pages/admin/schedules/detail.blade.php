@@ -40,7 +40,7 @@
         <div class="m-schedule-footer">
             <Ul class="m-schedule-footer__additional_data">
                 <li>{{ __("schedules.work_days_qty") }}: <span>{{ $additional_data['work_days_qty'] }}</span></li>
-                <li>{{ __("schedules.work_nights_qty") }}: <span>{{ $additional_data['work_days_qty'] }}</span></li>
+                <li>{{ __("schedules.work_nights_qty") }}: <span>{{ $additional_data['work_nights_qty'] }}</span></li>
                 <li>{{ __("schedules.days_off_qty") }}: <span>{{ $additional_data['days_off_qty'] }}</span></li>
             </Ul>
     

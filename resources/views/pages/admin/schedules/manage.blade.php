@@ -78,11 +78,6 @@
                         </div>   --}}
 
 
-
-
-
-
-
                         <div class="m-schedule-footer">
                             <div class="schedule-btn-block">
                                 <a href="{{ route('schedules.edit', $schedule->id) }}" class="btn btn-blue">Edit</a>
