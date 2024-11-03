@@ -73,6 +73,7 @@
             } 
         }
     }
+
 }
 .schedule-container {
     background-color: #fff;
@@ -141,20 +142,28 @@
     font-weight: 600;
 }
 
+.m-schedule-table, .m-schedule-footer {
+    width: 500px;
+    margin: 0 auto 20px;
+}
+
 
 .m-schedule-table {
-    width: 500px;
-    margin: 0 auto 40px;
     @media (max-width: $mobile-max) {  
         width: 100%;
     }       
+}
+
+.m-schedule-footer {
     &__additional_data {
         span {
             color: red;
             font-weight: 600;
         }
+        margin-bottom: 20px;
     }
 }
+
 
 .m-week-row-th {
     display: flex;    

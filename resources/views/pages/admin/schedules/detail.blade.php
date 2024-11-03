@@ -37,12 +37,25 @@
             @endforeach
         </div>
 
-        <Ul class="m-schedule-table__additional_data">
-            <li>{{ __("schedules.work_days_qty") }}: <span>{{ $additional_data['work_days_qty'] }}</span></li>
-            <li>{{ __("schedules.work_nights_qty") }}: <span>{{ $additional_data['work_days_qty'] }}</span></li>
-            <li>{{ __("schedules.days_off_qty") }}: <span>{{ $additional_data['days_off_qty'] }}</span></li>
-        </Ul>
+        <div class="m-schedule-footer">
+            <Ul class="m-schedule-footer__additional_data">
+                <li>{{ __("schedules.work_days_qty") }}: <span>{{ $additional_data['work_days_qty'] }}</span></li>
+                <li>{{ __("schedules.work_nights_qty") }}: <span>{{ $additional_data['work_days_qty'] }}</span></li>
+                <li>{{ __("schedules.days_off_qty") }}: <span>{{ $additional_data['days_off_qty'] }}</span></li>
+            </Ul>
+    
+            <div class="schedule-btn-block">
+                <a class="btn btn-grey" href="{{ route('schedules.index') }}">Back</a>
+    
+                <form action="{{ route('schedules.destroy', $schedule->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button href="{{ route('schedules.destroy', $schedule->id) }}" class="btn btn-red">Delete</button> 
+                </form>
+            </div> 
+        </div>
 
+ 
     </main>
 
 </x-admin-layout>

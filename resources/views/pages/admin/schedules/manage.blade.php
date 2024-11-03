@@ -68,16 +68,33 @@
                         </div>  
 
 
-
-                        <div class="schedule-btn-block">
+                        {{-- <div class="schedule-btn-block">
                             <a href="{{ route('schedules.edit', $schedule->id) }}" class="btn btn-blue">Edit</a>
                             <form action="{{ route('schedules.destroy', $schedule->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button href="{{ route('schedules.destroy', $schedule->id) }}" class="btn btn-red">Delete</button> 
                             </form>
-                        </div>  
-                    </li>        
+                        </div>   --}}
+
+
+
+
+
+
+
+                        <div class="m-schedule-footer">
+                            <div class="schedule-btn-block">
+                                <a href="{{ route('schedules.edit', $schedule->id) }}" class="btn btn-blue">Edit</a>
+                                <form action="{{ route('schedules.destroy', $schedule->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button href="{{ route('schedules.destroy', $schedule->id) }}" class="btn btn-red">Delete</button> 
+                                </form>
+                            </div>  
+                        </div>                        
+                    </li>   
+   
                 @endforeach
             </ul>  
         @else

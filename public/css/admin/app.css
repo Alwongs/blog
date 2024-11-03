@@ -1450,16 +1450,21 @@ select {
   font-weight: 600;
 }
 
-.m-schedule-table {
+.m-schedule-table, .m-schedule-footer {
   width: 500px;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;
 }
+
 @media (max-width: 767px) {
   .m-schedule-table {
     width: 100%;
   }
 }
-.m-schedule-table__additional_data span {
+
+.m-schedule-footer__additional_data {
+  margin-bottom: 20px;
+}
+.m-schedule-footer__additional_data span {
   color: red;
   font-weight: 600;
 }
