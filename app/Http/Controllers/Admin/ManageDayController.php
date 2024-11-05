@@ -106,6 +106,7 @@ class ManageDayController extends Controller
      */
     public function update(Request $request, ManageDay $manage_day)
     {
+        $manage_day->color_id = $request->color_id;
         $manage_day->position = $request->position;
         $manage_day->title = $request->title;
         $manage_day->user_id = $request->user_id;
