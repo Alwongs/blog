@@ -1,12 +1,18 @@
 @php
-    $count = $list->activeProducts->count();
+    $activeProducts = $list->activeProducts;
+    $count = $activeProducts->count();
+    $sum = $activeProducts->sum('price');
 @endphp
 
 <li class="prod-list-item {{ $bg_color }}">
 
-    <a class="prod-list-item__title" href="{{ route('product-lists.show', $list->id) }}" >{{$list->title}}</a>
+    <a class="prod-list-item__title" href="{{ route('product-lists.show', $list->id) }}">{{$list->title}}</a>
     @if ($count != 0)
         <span class="prod-list-item__title-label">{{ $count }}</span>
+    @endif
+
+    @if ($sum != 0)
+        <span class="prod-list-item__title-label-sum">{{ $sum }}руб</span>
     @endif
 
     <div class="prod-list-item__actions">

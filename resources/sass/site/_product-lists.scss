@@ -381,21 +381,30 @@
         transition: 0.2s;
         padding-left: 20px;
     }
-    &__title-label {
+    &__title-label, &__title-label-sum {
         position: absolute;
-        width: 24px;
         height: 24px;
-        border-radius: 50%;
         background-color: rgb(20, 218, 53);
         font-size: 14px;
         font-weight: 700;
         display: flex;
         justify-content: center;
         align-items: center;
-        left: 10px;
         top: 10px;
-        color: green;
     }
+    &__title-label {
+        color: green;
+        border-radius: 50%;
+        left: 10px;
+        width: 24px;
+    }
+    &__title-label-sum {
+        color: red;
+        border-radius: 3px;
+        left: 44px;
+        width: 70px;
+    }
+
     &__price {
         flex: 0 0 70px;
         text-align: end;
