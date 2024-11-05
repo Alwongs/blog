@@ -16,8 +16,30 @@
             <input type="hidden" name="user_id" value="{{ $user_id }}" />
 
             <div class="form__input-block">
+                <input name="position" type="text" placeholder="position" value="{{ isset($task) ? $task->position : '0' }}" required  />
+            </div>              
+
+            <div class="form__input-block">
                 <input name="title" type="text" placeholder="title" value="{{ isset($task) ? $task->title : '' }}" required autofocus />
-            </div>    
+            </div>  
+            
+            <div class="form__status-block">
+                @foreach(App\Enum\Status::STATUSES as $key=>$status)
+                    <input 
+                        id="status-{{ $status }}" 
+                        type="radio" 
+                        name="status" 
+                        class="product-status-{{ $status }}" 
+                        value="{{ $key }}"
+                        @if(isset($task) && $task->status == $key)
+                            checked
+                        @elseif(!isset($task) && $key == 'A')
+                            checked
+                        @endif
+                    />
+                    <label for="status-{{ $status }}" class="{{ $status }}">{{ $status }}</label>
+                @endforeach
+            </div>             
 
             <div class="form__color-block">
                 @foreach(App\Enum\Rates::RATES as $key=>$rate)

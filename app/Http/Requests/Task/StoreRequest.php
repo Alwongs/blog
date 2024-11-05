@@ -35,6 +35,8 @@ class StoreRequest extends FormRequest
                 }),              
             ],
             'description' => ['nullable', 'string'],
+            'position' => ['required'],
+            'status' => ['required'],
         ];
     }
 
@@ -45,3 +47,4 @@ class StoreRequest extends FormRequest
         ];
     }    
 }
+ 

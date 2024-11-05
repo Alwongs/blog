@@ -17,7 +17,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::orderBy('rate', 'DESC')->get();
+        $tasks = Task::orderBy('rate', 'DESC')->orderBy('position', 'ASC')->get();
 
         return view('pages/site/tasks/manage', compact('tasks'));
     }
@@ -97,6 +97,8 @@ class TaskController extends Controller
         $task->title = $request->title;
         $task->description = $request->description;
         $task->rate = $request->rate;
+        $task->position = $request->position;
+        $task->status = $request->status;
         $task->update();
 
         return redirect()->route('tasks.index')->with('info', 'Task has been updated!');
