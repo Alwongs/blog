@@ -1,6 +1,6 @@
 <li class="todo-list__item todo-item {{ App\Enum\Rates::RATES[$task->rate] }}">
 
-    <a class="todo-item__title" href="{{ route('tasks.show', $task->id) }}" >&bull; {{$task->title}} {{ $task->position }}</a>
+    <a class="todo-item__title" href="{{ route('tasks.show', $task->id) }}" >&bull; {{$task->title}}</a>
 
     <div class="todo-item__actions">
         <i class="three-dots-icon"></i>
