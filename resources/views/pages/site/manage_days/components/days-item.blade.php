@@ -1,5 +1,5 @@
 @php
-    $color = App\Models\Color::find($day->color_id)->color;
+    $color = isset($day->color_id) ? App\Models\Color::find($day->color_id)->color : '';
 @endphp
 
 <li class="prod-list-item {{ '$bg_color' }}" style="background-color: {{ $color }};">
