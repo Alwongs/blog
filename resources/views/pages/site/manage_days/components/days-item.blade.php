@@ -1,4 +1,8 @@
-<li class="prod-list-item {{ $bg_color }}">
+@php
+    $color = App\Models\Color::find($day->color_id)->color;
+@endphp
+
+<li class="prod-list-item {{ '$bg_color' }}" style="background-color: {{ $color }};">
 
     <a class="prod-list-item__title" href="{{ route('manage-days.show', $day->id) }}" >{{$day->title}}</a>
 

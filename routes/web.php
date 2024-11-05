@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\ManageDayController;
 use App\Http\Controllers\Admin\ManageTimeController;
 use App\Http\Controllers\TaskController as TodoController;
 use App\Http\Controllers\Admin\ScheduleController;
+use App\Http\Controllers\Admin\ColorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,7 +87,8 @@ Route::middleware('auth')->group(function () {
         'products'        => ProductController::class,
         'ideas'           => IdeaController::class,
         'manage-days'     => ManageDayController::class,
-        'manage-times'    => ManageTimeController::class
+        'manage-times'    => ManageTimeController::class,
+        'colors'          => ColorController::class,
     ]);
 });
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ManageDay;
+use App\Models\Color;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ManageDay\StoreRequest;
 use App\Helpers\TimeHelper;
@@ -20,6 +21,7 @@ class ManageDayController extends Controller
     public function index()
     {
         $manage_days = ManageDay::orderBy('position', 'ASC')->get();
+
         return view('pages/site/manage_days/manage', compact('manage_days'));
     }
 
@@ -31,7 +33,8 @@ class ManageDayController extends Controller
     public function create()
     {
         $user_id = Auth::user()->id;
-        return view('pages/site/manage_days/update', compact('user_id'));
+        $colors = Color::all();
+        return view('pages/site/manage_days/update', compact('user_id', 'colors'));
     }
 
     /**
@@ -90,7 +93,8 @@ class ManageDayController extends Controller
      */
     public function edit(ManageDay $manage_day)
     {
-        return view('pages/site/manage_days/update', compact('manage_day')); 
+        $colors = Color::all();
+        return view('pages/site/manage_days/update', compact('manage_day', 'colors')); 
     }
 
     /**

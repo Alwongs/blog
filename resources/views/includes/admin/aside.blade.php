@@ -85,12 +85,20 @@
             </a>
 
             <a 
-            href="{{ route('ideas.index') }}"
-            @if (in_array($currentRouteName, ['ideas.index'])) class="active" @endif 
+                href="{{ route('ideas.index') }}"
+                @if (in_array($currentRouteName, ['ideas.index'])) class="active" @endif 
                 style="color:red;"
             >
                 APPS IDEAS
-            </a>            
+            </a>   
+            
+            <a 
+                href="{{ route('colors.index') }}"
+                @if (in_array($currentRouteName, ['colors.index'])) class="active" @endif 
+                style="color:red;"
+            >
+                COLORS
+            </a>          
         </nav>
     </div>
     @endauth

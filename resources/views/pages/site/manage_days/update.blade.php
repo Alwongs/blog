@@ -22,7 +22,22 @@
 
             <div class="form__input-block">
                 <input name="position" type="text" placeholder="position" value="{{ isset($manage_day) ? $manage_day->position : 0 }}" required  />
-            </div>              
+            </div>  
+            
+            <div class="form__input-block">
+                <select name="color_id" id="" value="color_id">
+                    <option style="background-color: #fff;"></option>
+                    @foreach($colors as $color)
+                        <option
+                            value="{{ $color->id  }}"
+                            style="background-color:{{ $color->color }}"
+                            @if(isset($manage_day) && $color->id == $manage_day->color_id) selected @endif
+                        >
+                            {{ $color->title }}
+                        </option>
+                    @endforeach
+                </select>
+            </div> 
 
             <div class="form__btn-block">
                 <button type="submit" class="btn btn-green btn-save">

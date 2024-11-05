@@ -175,3 +175,10 @@ a {
 .border-red {
     border: 1px solid red;
 }
+
+
+.divider {
+    border-bottom: 1px solid rgba($baseText, 0.2);
+    width: 100%;
+    margin-bottom: 10px;
+}
