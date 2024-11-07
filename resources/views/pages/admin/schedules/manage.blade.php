@@ -57,6 +57,7 @@
                                     @foreach ($row as $key => $day)
                                         <div 
                                             class="m-week-row-td__td m-schedule-{{ $day['work_shift'] }}"
+                                            @if($day["is_today"]) style="border: 4px solid red;" @endif
                                         >
                                             {{ $day['day'] }}
                 

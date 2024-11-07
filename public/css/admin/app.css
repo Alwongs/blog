@@ -1478,12 +1478,16 @@ select {
   }
 }
 
+.m-schedule-footer {
+  font-size: 22px;
+  font-weight: 600;
+}
 .m-schedule-footer__additional_data {
   margin-bottom: 20px;
 }
 .m-schedule-footer__additional_data span {
   color: red;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .m-week-row-th {

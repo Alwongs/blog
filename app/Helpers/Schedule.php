@@ -76,6 +76,7 @@ class Schedule
             foreach ([1,2,3,4,5,6,7] as $week_day) {
                 if (!isset($weeks[$week_number][$week_day])) {
                     $weeks[$week_number][$week_day] = [
+                        "is_today" => false,
                         "is_gone" => false,
                         "day" => "",
                         "work_shift" => "",
@@ -88,22 +89,24 @@ class Schedule
             // timezone shifts
             if ($day["work_shift"] == self::DAY) {
 
-                $is_gone = ($keyTS + 60*60*24 < $currentTS - 8 * 3600) ? true : false;
+                $is_gone = ($currentTS + 8 * 60 * 60 > $keyTS + 60 * 60 * 24) ? true : false;
                 $work_days_qty = $work_days_qty + 1;
 
             } else if ($day["work_shift"] == self::NIGHT) {
 
-                $is_gone = ($keyTS + 60*60*24 < $currentTS + 4 * 3600) ? true : false;
+                $is_gone = ($currentTS - 4 * 60 * 60 > $keyTS + 60 * 60 * 24) ? true : false;
                 $work_nights_qty = $work_nights_qty + 1;
 
             } else if ($day["work_shift"] == self::DAY_OFF) {
 
-                $is_gone = ($keyTS + 60*60*24 < $currentTS - 4 * 3600) ? true : false;
+                $is_gone = ($currentTS + 8 * 60 * 60 > $keyTS + 60 * 60 * 24) ? true : false;
                 $days_off_qty = $days_off_qty + 1;
-
             }
 
+            $is_today = ($currentTS > $keyTS + 60 * 60 * 4 && $currentTS < $keyTS + 60 * 60 * 28) ? true : false;
+
             $weeks[$week_number][$day['week_day']] = [
+                "is_today" => $is_today,
                 "is_gone" => $is_gone,
                 "day" => $key,
                 "work_shift" => $day["work_shift"],

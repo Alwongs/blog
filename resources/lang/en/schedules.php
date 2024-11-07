@@ -10,5 +10,8 @@ return [
     'first_week_day' => 'First week day',
     'work_days_qty' => 'Work days total',
     'work_nights_qty' => 'Work nights total',
-    'days_off_qty' => 'Days off total'
+    'days_off_qty' => 'Days off total',
+    'days' => 'Days',
+    'nights' => 'Nights',
+    'days_off' => 'Days off'
 ];

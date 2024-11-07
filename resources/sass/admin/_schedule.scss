@@ -152,10 +152,12 @@
 
 
 .m-schedule-footer {
+    font-size: 22px;
+    font-weight: 600;
     &__additional_data {
         span {
             color: red;
-            font-weight: 600;
+            font-weight: 700;
         }
         margin-bottom: 20px;
     }
