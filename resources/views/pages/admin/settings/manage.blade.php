@@ -88,6 +88,15 @@
                     </li>
 
                     <li class="dashboard-actions__item">
+                        <form action="{{ route('clear-schedule-days') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dashboard-actions__action bg-red" onclick="confirm('Are you ready to clear the schedule days?')">
+                                {{ __("dashboard.clear_schedule_days") }}
+                            </button>
+                        </form>
+                    </li>                     
+
+                    <li class="dashboard-actions__item">
                         <form action="{{ route('add-new-thumbnails') }}" method="POST">
                             @csrf
                             <button type="submit" class="dashboard-actions__action bg-green" onclick="confirm('Are you ready to create new thumbnails!')">
@@ -95,6 +104,7 @@
                             </button>
                         </form>
                     </li>
+
                 @endif
             </ul>
         </section>

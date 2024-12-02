@@ -22,9 +22,6 @@
         </nav>
     </div>
 
-
-
-
     @auth
     <div class="aside-navigation">
         <h2 class="aside-navigation__title">Admin panel</h2>
@@ -38,12 +35,12 @@
             </a>
 
             <a 
-                href="{{ route('schedules.index') }}"
-                @if (in_array($currentRouteName, ['schedule'])) class="active" @endif
+                href="{{ route('schedule-days.index') }}"
+                @if (in_array($currentRouteName, ['schedule-days'])) class="active" @endif
             >
                 {{ __("dashboard.work_schedule") }}
             </a>            
-            
+
             <a 
                 href="{{ route('events.index') }}"
                 @if (in_array($currentRouteName, ['events.index', 'events.create', 'events.edit'])) class="active" @endif

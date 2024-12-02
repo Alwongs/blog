@@ -16,7 +16,13 @@
             flex: 1 0 200px;               
         }            
     }
-
+    &__item-schedule-year {
+        font-size: 70px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(214, 63, 169);
+    } 
     &__item-schedule-month {
         font-size: 22px;
         font-weight: 600;

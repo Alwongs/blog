@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Schedule;
+namespace App\Http\Requests\ScheduleDay;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -26,14 +26,10 @@ class StoreRequest extends FormRequest
     {
         return [
             'user_id' => ['required'],
-            'month'       => [
-                'required', 
-                'string', 
-                'max:255',
-                Rule::unique('schedules', 'month')->where(function ($query) {
-                    return $query->where('user_id', $this->user_id);
-                }),              
-            ],
+            'year'   => ['required'],
+            'month'   => ['required'],
+            'first_day_shift_index' => ['required'],
+            'description' => ['nullable']
         ];
     }
 

@@ -1,18 +1,18 @@
 <x-admin-layout>
     <header class="header">
         <h1>
-            @isset($post){{ __('schedule.update') }}@else{{ __('schedules.new_schedule') }}@endisset
+            @isset($day){{ __('schedule.update') }}@else{{ __('new_schedule_days') }}@endisset
         </h1>
     </header>
 
     @include('includes.common.notification')
 
     <main class="main">
-        @if(isset($schdule))
+        @if(isset($day))
             <form class="form" action="{{ route('schedules.update', $schdule) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
         @else
-            <form class="form" action="{{ route('schedules.store') }}" method="POST" enctype="multipart/form-data">
+            <form class="form" action="{{ route('schedule-days.store') }}" method="POST" enctype="multipart/form-data">
         @endif
             @csrf
             <input type="hidden" name="user_id" value="{{ $user_id }}" />
@@ -33,38 +33,20 @@
                         <option value="{{ $month }}">{{ App\Enum\Calendar::MONTHES[$month] }}</option>
                     @endforeach
                 </select>
-            </div>
+            </div> 
             
             <div class="form__input-block input-type-block">
-                <select name="days_in_month" type="text" required >
-                    <option>{{ __("schedules.days_in_month") }}</option>                    
-                    @foreach([28,29,30,31] as $item)
-                        <option value="{{ $item }}">{{ $item }}</option>
-                    @endforeach
-                </select>
-            </div>     
-            
-            <div class="form__input-block input-type-block">
-                <select name="first_day_index" type="text" required >
+                <select name="first_day_shift_index" type="text" required >
                     <option>{{ __("schedules.first_day_index") }}</option>                    
-                    @foreach(App\Helpers\Schedule::WORK_SCHEDULE as $key => $item)
-                        <option class="schedule-{{ $item }}" value="{{ $key }}">{{ App\Helpers\Schedule::FULL_DAY_PERIOD[$item] }} - {{ $key+1  }}</option>
+                    @foreach(App\Helpers\ScheduleDay::WORK_SCHEDULE as $key => $item)
+                        <option class="schedule-{{ $item }}" value="{{ $key }}">{{ App\Helpers\ScheduleDay::FULL_DAY_PERIOD[$item] }} - {{ $key+1  }}</option>
                     @endforeach
                 </select>
             </div>     
-            
-            <div class="form__input-block input-type-block">
-                <select name="first_week_day" type="text" required >
-                    <option>{{ __("schedules.first_week_day") }}</option>                    
-                    @foreach(App\Enum\Calendar::WEEK_DAYS as $key => $item)
-                        <option value="{{ $key }}">{{ App\Enum\Calendar::WEEK_DAYS[$key] }}</option>
-                    @endforeach
-                </select>
-            </div>              
 
             <div class="form__btn-block">
                 <button type="submit" class="btn btn-green btn-save">
-                    @if(isset($schedule))
+                    @if(isset($day))
                         Update
                     @else
                         Save

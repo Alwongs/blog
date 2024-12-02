@@ -13,5 +13,6 @@ return [
     'days_off_qty' => 'Days off total',
     'days' => 'Days',
     'nights' => 'Nights',
-    'days_off' => 'Days off'
+    'days_off' => 'Days off',
+    'shift_index' => 'Shift index'
 ];

@@ -22,7 +22,10 @@ use App\Http\Controllers\Admin\ManageDayController;
 use App\Http\Controllers\Admin\ManageTimeController;
 use App\Http\Controllers\TaskController as TodoController;
 use App\Http\Controllers\Admin\ScheduleController;
+use App\Http\Controllers\Admin\ScheduleDayController;
 use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\WorkShiftController;
+use App\Models\ScheduleDay;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +37,11 @@ use App\Http\Controllers\Admin\ColorController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::delete('/clear-schedule-days', function() {
+    ScheduleDay::truncate();
+})->name('clear-schedule-days');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -75,20 +83,23 @@ Route::middleware('auth')->group(function () {
         Route::resources([
             'settings' => SettingController::class, 
         ]);
+        
+        Route::delete('/scedule-days-delete-month/{id}', [WorkShiftController::class, 'deleteMonth'])->name('scedule-days-delete-month');
     });
 
     Route::resources([ 
-        'events'          => EventController::class,
-        'categories'      => CategoryController::class,
-        'posts'           => PostController::class,
-        'tasks'           => TaskController::class,
-        'schedules'       => ScheduleController::class,
-        'product-lists'   => ProductListController::class,
-        'products'        => ProductController::class,
-        'ideas'           => IdeaController::class,
-        'manage-days'     => ManageDayController::class,
-        'manage-times'    => ManageTimeController::class,
-        'colors'          => ColorController::class,
+        'events'         => EventController::class,
+        'categories'     => CategoryController::class,
+        'posts'          => PostController::class,
+        'tasks'          => TaskController::class,
+        'schedules'      => ScheduleController::class,
+        'schedule-days'  => ScheduleDayController::class,
+        'product-lists'  => ProductListController::class,
+        'products'       => ProductController::class,
+        'ideas'          => IdeaController::class,
+        'manage-days'    => ManageDayController::class,
+        'manage-times'   => ManageTimeController::class,
+        'colors'         => ColorController::class,
     ]);
 });
 
