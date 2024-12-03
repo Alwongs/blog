@@ -89,6 +89,7 @@ class ScheduleDayController extends Controller
     {
 
         $scheduleDay->shift_type = $request->shift_type;
+        $scheduleDay->description = $request->description;
         $scheduleDay->update();
 
         return redirect()->route('schedule-days.index')->with('info', 'Day has been updated!'); 

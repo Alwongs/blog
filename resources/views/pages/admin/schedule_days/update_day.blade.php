@@ -28,6 +28,10 @@
                 </select>
             </div>     
 
+            <div class="form__textarea-block">
+                <textarea name="description" id="" cols="30" rows="10">{{ $scheduleDay->description }}</textarea>
+            </div>            
+
             <div class="form__btn-block">
                 <button type="submit" class="btn btn-green btn-save">
                     @if(isset($day))
