@@ -46,7 +46,8 @@
                                             @if(App\Helpers\ScheduleDay::checkIfToday($day)) style="border: 5px solid red;" @endif
                                         >
                                             {{ $day['day'] }}
-                                            @if(App\Helpers\ScheduleDay::isDayPassed($day))<div class="m-week-row-td__td-dark-filter"></div>@endif                            
+                                            @if(App\Helpers\ScheduleDay::isDayPassed($day))<div class="m-week-row-td__td-dark-filter"></div>@endif   
+                                            @if(!empty($day['description']))<div class="m-week-row-td__td-flag">D</div>@endif                           
                                         </a>
                                     @endforeach
                                 </div>
