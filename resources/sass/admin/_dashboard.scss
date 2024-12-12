@@ -176,6 +176,10 @@
             flex: 1 0 185px;               
         }         
     }
+    &__title.text-color-red {
+        color: red;
+        font-weight: 500;
+    }
     &__btn-block {
         display: flex;
         @media (max-width: $mobile-max) {  

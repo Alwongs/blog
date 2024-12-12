@@ -16,7 +16,13 @@
             @foreach($events as $event)
                 <li class="dashboard-card__item dashboard-card-item">
 
-                    <a class="dashboard-card-item__title" href="#" title="">{{ $event->event }}</a>
+                    <a
+                        class="dashboard-card-item__title @if(in_array($title, ["today", "overdue"])) text-color-red  @endif"
+                        href="#"
+                        title=""
+                    >
+                        {{ $event->event }}
+                    </a>
 
                     <div class="dashboard-card-item__btn-block"> 
                         <a href="{{ route('events.edit', $event->id) }}"  class="cell-btn btn-icon-edit"></a>

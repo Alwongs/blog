@@ -210,15 +210,18 @@
     }
     &__td-flag {
         position: absolute;
-        right: 3px;
-        top: 3px;
-        background-color: #fff;
-        border: 1px solid green;
+        right: -3px;
+        top: -3px;
+        background-image:  url('../../images/icons/message.svg');
+        background-repeat: no-repeat;      
+        background-size: 80%; 
+        background-position: center;  
         border-radius: 50%;
-        width: 15px;
-        height: 15px;
+        width: 30px;
+        height: 30px;
         font-size: 10px;
         text-align: center;
+ 
     }
 }
 
